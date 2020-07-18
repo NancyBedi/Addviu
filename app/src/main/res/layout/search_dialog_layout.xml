@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="430dp"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:background="@drawable/curved_white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/spinerTitle"
+            style="@style/text_view_14_style"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_16"
+            android:layout_margin="10dp"
+            android:textColor="@color/dark_gray"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/l_d_gray" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/searchBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_5"
+                android:textSize="@dimen/text_14"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_15"
+                android:paddingRight="@dimen/margin_15"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginRight="@dimen/margin_20"
+                android:textColorHint="@color/l_d_gray"
+                android:background="@drawable/white_edit_curve"
+                />
+
+        </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_40"
+            android:layout_marginTop="@dimen/margin_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black_trans_99" />
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close"
+        android:layout_width="@dimen/margin_50"
+        android:layout_height="@dimen/margin_50"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
+        android:padding="@dimen/margin_10"
+        app:srcCompat="@drawable/ic_close_white_24dp"
+        android:background="@drawable/black_trans_circle" />
+
+</RelativeLayout>

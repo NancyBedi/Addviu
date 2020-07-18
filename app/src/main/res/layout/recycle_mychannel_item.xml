@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="@dimen/margin_10">
+
+    <ImageView
+        android:id="@+id/channelImage"
+        android:layout_width="@dimen/margin_90"
+        android:layout_height="@dimen/margin_90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_user"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/channelImage"
+        app:layout_constraintRight_toLeftOf="@+id/moreIcon"
+        app:layout_constraintLeft_toRightOf="@+id/channelImage"
+        app:layout_constraintTop_toTopOf="@+id/channelImage">
+
+        <TextView
+            android:id="@+id/channelName"
+            style="@style/text_view_14_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenny Creations"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/txtsubscriber"
+            style="@style/text_view_14_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.1k Subscribers"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/text_12"
+            android:textColor="@color/dark_gray" />
+
+        <TextView
+            android:id="@+id/txtVideo"
+            style="@style/text_view_14_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Videos"
+            android:textSize="@dimen/text_12"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/dark_gray" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/moreIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/nameLayout"
+        android:layout_marginEnd="@dimen/margin_10"
+        app:srcCompat="@drawable/ic_more_vert_grey_24dp"
+        tools:ignore="ContentDescription"
+        android:layout_marginRight="@dimen/margin_10" />
+</androidx.constraintlayout.widget.ConstraintLayout>

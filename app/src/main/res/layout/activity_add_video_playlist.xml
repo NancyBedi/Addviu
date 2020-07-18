@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.AddVideoPlaylist">
+
+    <include layout="@layout/common_actionbar"
+        android:id="@+id/toolPlay"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolPlay"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtVid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_view_14_style"
+                android:text="Add Videos"
+                android:textSize="@dimen/text_18"
+                android:layout_marginLeft="@dimen/margin_20"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/view"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SAVE"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/margin_15"
+                android:paddingRight="@dimen/margin_15"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                app:layout_constraintTop_toTopOf="@id/txtVid"
+                app:layout_constraintBottom_toBottomOf="@id/txtVid"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="@dimen/margin_15"
+                android:background="@drawable/purple_image_button"
+                android:layout_marginEnd="@dimen/margin_15" />
+            
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/l_d_gray"
+                app:layout_constraintTop_toBottomOf="@id/btnSave"
+                android:layout_marginTop="@dimen/margin_20"/>
+
+            <TextView
+                android:id="@+id/numVid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_view_14_style"
+                android:text="0 Videos Selected"
+                android:textColor="@color/dark_gray"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_15" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycleSelectPlaylist"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/numVid"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

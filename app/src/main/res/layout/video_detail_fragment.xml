@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/scrollLayout"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/videoTitle"
+            style="@style/text_view_14_style"
+            android:layout_margin="@dimen/margin_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/detailText"
+            style="@style/text_view_12_style"
+            android:textColor="@color/dark_gray"
+            app:layout_constraintEnd_toEndOf="@+id/videoTitle"
+            app:layout_constraintStart_toStartOf="@+id/videoTitle"
+            app:layout_constraintTop_toBottomOf="@+id/videoTitle">
+
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/likeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailText">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/likeButton"
+                style="@style/text_view_12_style"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:drawableTop="@drawable/like_grey"
+                android:gravity="center"
+                android:text="@string/_0"
+                android:textColor="@color/dark_gray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dislikeButton"
+                style="@style/text_view_12_style"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:drawableTop="@drawable/dislike_grey"
+                android:gravity="center"
+                android:text="@string/_0"
+                android:textColor="@color/dark_gray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_view_12_style"
+                android:layout_width="0dp"
+                android:id="@+id/shareButton"
+                android:layout_weight="0.2"
+                android:drawableTop="@drawable/share"
+                android:gravity="center"
+                android:text="@string/share"
+                android:textColor="@color/dark_gray" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/subscribeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/likeLayout">
+
+            <View
+                android:id="@+id/viewTop"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/l_d_gray" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/channelImage"
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="@dimen/margin_40"
+                android:layout_below="@+id/viewTop"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                app:srcCompat="@drawable/circle_user" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/channelName"
+                style="@style/text_view_14_style"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_toStartOf="@+id/subscribeBtn"
+                android:layout_toLeftOf="@+id/subscribeBtn"
+                android:layout_toEndOf="@+id/channelImage"
+                android:layout_toRightOf="@+id/channelImage"
+                android:includeFontPadding="false" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textSubscriber"
+                style="@style/text_view_12_style"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/channelName"
+                android:layout_toEndOf="@+id/channelImage"
+                android:layout_toRightOf="@+id/channelImage"
+                android:includeFontPadding="false"
+                android:textColor="@color/dark_gray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/subscribeBtn"
+                style="@style/text_view_14_style"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:padding="@dimen/margin_5"
+                android:text="@string/SUBSCRIBE"
+                android:textColor="@color/purpule"
+                android:textSize="@dimen/text_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/textSubscriber"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@color/l_d_gray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/commentsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subscribeLayout">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textComments"
+                style="@style/text_view_14_style"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/comments" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:src="@drawable/up_down_arrow" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userImage"
+                android:layout_width="@dimen/margin_30"
+                android:layout_height="@dimen/margin_30"
+                android:layout_below="@+id/textComments"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_5"
+                android:src="@drawable/circle_user" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/commentText"
+                style="@style/text_view_12_style"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/textComments"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:layout_toEndOf="@+id/userImage"
+                android:layout_toRightOf="@+id/userImage"
+                android:background="@drawable/grey_round_bg"
+                android:hint="@string/add_a_public_comment"
+                android:paddingLeft="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingRight="@dimen/margin_10"
+                android:paddingBottom="@dimen/margin_5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/commentText"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@color/l_d_gray" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentsLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white_min_curve"
+    android:padding="@dimen/margin_15">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        android:text="New Playlist"
+        android:textSize="@dimen/text_18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/dialogLay"
+        app:layout_constraintTop_toBottomOf="@+id/dialogTitle">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_style"
+            android:layout_marginTop="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleDialog"
+                style="@style/edit_text_style"
+                android:hint="@string/title"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_style"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descDialog"
+                style="@style/edit_text_style"
+                android:hint="@string/description"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thumbnail image"
+                style="@style/text_view_14_style"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/dark_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/btnImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image"
+                android:textColor="@color/white"
+                android:background="@drawable/purple_image_button"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingLeft="@dimen/margin_20"
+                android:paddingRight="@dimen/margin_20"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        android:text="CANCEL"
+        app:layout_constraintTop_toTopOf="@id/btnCreate"
+        app:layout_constraintBottom_toBottomOf="@id/btnCreate"
+        app:layout_constraintRight_toLeftOf="@id/btnCreate"
+        android:layout_marginRight="@dimen/margin_20"
+        android:textSize="@dimen/text_18"
+        android:textColor="@color/purpule"/>
+
+    <TextView
+        android:id="@+id/btnCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        android:text="CREATE"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintTop_toBottomOf="@id/dialogLay"
+        app:layout_constraintRight_toRightOf="@id/dialogLay"
+        android:layout_marginTop="@dimen/margin_20"
+        android:textSize="@dimen/text_18"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.addviu">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="false"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,UnusedAttribute"
+        tools:replace="android:allowBackup">
+        <activity android:name=".view.activity.MyVideos"></activity>
+        <activity android:name=".view.activity.SideMenuVid" />
+        <activity android:name=".view.activity.Playlistpage" />
+        <activity android:name=".view.activity.AddVideoPlaylist" />
+        <activity android:name=".view.activity.ChannelPage" />
+        <activity android:name=".view.activity.CreateChannelScreen" />
+        <activity
+            android:name=".view.activity.MyChannels"
+            android:windowSoftInputMode="adjustPan" /> <!-- <activity android:name=".view.activity.CommentsScreen" /> -->
+        <activity
+            android:name=".view.activity.VideoPlayerScreen"
+            android:configChanges="screenSize|orientation" />
+        <activity android:name=".view.activity.VideoUploadScreen" />
+        <activity android:name=".view.activity.ForgotScreen" />
+        <activity android:name=".view.activity.SignInScreen" />
+        <activity android:name=".view.activity.SignUpScreen" />
+        <activity
+            android:name=".view.activity.HomeScreen"
+            android:configChanges="screenSize|orientation" />
+        <activity android:name=".view.activity.RewardsScreen" />
+        <activity android:name=".view.activity.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/file_provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <provider
+            android:name=".data.helper.LocalStorageProvider"
+            android:authorities="com.app.addviu.localstorage.documents"
+            android:enabled="@bool/use_provider"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+    </application>
+
+</manifest>

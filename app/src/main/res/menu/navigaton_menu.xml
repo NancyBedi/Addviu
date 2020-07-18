@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeMenu"
+        android:icon="@drawable/ic_home_purpule_24dp"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/trendingMenu"
+        android:icon="@drawable/trending"
+        android:title="@string/trending" />
+    <item
+        android:id="@+id/signInMenu"
+        android:icon="@drawable/signin"
+        android:title="@string/sign_in"/>
+
+    <item
+        android:id="@+id/rewardsMenu"
+        android:icon="@drawable/reward"
+        android:title="AddViu Security"/>
+
+    <item
+        android:id="@+id/highViewMenu"
+        android:icon="@drawable/highly_view"
+        android:title="@string/highly_viewed"/>
+
+</menu>

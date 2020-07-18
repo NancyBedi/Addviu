@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F7F7F7</color>
+    <color name="colorPrimaryDark">#F7F7F7</color>
+    <color name="colorAccent">#9966FF</color>
+    <color name="light_gray">#EEEEEE</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="rust">#FFAA00</color>
+    <color name="red">#F44336</color>
+    <color name="purpule">#7F05D5</color>
+    <color name="dark_gray">#757575</color>
+
+    <color name="l_d_gray">#C5C5C5</color>
+    <color name="transparent">#00000000</color>
+    <color name="black_trans_50">#50000000</color>
+<!--    <color name="transparent_dark_black">#99000000</color>-->
+    <color name="black_trans_99">#99000000</color>
+    <color name="tab_color">#F7F7F7</color>
+
+</resources>

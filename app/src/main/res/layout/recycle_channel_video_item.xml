@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_5"
+    android:layout_marginBottom="@dimen/margin_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="110dp"
+        android:layout_height="@dimen/margin_80"
+        android:src="@drawable/background"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23:57"
+        android:textSize="@dimen/text_12"
+        android:textColor="@color/white"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:layout_margin="7dp"
+        android:background="@drawable/gradient_black"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail"
+        app:layout_constraintRight_toRightOf="@id/thumbnail"/>
+
+    <TextView
+        android:id="@+id/videoTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        android:textSize="@dimen/text_16"
+        android:text="Video title"
+        android:maxLines="2"
+        android:layout_marginStart="@dimen/margin_10"
+        app:layout_constraintLeft_toRightOf="@id/thumbnail"
+        app:layout_constraintTop_toTopOf="@id/thumbnail"
+        app:layout_constraintRight_toLeftOf="@id/btnMore"
+        android:layout_marginLeft="@dimen/margin_5" />
+
+    <ImageView
+        android:id="@+id/btnMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_more_vert_grey_24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/videoTitle"/>
+
+    <TextView
+        android:id="@+id/txtsubscriber"
+        style="@style/text_view_14_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:fontFamily="@font/poppins"
+        android:text="3.1k views"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail"
+        app:layout_constraintLeft_toRightOf="@id/thumbnail"
+        app:layout_constraintTop_toBottomOf="@+id/videoTitle"
+        android:layout_marginStart="@dimen/margin_10" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

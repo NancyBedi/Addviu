@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:elevation="@dimen/margin_10"
+    android:id="@+id/toolbar"
+    android:layout_height="@dimen/margin_45"
+    android:background="@color/tab_color"
+    tools:ignore="UnusedAttribute">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10"
+        android:paddingLeft="@dimen/margin_15"
+        android:paddingRight="@dimen/margin_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu_black_24dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/text_view_14_style"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_toEndOf="@+id/menuIcon"
+        android:layout_toRightOf="@+id/menuIcon"
+        android:gravity="center_vertical"
+        android:text="@string/ADDVIU"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/uploadIcon"
+        app:layout_constraintStart_toEndOf="@+id/menuIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/margin_10" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/uploadIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10"
+        android:paddingLeft="@dimen/margin_15"
+        android:paddingRight="@dimen/margin_15"        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_file_upload_black_24dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

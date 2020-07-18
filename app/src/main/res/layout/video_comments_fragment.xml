@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:id="@+id/commentsLayout"
+        android:background="@drawable/white_rectangle_border"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backImage"
+            android:visibility="gone"
+            android:layout_width="@dimen/margin_45"
+            android:layout_height="@dimen/margin_45"
+            android:padding="@dimen/margin_10"
+            app:srcCompat="@drawable/ic_arrow_back_grey_36dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/commentsCount"
+            android:layout_toLeftOf="@+id/closeImage"
+            android:layout_toRightOf="@+id/backImage"
+            android:layout_width="match_parent"
+            style="@style/text_view_14_style"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_10"
+            android:text="@string/comments"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingRight="@dimen/margin_15"
+            android:layout_toStartOf="@+id/closeImage"
+            android:layout_toEndOf="@+id/backImage" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeImage"
+            android:layout_width="@dimen/margin_45"
+            android:layout_height="@dimen/margin_45"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/margin_10"
+            app:srcCompat="@drawable/ic_close_grey_36dp"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/userImage"
+        android:layout_width="@dimen/margin_40"
+        android:layout_height="@dimen/margin_40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/commentEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/commentEditText"
+        android:layout_marginStart="@dimen/margin_15"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:src="@drawable/circle_user" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/commentEditText"
+        style="@style/edit_text_style"
+        android:textSize="@dimen/text_12"
+        android:layout_width="0dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:layout_margin="@dimen/margin_10"
+        android:layout_height="@dimen/margin_70"
+        android:background="@drawable/grey_round_bg"
+        android:hint="@string/add_a_public_comment"
+        android:padding="@dimen/margin_10"
+        app:layout_constraintEnd_toStartOf="@+id/sendBtn"
+        app:layout_constraintStart_toEndOf="@+id/userImage"
+        app:layout_constraintTop_toBottomOf="@+id/commentsLayout" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/sendBtn"
+        android:layout_width="@dimen/margin_40"
+        android:layout_height="@dimen/margin_40"
+        android:layout_marginRight="@dimen/margin_15"
+        android:padding="@dimen/margin_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/commentEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/commentEditText"
+        app:srcCompat="@drawable/ic_send_purpule_36dp"
+        android:layout_marginEnd="@dimen/margin_15" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentEditText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

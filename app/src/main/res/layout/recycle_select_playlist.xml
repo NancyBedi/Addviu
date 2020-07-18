@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_5"
+    android:layout_marginBottom="@dimen/margin_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="110dp"
+        android:layout_height="@dimen/margin_80"
+        android:src="@drawable/background"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/videoTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        android:textSize="@dimen/text_18"
+        android:text="Video title"
+        android:maxLines="2"
+        android:layout_marginStart="@dimen/margin_10"
+        app:layout_constraintLeft_toRightOf="@id/thumbnail"
+        app:layout_constraintTop_toTopOf="@id/thumbnail"
+        app:layout_constraintRight_toLeftOf="@id/checkbox"
+        android:layout_marginLeft="@dimen/margin_5" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/btnMore"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:srcCompat="@drawable/ic_more_vert_grey_24dp"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/videoTitle"/>-->
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/thumbnail"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtsubscriber"
+        style="@style/text_view_14_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.1k Subscribers"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintLeft_toRightOf="@id/thumbnail"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail"
+        android:layout_marginStart="@dimen/margin_10"
+        android:textColor="@color/dark_gray"
+        android:layout_marginLeft="@dimen/margin_10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23:57"
+        android:textSize="@dimen/text_12"
+        android:textColor="@color/white"
+        android:paddingLeft="@dimen/margin_5"
+        android:paddingRight="@dimen/margin_5"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/gradient_black"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail"
+        app:layout_constraintRight_toRightOf="@id/thumbnail"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/signin_bg"
+    tools:context=".view.activity.SignUpScreen">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_white_24dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logoAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_50"
+        android:src="@drawable/splash_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/margin_15"
+        app:layout_constraintTop_toBottomOf="@+id/logoAdd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_style"
+            android:layout_marginTop="0dp"
+            android:theme="@style/themeInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEditText"
+                style="@style/edit_text_style"
+                android:textColor="@color/white"
+                android:hint="@string/name"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_style"
+            android:theme="@style/themeInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditText"
+                style="@style/edit_text_style"
+                android:textColor="@color/white"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_style"
+            android:theme="@style/themeInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contactEditText"
+                style="@style/edit_text_style"
+                android:textColor="@color/white"
+                android:hint="@string/contact"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_style"
+            android:theme="@style/themeInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passEditText"
+                style="@style/edit_text_style"
+                android:textColor="@color/white"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_style"
+            android:theme="@style/themeInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmPassEditText"
+                style="@style/edit_text_style"
+                android:textColor="@color/white"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_input_style"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:theme="@style/themeInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dobEditText"
+                    style="@style/edit_text_style"
+                    android:focusable="false"
+                    android:textColor="@color/white"
+                    android:hint="@string/date_of_birth"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_input_style"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:theme="@style/themeInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ageEditText"
+                    style="@style/edit_text_style"
+                    android:focusable="false"
+                    android:textColor="@color/white"
+                    android:hint="@string/age"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:text="@string/sign_up"
+            android:layout_marginTop="@dimen/margin_50"
+            style="@style/button_style"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_view_12_style"
+            android:id="@+id/alreadyAccText"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_10"
+            android:gravity="end"
+            android:layout_marginBottom="@dimen/margin_30"
+            android:textColor="@color/white"
+            android:text="@string/already_account"
+            android:layout_marginEnd="@dimen/margin_10" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

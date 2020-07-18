@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">AddViu</string>
+    <string name="should_not_be_empty">should not be empty</string>
+    <string name="home">Home</string>
+    <string name="trending">Trending</string>
+    <string name="sign_in">Sign In</string>
+    <string name="rewards">Rewards</string>
+    <string name="account">Account</string>
+    <string name="latest_videos">Latest Videos</string>
+    <string name="entertainment_and_comedy">Entertainment and Comedy</string>
+    <string name="latest_news">Latest News</string>
+    <string name="women_s_special">Women\'s Special</string>
+    <string name="suggested_for_you">Suggested for You</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="highly_viewed">Highly Viewed</string>
+    <string name="name">Name</string>
+    <string name="contact">Contact</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="submit">Submit</string>
+    <string name="age">Age</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_account">Already have an account? <u>Sign Here</u></string>
+    <string name="dont_account">Don\'t have an account? <u>Signup Here</u></string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in_with">sign in with</string>
+    <string name="send">Send</string>
+    <string name="upload_video">Upload Video</string>
+    <string name="title">Title</string>
+    <string name="keywords_for_search">Keywords for Search</string>
+    <string name="description">Description</string>
+    <string name="select_category">Select Category</string>
+    <string name="select_channel">Select Channel</string>
+    <string name="select_playlist">Select Playlist</string>
+    <string name="status">Status</string>
+    <string name="allow_comments">Allow Comments</string>
+    <string name="allow_likes"><![CDATA[Allow Likes & Dislikes]]></string>
+    <string name="publish">Publish</string>
+    <string name="_0">0</string>
+
+
+    <string name="file_provider_authority" translatable="false">com.app.addviu.fileprovider</string>
+    <string name="add_thumbnail">Add Thumbnail</string>
+    <string name="cancel_uploading">Cancel Uploading…</string>
+    <string name="remove_video">Remove Video</string>
+    <string name="ad_ui_lang">en</string>
+    <string name="hello">Hello</string>
+    <string name="share">Share</string>
+    <string name="SUBSCRIBE">SUBSCRIBE</string>
+    <string name="UNSUBSCRIBE">UNSUBSCRIBE</string>
+    <string name="replies">Replies</string>
+    <string name="add_a_public_comment">Add a public comment…</string>
+    <string name="comments">Comments</string>
+    <string name="add_public_reply">Add a public reply....</string>
+    <string name="my_channels">My Channels</string>
+    <string name="_0_reply">0 Reply</string>
+    <string name="ADDVIU">ADDVIU</string>
+    <string name="channel_image">Channel Image</string>
+    <string name="channel_desc">A Channel Description (also known as a “AddViu About Page”) is a brief outline of what type of content you publish on your channel. It appears on your Channel Page and in AddViu\'s search results. ... And a well-written Channel Description can also convert visitors into subscribers.</string>
+
+
+</resources>
