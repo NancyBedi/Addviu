@@ -49,7 +49,7 @@ class AccountFragment : BaseFragment() {
 
 
 
-        val accountAdapter = AccountListAdapter(imageLoader, arrayList, activity!!)
+        val accountAdapter = AccountListAdapter(imageLoader, arrayList, activity!!, sharedPrefsHelper!!)
         recyclerView.adapter = accountAdapter
 
     }

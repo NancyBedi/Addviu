@@ -7,15 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
+import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.model.homeModel.AccountData
+import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.MyChannels
+import com.app.addviu.view.activity.SignInScreen
 import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.account_list_adapter.view.*
 
 
 class AccountListAdapter(private val imageLoader: ImageLoader,
                          private val mainList: ArrayList<AccountData>,
-                         val context: Context
+                         val context: Context,
+                         val sharedPrefsHelper: SharedPrefsHelper
 ) :
     RecyclerView.Adapter<AccountListAdapter.ViewHolder>() {
 
@@ -58,8 +62,12 @@ class AccountListAdapter(private val imageLoader: ImageLoader,
             val data = mainList[adapterPosition]
             if(data.title == "My Channels"){
                 context.startActivity(Intent(context,MyChannels::class.java))
+            }else if(data.title == "Logout"){
+                sharedPrefsHelper.deleteAllSharedPrefData()
+                val intent = Intent(context, HomeScreen::class.java)
+                context.startActivity(intent)
+                (context as HomeScreen).finish()
             }
-
         }
     }
 }
