@@ -12,6 +12,7 @@ import com.app.addviu.data.helper.USER_NAME
 import com.app.addviu.model.homeModel.AccountData
 import com.app.addviu.model.homeModel.HomeBean
 import com.app.addviu.model.homeModel.HomeData
+import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.adapter.AccountListAdapter
 import com.app.addviu.view.adapter.HomeListAdapter
 import com.app.addviu.view.viewInterface.ResponseCallback
@@ -19,6 +20,7 @@ import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.account_fragment_layout.*
 import kotlinx.android.synthetic.main.home_fragment_layout.*
 import kotlinx.android.synthetic.main.home_fragment_layout.recyclerView
+import kotlinx.android.synthetic.main.home_screen_actionbar.*
 
 class AccountFragment : BaseFragment() {
 
@@ -27,6 +29,7 @@ class AccountFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (context as HomeScreen).searchIcon.visibility = View.GONE
         return inflater.inflate(R.layout.account_fragment_layout, container, false)
     }
 

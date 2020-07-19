@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.video_player_layout.*
 
 class HomeListAdapter(
     private val imageLoader: ImageLoader,
-    private val dashList: ArrayList<HomeData>,
+    private var dashList: ArrayList<HomeData>,
     val context: Context,val baseFragment: BaseFragment
 ) :
     RecyclerView.Adapter<HomeListAdapter.ViewHolder>() {
@@ -121,5 +121,10 @@ class HomeListAdapter(
             intent.putExtra("uid", data.uid)
             (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
         }
+    }
+
+    fun updateList(homeList: ArrayList<HomeData>) {
+        dashList = homeList
+        notifyDataSetChanged()
     }
 }

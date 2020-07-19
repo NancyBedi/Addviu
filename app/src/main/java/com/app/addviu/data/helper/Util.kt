@@ -197,7 +197,7 @@ open class Util {
         public fun comingSoonDialog(context: Context, title:String) {
             val inflater =
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            val alertLayout = inflater.inflate(R.layout.download_dialog, null)
+            val alertLayout = inflater.inflate(R.layout.coming_soon_dialog, null)
             val msgAlert = alertLayout.findViewById<TextView>(R.id.msgAlert)
             val okButton = alertLayout.findViewById<TextView>(R.id.okBtnAlert)
 //            val oprnAlert = alertLayout.findViewById<TextView>(R.id.oprnAlert)
@@ -415,7 +415,6 @@ open class Util {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         }
 
 
@@ -441,7 +440,6 @@ open class Util {
                 showToast("Something went wrong with your internet connection", context)
             }
         }
-
 
     }
 }

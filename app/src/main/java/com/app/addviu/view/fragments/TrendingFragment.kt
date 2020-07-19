@@ -12,10 +12,12 @@ import com.app.addviu.data.helper.CHANGE_HOME_DATA
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.homeModel.TrendingBean
 import com.app.addviu.model.relatedModel.RelatedVideo
+import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.adapter.HomeListAdapter
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.home_fragment_layout.*
+import kotlinx.android.synthetic.main.home_screen_actionbar.*
 
 class TrendingFragment:BaseFragment(),ResponseCallback {
 
@@ -30,6 +32,7 @@ class TrendingFragment:BaseFragment(),ResponseCallback {
         savedInstanceState: Bundle?
     ): View? {
         AppController.instance?.dataManager?.getTrendingVideoData(1,this, activity)
+        (context as HomeScreen).searchIcon.visibility = View.GONE
         return inflater.inflate(R.layout.home_fragment_layout, container, false)
     }
 

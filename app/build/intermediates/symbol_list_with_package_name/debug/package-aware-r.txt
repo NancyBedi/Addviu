@@ -1497,8 +1497,10 @@ drawable ic_arrow_back_grey_36dp
 drawable ic_arrow_back_white
 drawable ic_arrow_drop_down_purple_36dp
 drawable ic_arrow_white_24dp
+drawable ic_baseline_search_24
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
+drawable ic_close
 drawable ic_close_grey_36dp
 drawable ic_close_white_24dp
 drawable ic_edit_black_24dp
@@ -1700,6 +1702,7 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id close
+id closeIcon
 id closeImage
 id collapseActionView
 id commentCheckBox
@@ -1750,6 +1753,7 @@ id duration
 id edit
 id editBanner
 id editImage
+id editSearch
 id edit_query
 id emailEditText
 id emailInputlayout
@@ -1937,6 +1941,7 @@ id scrollLayout
 id scrollView
 id scrollable
 id searchBox
+id searchIcon
 id search_badge
 id search_bar
 id search_button

@@ -11,6 +11,7 @@ import com.app.addviu.R
 import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.data.helper.IS_SIGN_CLICKED
 import com.app.addviu.data.helper.SharedPrefsHelper
+import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.RewardsScreen
 import com.app.addviu.view.activity.SignInScreen
 import com.app.addviu.view.fragments.AccountFragment
@@ -42,7 +43,7 @@ class HomePresenter(private val context: Context) : HomeInterface {
 
             when (item.itemId) {
                 R.id.homeMenu -> {
-                    baseFragment = HomeFragment()
+                    baseFragment = HomeFragment(context as HomeScreen)
                     previousFragment = baseFragment
                     loadFragment(baseFragment,fragmentManager)
                     return@setOnNavigationItemSelectedListener true
