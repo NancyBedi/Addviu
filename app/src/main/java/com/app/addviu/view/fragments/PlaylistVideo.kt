@@ -13,7 +13,7 @@ import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.channel_video_fragment.*
 
-class PlaylistVideo(val playListId:String):BaseFragment(), ResponseCallback {
+class PlaylistVideo(val playListId:String, val isUserChannel:Boolean):BaseFragment(), ResponseCallback {
     var adapter: ChannelListAdapter?=null
 
     override fun onCreateView(
@@ -32,7 +32,7 @@ class PlaylistVideo(val playListId:String):BaseFragment(), ResponseCallback {
     override fun <T> success(t: T) {
         if (t is ChannelVideoBean){
             if (t.status == 1){
-                recycleVideo.adapter = ChannelVidAdapter(imageLoader, t.data, activity!!)
+                recycleVideo.adapter = ChannelVidAdapter(imageLoader, t.data, activity!!, isUserChannel)
             }else{
                 Util.showToast("No Videos found!!", activity!!)
             }

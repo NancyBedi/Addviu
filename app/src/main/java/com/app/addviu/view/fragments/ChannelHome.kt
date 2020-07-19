@@ -11,6 +11,8 @@ import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.annotation.RequiresApi
@@ -37,7 +39,7 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 
-class ChannelHome(var channelId:String):BaseFragment(), ResponseCallback, YesClick {
+class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(), ResponseCallback, YesClick {
     var adapter: ChannelListAdapter?=null
     private var viewClicked = ""
     private val PERMISSION_ALL = 1
@@ -60,6 +62,13 @@ class ChannelHome(var channelId:String):BaseFragment(), ResponseCallback, YesCli
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (isUserChannel){
+            editBanner.visibility = GONE
+            editImage.visibility = GONE
+        }else{
+            editBanner.visibility = VISIBLE
+            editImage.visibility = VISIBLE
+        }
         editBanner.setOnClickListener {
             type = "banner"
             bannerPop()

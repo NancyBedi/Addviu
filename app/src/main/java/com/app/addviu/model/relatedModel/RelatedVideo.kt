@@ -10,6 +10,7 @@ class RelatedVideo() : Parcelable{
     @SerializedName("channel")
     @Expose
     var channel = ChannelData()
+
     @SerializedName("views_count")
     @Expose
     var viewsCount = 0

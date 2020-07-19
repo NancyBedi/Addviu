@@ -1543,6 +1543,7 @@ drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
 drawable news
+drawable no_img
 drawable notification
 drawable notification_action_background
 drawable notification_bg
@@ -2143,6 +2144,7 @@ layout activity_create_channel_screen
 layout activity_forgot_screen
 layout activity_home_screen
 layout activity_my_channels
+layout activity_my_videos
 layout activity_playlistpage
 layout activity_rewards_screen
 layout activity_side_menu_vid
@@ -2156,6 +2158,7 @@ layout channel_about_fragment
 layout channel_home_fragment
 layout channel_playlist_fragment
 layout channel_video_fragment
+layout coming_soon_dialog
 layout common_actionbar
 layout custom_dialog
 layout custom_progress_dialog

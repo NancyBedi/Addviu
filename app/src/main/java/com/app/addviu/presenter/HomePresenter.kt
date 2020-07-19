@@ -83,11 +83,9 @@ class HomePresenter(private val context: Context) : HomeInterface {
                     Util.comingSoonDialog(context, "Coming Soon")
                     return@setOnNavigationItemSelectedListener true
                 }
-
             }
             return@setOnNavigationItemSelectedListener false
         }
-
     }
 
     override fun loadFragment(fragment: Fragment, fragmentManager: FragmentManager) {

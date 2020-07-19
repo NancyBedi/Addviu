@@ -324,6 +324,10 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\channel_home_fragment.xml"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_no_img.png.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\no_img.png"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_more_vert_grey_24dp.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_more_vert_grey_24dp.xml"
     },
@@ -338,6 +342,10 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_videos.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_my_videos.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_news.png.flat",
@@ -430,6 +438,10 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_related_video_adapter.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\related_video_adapter.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_coming_soon_dialog.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\coming_soon_dialog.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_image_icon.png.flat",

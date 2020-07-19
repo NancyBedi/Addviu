@@ -25,6 +25,7 @@ import com.app.addviu.model.relatedModel.RelatedVideoData
 import com.app.addviu.model.userModel.SignUpBean
 import com.app.addviu.model.videoModel.SubscribeBean
 import com.app.addviu.model.videoModel.VotesBean
+import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.SignInScreen
 import com.app.addviu.view.activity.VideoPlayerScreen
 import com.app.addviu.view.adapter.AccountListAdapter
@@ -47,6 +48,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
     private var channelSlug = ""
     private var firstTime = true
     private var canSubscribe = false
+    var channelId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,6 +118,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
         dislikeButton.setOnClickListener(this)
         shareButton.setOnClickListener(this)
         channelName.setOnClickListener(this)
+        textSubscriber.setOnClickListener(this)
     }
 
     fun setData(relatedVideo: RelatedVideo) {
@@ -129,6 +132,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
             relatedVideo.viewsCount.toString().plus(" views")
                 .plus(" . ").plus(relatedVideo.createdDate)
         channelName.text = relatedVideo.channel.channelName
+        channelId = relatedVideo.channel.id
 
         likeButton.text = relatedVideo.likes.toString()
     }
@@ -300,10 +304,12 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
                 intent.putExtra(Intent.EXTRA_TEXT, link)
                 startActivity(Intent.createChooser(intent, "Share"))
             }
-            R.id.channelName ->{
+            R.id.channelImage, R.id.channelName, R.id.textSubscriber ->{
                 if (canSubscribe) {
-                    val intent = Intent(activity, ChannelHome::class.java)
-                    intent.putExtra("id", data?.uid)
+                    val intent = Intent(activity, ChannelPage::class.java)
+                    intent.putExtra("id", channelId.toString())
+                    intent.putExtra("name", channelName.text.toString())
+                    intent.putExtra("userChannel", true)
                     startActivity(intent)
                 }
             }

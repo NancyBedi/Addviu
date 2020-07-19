@@ -5,6 +5,8 @@ import android.content.Intent
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +24,8 @@ import kotlinx.android.synthetic.main.recycle_channel_video_item.view.*
 
 class ChannelVidAdapter (private val imageLoader: ImageLoader,
                          private val mainList: ArrayList<ChannelVidData>,
-                         val context: Context
+                         val context: Context,
+                         val isUserChannel:Boolean
 ) :
     RecyclerView.Adapter<ChannelVidAdapter.ViewHolder>(), YesClick {
 
@@ -51,28 +54,34 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
         if (data.thumbnailUrl.isNotEmpty()) {
             imageLoader.displayImage(data.thumbnailUrl, holder.thumbnail)
         }
-        holder.btnMore.setOnClickListener {
+        if (!isUserChannel) {
+            holder.btnMore.visibility = VISIBLE
+            holder.btnMore.setOnClickListener {
 //            val wrapper: Context = ContextThemeWrapper(this, R.style.PopupMenu)
-            val popupMenu: PopupMenu = PopupMenu(context    , holder.btnMore)
-            popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
+                val popupMenu: PopupMenu = PopupMenu(context, holder.btnMore)
+                popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
 
-            popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
-                when (item.itemId) {
-                    R.id.edit -> {
-                        val intent = Intent(context, VideoUploadScreen::class.java)
-                        intent.putExtra("videoData",data)
-                        context.startActivity(intent)
+                popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
+                    when (item.itemId) {
+                        R.id.edit -> {
+                            val intent = Intent(context, VideoUploadScreen::class.java)
+                            intent.putExtra("videoData", data)
+                            context.startActivity(intent)
+                        }
+                        R.id.delete -> {
+                            Util.showDeleteDialog(
+                                context,
+                                "Are you really want to delete this Video",
+                                this
+                            )
+                        }
                     }
-                    R.id.delete -> {
-                        Util.showDeleteDialog(
-                            context,
-                            "Are you really want to delete this Video",
-                            this)
-                    }
-                }
-                true
-            })
-            popupMenu.show()
+                    true
+                })
+                popupMenu.show()
+            }
+        }else{
+            holder.btnMore.visibility = GONE
         }
     }
 

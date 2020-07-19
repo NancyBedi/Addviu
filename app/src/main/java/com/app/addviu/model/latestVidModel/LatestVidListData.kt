@@ -16,6 +16,10 @@ class LatestVidListData {
     @Expose
     var channelId = 0
 
+    @SerializedName("channel_image")
+    @Expose
+    var channel_image = ""
+
     @SerializedName("playlist_id")
     @Expose
     var playlistId = 0

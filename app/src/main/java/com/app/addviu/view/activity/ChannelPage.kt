@@ -19,6 +19,7 @@ class ChannelPage : BaseActivity() {
     var channelId = ""
     var banner = ""
     var coverImg = ""
+    var isUserChannel = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,14 +27,15 @@ class ChannelPage : BaseActivity() {
 
         name = intent.getStringExtra("name")?:""
         channelId = intent.getStringExtra("id")?:""
-        banner = intent.getStringExtra("banner")?:""
-        coverImg = intent.getStringExtra("coverImg")?:""
+//        banner = intent.getStringExtra("banner")?:""
+//        coverImg = intent.getStringExtra("coverImg")?:""
+        isUserChannel = intent.getBooleanExtra("userChannel", false)
         textTitle.text = name
 
         val adapter = ChannelHomeAdapter(getSupportFragmentManager())
-        adapter.addFragment(ChannelHome(channelId), "HOME")
-        adapter.addFragment(ChannelVideo(channelId), "VIDEOS")
-        adapter.addFragment(ChannelPlaylist(channelId), "PLAYLIST")
+        adapter.addFragment(ChannelHome(channelId, isUserChannel), "HOME")
+        adapter.addFragment(ChannelVideo(channelId, isUserChannel), "VIDEOS")
+        adapter.addFragment(ChannelPlaylist(channelId, isUserChannel), "PLAYLIST")
         adapter.addFragment(ChannelAbout(), "ABOUT")
 
         viewPager.setAdapter(adapter)

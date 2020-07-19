@@ -19,6 +19,10 @@ class ChannelData() : Parcelable{
     @Expose
     var channelName: String = ""
 
+    @SerializedName("id")
+    @Expose
+    var id: Int = 0
+
     @SerializedName("slug")
     @Expose
     var slug: String = ""

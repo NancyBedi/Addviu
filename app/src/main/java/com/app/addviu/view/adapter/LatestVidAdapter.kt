@@ -79,12 +79,11 @@ class LatestVidAdapter(
             (context as SideMenuVid).profilePic()
         )
 
-//        if(data.channelImage.isNullOrBlank()){
+        if(data.channel_image.isNullOrBlank()){
             holder.userImage.setImageResource(R.drawable.circle_user)
-//        }else {
-//            imageLoader.displayImage(data.channelImage, holder.userImage, context.roundProfilePic())
-//        }
-
+        }else {
+            imageLoader.displayImage(data.channel_image, holder.userImage, context.roundProfilePic())
+        }
     }
 
     inner class ViewHolder(row: View) : RecyclerView.ViewHolder(row), View.OnClickListener {

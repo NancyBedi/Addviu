@@ -66,7 +66,7 @@ class VideoUploadScreen : BaseActivity(), UploadCallback, View.OnClickListener, 
             channelVidData = intent.getParcelableExtra("videoData")!!
         }
 
-        if (channelVidData != null && intent.hasExtra("videoData")) {
+        if (intent.hasExtra("videoData")) {
             uploadIcon.visibility = GONE
             uploadText.text = "Edit Video"
             titleEditText.setText(channelVidData.title)
@@ -87,9 +87,7 @@ class VideoUploadScreen : BaseActivity(), UploadCallback, View.OnClickListener, 
             uploadIcon.visibility = VISIBLE
             uploadText.text = "Upload Video"
         }
-
         initViews()
-
     }
 
     private fun initViews() {
@@ -259,7 +257,7 @@ class VideoUploadScreen : BaseActivity(), UploadCallback, View.OnClickListener, 
                 }
             }
             R.id.btnPublish -> {
-                if (channelVidData != null) {
+                if (intent.hasExtra("videoData")) {
 
                 }else{
                     if (checkValidation()) {

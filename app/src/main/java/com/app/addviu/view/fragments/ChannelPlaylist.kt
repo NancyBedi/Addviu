@@ -10,6 +10,8 @@ import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.TextView
@@ -37,7 +39,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
-class ChannelPlaylist(val channelId:String):BaseFragment(), ResponseCallback {
+class ChannelPlaylist(val channelId:String, var isUserChannel:Boolean):BaseFragment(), ResponseCallback {
     var adapter: ChannelListAdapter?=null
     val playlistData = PlaylistData()
     private var viewClicked = ""
@@ -60,6 +62,11 @@ class ChannelPlaylist(val channelId:String):BaseFragment(), ResponseCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (isUserChannel){
+            btnNewPlaylist.visibility = GONE
+        }else{
+            btnNewPlaylist.visibility = VISIBLE
+        }
         btnNewPlaylist.setOnClickListener {
             newPlaylist(activity!!,"add", playlistData)
         }
@@ -69,7 +76,7 @@ class ChannelPlaylist(val channelId:String):BaseFragment(), ResponseCallback {
         if (t is PlaylistBean){
             if (t.status == 1){
                 if (t.data.size >= 1 ) {
-                    recycle_playlist.adapter = PlaylistAdapter(imageLoader, t.data, activity!!, this)
+                    recycle_playlist.adapter = PlaylistAdapter(imageLoader, t.data, activity!!, this, isUserChannel)
                 }else{
                     Util.showToast("No Playlist found!" , activity!!)
                 }

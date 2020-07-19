@@ -16,6 +16,7 @@ class Playlistpage : BaseActivity() {
     var playlistId = ""
     var banner = ""
     var coverImg = ""
+    var isUserChannel = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playlistpage)
@@ -25,8 +26,8 @@ class Playlistpage : BaseActivity() {
         textTitle.text = name
 
         val adapter = ChannelHomeAdapter(getSupportFragmentManager())
-        adapter.addFragment(PlaylistHome(playlistId), "HOME")
-        adapter.addFragment(PlaylistVideo(playlistId), "VIDEOS")
+        adapter.addFragment(PlaylistHome(playlistId, isUserChannel), "HOME")
+        adapter.addFragment(PlaylistVideo(playlistId, isUserChannel), "VIDEOS")
         adapter.addFragment(ChannelAbout(), "ABOUT")
 
         viewPager.setAdapter(adapter)
