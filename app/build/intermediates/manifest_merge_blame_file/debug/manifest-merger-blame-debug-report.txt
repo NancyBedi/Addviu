@@ -45,8 +45,8 @@
 25-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:18:9-33
 26        android:requestLegacyExternalStorage="true"
 26-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:19:9-52
-27        android:roundIcon="@mipmap/ic_launcher_round"
-27-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:20:9-54
+27        android:roundIcon="@mipmap/ic_launcher"
+27-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:20:9-48
 28        android:supportsRtl="true"
 28-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:21:9-35
 29        android:testOnly="true"

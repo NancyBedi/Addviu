@@ -13,10 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
 import com.app.addviu.model.channelVideoModel.ChannelVidData
-import com.app.addviu.view.activity.ChannelPage
-import com.app.addviu.view.activity.SideMenuVid
-import com.app.addviu.view.activity.VideoPlayerScreen
-import com.app.addviu.view.activity.VideoUploadScreen
+import com.app.addviu.model.channelVideosModel.Channel
+import com.app.addviu.view.activity.*
 import com.app.addviu.view.viewInterface.YesClick
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
@@ -83,6 +81,7 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
         }else{
             holder.btnMore.visibility = GONE
         }
+        holder.btnMore.visibility = GONE
     }
 
     inner class ViewHolder(row: View) : RecyclerView.ViewHolder(row), View.OnClickListener {
@@ -101,7 +100,11 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
             val data = mainList[adapterPosition]
             val intent = Intent(context, VideoPlayerScreen::class.java)
             intent.putExtra("uid", data.uid)
-            (context as ChannelPage).startActivityForResult(intent, CHANGE_HOME_DATA)
+            if (context is ChannelPage) {
+                (context as ChannelPage).startActivityForResult(intent, CHANGE_HOME_DATA)
+            }else{
+                (context as Playlistpage).startActivityForResult(intent, CHANGE_HOME_DATA)
+            }
 //            if(data.title == "My Channels"){
 //                context.startActivity(Intent(context, MyChannels::class.java))
 //            }

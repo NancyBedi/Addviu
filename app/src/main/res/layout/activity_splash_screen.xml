@@ -4,19 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tab_color"
+    android:background="@drawable/pattern"
     tools:context=".view.activity.SplashScreen">
 
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/logoImage"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/margin_20"
-        app:srcCompat="@drawable/splash_logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/margin_70"
+        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:padding="@dimen/margin_20"
+            app:srcCompat="@drawable/ic_logo" />
+
+        <TextView
+            style="@style/text_view_14_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_35"
+            android:layout_marginLeft="@dimen/margin_35"
+            android:layout_marginTop="-35dp"
+            android:text="Beta Version" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/flag" />
+
+        <TextView
+            android:id="@+id/textInd"
+            style="@style/text_view_14_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proudly Indian"
+            android:textSize="@dimen/text_16"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
