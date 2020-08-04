@@ -4,6 +4,8 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.latestVidModel.LatestVidListData
@@ -21,6 +23,15 @@ class SideMenuVid : BaseActivity() {
     private val sideMenuPresenter = SideMenuPresenter(this)
     var title = ""
     val arrayList = ArrayList<LatestVidListData>()
+    private var visibleThreshold = 0
+    private var lastVisibleItem = 0
+    private var totalItemCount: Int = 0
+    private var isLoading = false
+    var totalItemsAvailable = 0
+    var lastPage = 0
+    private val PAGE_START = 1
+    private var currentPage = PAGE_START
+    var linearLayoutManager: LinearLayoutManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +42,39 @@ class SideMenuVid : BaseActivity() {
             finish()
         }
         textTitle.text = title
+//        latestVidAdapter = LatestVidAdapter(imageLoader, arrayList, this)
+//        recyclerView.adapter = latestVidAdapter
+
+        linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = linearLayoutManager
         latestVidAdapter = LatestVidAdapter(imageLoader, arrayList, this)
         recyclerView.adapter = latestVidAdapter
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                totalItemCount = linearLayoutManager!!.itemCount
+                var lastVisibleItemarray = linearLayoutManager!!.findLastVisibleItemPosition()
+                if (lastVisibleItemarray > 0) {
+                    lastVisibleItem = if (lastVisibleItemarray == 3) {
+                        lastVisibleItemarray
+                    } else {
+                        lastVisibleItemarray
+                    }
+                    if (totalItemCount < totalItemsAvailable) {
+                        if (!isLoading && totalItemCount <= lastVisibleItem + 1) {
+                            if (lastPage > currentPage) {
+                                currentPage += 1
+//                                loadNextPage()
+                                isLoading = true
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
+
 
         when(title){
             "Latest Videos" ->{

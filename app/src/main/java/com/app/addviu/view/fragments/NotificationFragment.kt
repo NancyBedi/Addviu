@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.app.addviu.AppController
 import com.app.addviu.R
+import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.model.notificationModel.NotificationBean
 import com.app.addviu.view.adapter.ChannelListAdapter
 import com.app.addviu.view.adapter.NotificationAdapter
@@ -13,7 +14,8 @@ import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.activity_notification.*
 
-class NotificationFragment:BaseFragment(), ResponseCallback {
+class
+NotificationFragment:BaseFragment(), ResponseCallback {
     var adapter: ChannelListAdapter?=null
 
     override fun onCreateView(
@@ -21,8 +23,9 @@ class NotificationFragment:BaseFragment(), ResponseCallback {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        AppController.instance?.dataManager?.getNotifications(this, activity)
+        if (sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
+            AppController.instance?.dataManager?.getNotifications(this, activity)
+        }
         return inflater.inflate(R.layout.activity_notification, container, false)
     }
 

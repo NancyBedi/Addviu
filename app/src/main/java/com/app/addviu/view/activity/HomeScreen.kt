@@ -168,7 +168,7 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
 //                bottomNavView.menu.findItem(R.id.signInMenu).setIcon(R.drawable.circle_user)
             }
             if (sharedPrefsHelper?.get(IS_SIGN_CLICKED, false)!!) {
-                bottomNavView.selectedItemId = R.id.signInMenu
+//                bottomNavView.selectedItemId = R.id.homeMenu
                 sharedPrefsHelper?.put(IS_SIGN_CLICKED, false)
             }
         }
