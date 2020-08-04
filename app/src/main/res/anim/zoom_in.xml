@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--blink-->
+<!--<set xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <alpha android:fromAlpha="0.0"-->
+<!--        android:toAlpha="1.0"-->
+<!--        android:interpolator="@android:anim/accelerate_interpolator"-->
+<!--        android:duration="500"-->
+<!--        android:repeatMode="reverse"-->
+<!--        android:repeatCount="infinite"/>-->
+<!--</set>-->
+<!--bounce-->
+<!--<set xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:fillAfter="true"-->
+<!--    android:interpolator="@android:anim/bounce_interpolator">-->
+
+<!--    <scale-->
+<!--        android:duration="1000"-->
+<!--        android:fromXScale="1.0"-->
+<!--        android:fromYScale="0.0"-->
+<!--        android:toXScale="1.0"-->
+<!--        android:toYScale="1.0" />-->
+
+<!--</set>-->
+<!--fade in-->
+<!--<set xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:fillAfter="true" >-->
+
+<!--    <alpha-->
+<!--        android:duration="1000"-->
+<!--        android:fromAlpha="0.0"-->
+<!--        android:interpolator="@android:anim/accelerate_interpolator"-->
+<!--        android:toAlpha="1.0" />-->
+
+<!--</set>-->
+
 <set xmlns:android="http://schemas.android.com/apk/res/android">
-    <scale
-        android:duration="1500"
-        android:fromXScale="0.5"
-        android:fromYScale="0.5"
-        android:pivotX="50%"
-        android:pivotY="50%"
-        android:toXScale="1"
-        android:toYScale="1" >
-    </scale>
+<translate android:toYDelta="0%p"
+    android:fromYDelta="100%p"
+    android:duration="1500"/>
+
 </set>
+<!--zoom in-->
+<!--<set xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <scale-->
+<!--        android:duration="1500"-->
+<!--        android:fromXScale="0.5"-->
+<!--        android:fromYScale="0.5"-->
+<!--        android:pivotX="50%"-->
+<!--        android:pivotY="50%"-->
+<!--        android:toXScale="1"-->
+<!--        android:toYScale="1" >-->
+<!--    </scale>-->
+<!--</set>-->

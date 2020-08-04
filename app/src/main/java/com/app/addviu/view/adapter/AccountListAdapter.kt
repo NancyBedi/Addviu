@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.model.homeModel.AccountData
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.MyChannels
 import com.app.addviu.view.activity.SignInScreen
+import com.app.addviu.view.fragments.AccountFragment
+import com.app.addviu.view.viewInterface.YesClick
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.account_list_adapter.view.*
 
@@ -19,9 +23,10 @@ import kotlinx.android.synthetic.main.account_list_adapter.view.*
 class AccountListAdapter(private val imageLoader: ImageLoader,
                          private val mainList: ArrayList<AccountData>,
                          val context: Context,
-                         val sharedPrefsHelper: SharedPrefsHelper
+                         val sharedPrefsHelper: SharedPrefsHelper,
+                         val activity:AccountFragment
 ) :
-    RecyclerView.Adapter<AccountListAdapter.ViewHolder>() {
+    RecyclerView.Adapter<AccountListAdapter.ViewHolder>(), YesClick {
 
     private var contactView: View? = null
 
@@ -63,11 +68,12 @@ class AccountListAdapter(private val imageLoader: ImageLoader,
             if(data.title == "My Channels"){
                 context.startActivity(Intent(context,MyChannels::class.java))
             }else if(data.title == "Logout"){
-                sharedPrefsHelper.deleteAllSharedPrefData()
-                val intent = Intent(context, HomeScreen::class.java)
-                context.startActivity(intent)
-                (context as HomeScreen).finish()
+                Util.showDeleteDialog(context,"Are you sure you want to logout ?", this@AccountListAdapter)
             }
         }
+    }
+
+    override fun yesClick() {
+        AppController.instance?.dataManager?.logout(activity, context)
     }
 }

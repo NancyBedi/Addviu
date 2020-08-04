@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AddViu.iml" filepath="$PROJECT_DIR$/AddViu.iml" group="AddViu" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AddViu.iml" filepath="$PROJECT_DIR$/.idea/modules/AddViu.iml" group="AddViu" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="AddViu/app" />
     </modules>
   </component>

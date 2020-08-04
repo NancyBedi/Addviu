@@ -46,10 +46,26 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mainList[position]
 
-        holder.videoTitle.text = data.title
-        holder.duration.text = data.duration
-        holder.txtsubscriber.text = "${data.created_date} . ${data.viewsCount} views"
-        if (data.thumbnailUrl.isNotEmpty()) {
+        if (!data.title.isNullOrEmpty()) {
+            holder.videoTitle.text = data.title
+        }
+
+        if(!data.duration.isNullOrEmpty() && data.duration.contains(":")) {
+            val array = data.duration.split(":")
+            if (array[0].equals("00") && array.size == 3) {
+                holder.duration.text = array[1].plus(":").plus(array[2])
+            }else {
+                holder.duration.text = data.duration
+            }
+        }else{
+            holder.duration.text = data.duration
+        }
+        var date = data.created_date
+        var count = data.viewsCount
+        if (!data.created_date.isNullOrEmpty()){
+            holder.txtsubscriber.text = "${data.created_date} . ${data.viewsCount} views"
+        }
+        if (!data.thumbnailUrl.isNullOrEmpty()) {
             imageLoader.displayImage(data.thumbnailUrl, holder.thumbnail)
         }
         if (!isUserChannel) {
@@ -110,6 +126,13 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
 //            }
 
         }
+    }
+
+    fun getValue(value:String):String{
+        if (value == null){
+            return  ""
+        }
+        return value
     }
 
     override fun yesClick() {

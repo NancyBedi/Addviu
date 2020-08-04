@@ -2,6 +2,7 @@ package com.app.addviu.view.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.app.addviu.R
 import com.app.addviu.presenter.SignUpPresenter
 import com.app.addviu.view.BaseActivity
@@ -16,7 +17,8 @@ class SignUpScreen : BaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_screen)
-
+        val layoutParams = backImage.layoutParams as ConstraintLayout.LayoutParams
+        layoutParams.topMargin = statusBarHeight
         setClickListeners()
     }
 

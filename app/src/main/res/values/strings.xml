@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AddViu</string>
+    <string name="app_name">Addviu</string>
     <string name="should_not_be_empty">should not be empty</string>
     <string name="home">Home</string>
     <string name="trending">Trending</string>
@@ -60,6 +60,7 @@
     <string name="ADDVIU">ADDVIU</string>
     <string name="channel_image">Channel Image</string>
     <string name="channel_desc">A Channel Description (also known as a “AddViu About Page”) is a brief outline of what type of content you publish on your channel. It appears on your Channel Page and in AddViu\'s search results. ... And a well-written Channel Description can also convert visitors into subscribers.</string>
-
+    <string name="notifications">Notifications</string>
+    <string name="error_msg_unknown">Retry</string>
 
 </resources>

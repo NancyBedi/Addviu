@@ -2,10 +2,13 @@ package com.app.addviu.view.fragments
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -15,10 +18,10 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import android.widget.PopupWindow
 import androidx.annotation.RequiresApi
 import com.app.addviu.AppController
 import com.app.addviu.R
-import com.app.addviu.data.helper.IMAGE_URL
 import com.app.addviu.data.helper.REQUEST_GALLERY_IMAGE
 import com.app.addviu.data.helper.RealPathUtil
 import com.app.addviu.model.CommonSuccess
@@ -30,7 +33,6 @@ import com.app.addviu.view.viewInterface.YesClick
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.DisplayImageOptions
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
-import kotlinx.android.synthetic.main.add_channel_layout.*
 import kotlinx.android.synthetic.main.channel_home_fragment.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -38,8 +40,12 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.util.zip.Inflater
 
-class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(), ResponseCallback, YesClick {
+
+class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(), ResponseCallback, YesClick
+    {
+
     var adapter: ChannelListAdapter?=null
     private var viewClicked = ""
     private val PERMISSION_ALL = 1
@@ -72,6 +78,7 @@ class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(
         editBanner.setOnClickListener {
             type = "banner"
             bannerPop()
+//            showPopup(editBanner)
         }
         editImage.setOnClickListener {
             type = "channelImg"
@@ -296,7 +303,39 @@ class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(
         popupMenu.show()
     }
 
+
+//    fun showPopup(v: View?) {
+//        val popup = PopupMenu(activity, v)
+//        val inflater: MenuInflater = popup.menuInflater
+//        inflater.inflate(R.menu.image_menu, popup.menu)
+//        popup.show()
+//    }
+
+
     fun channelDetail(){
         AppController.instance?.dataManager?.channelDetails(channelId, this, activity)
     }
+
+//    override fun onMenuItemClick(item: MenuItem?): Boolean {
+//        return when (item?.itemId) {
+//            R.id.upload -> {
+//                viewClicked = "banner"
+//                if (hasPermissions(activity, PERMISSIONS)) {
+//                    openGalleryForImage()
+//                } else {
+//                    requestPermissionsSafely(PERMISSIONS, PERMISSION_ALL)
+//                }
+//                true
+//            }
+//            R.id.remove -> {
+//                Util.showDeleteDialog(
+//                    activity!!,
+//                    "Are you really want to remove this banner image",
+//                    this
+//                )
+//                true
+//            }
+//            else -> false
+//        }
+//    }
 }

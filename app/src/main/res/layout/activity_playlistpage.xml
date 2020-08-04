@@ -10,10 +10,9 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_50"
-        android:background="@color/purpule"
+        android:background="@color/tab_color"
         android:elevation="@dimen/margin_10"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="lollipop">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/backImage"
@@ -24,13 +23,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_arrow_back_white" />
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
             android:id="@+id/textTitle"
             style="@style/text_view_14_style"
             android:layout_centerVertical="true"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/text_16"
             android:layout_marginStart="@dimen/margin_5"
             android:layout_toEndOf="@+id/backImage"
@@ -53,7 +52,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_file_upload_white_24dp" />
+            app:srcCompat="@drawable/ic_file_upload_black_24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -61,16 +60,30 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?actionBarSize"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:tabBackground="@color/purpule"
         app:tabGravity="fill"
-        app:tabIndicatorHeight="5dp"
-        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorColor="@color/purpule"
         app:tabMode="fixed"
-        app:tabTextColor="@color/white">
+        app:tabSelectedTextColor="@color/purpule"
+        app:tabTextAppearance="@style/text_view_12_style" />
 
-    </com.google.android.material.tabs.TabLayout>
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:minHeight="?actionBarSize"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/header"-->
+<!--        app:tabBackground="@color/purpule"-->
+<!--        app:tabGravity="fill"-->
+<!--        app:tabIndicatorHeight="5dp"-->
+<!--        app:tabIndicatorColor="@color/white"-->
+<!--        app:tabMode="fixed"-->
+<!--        app:tabTextColor="@color/white">-->
+
+<!--    </com.google.android.material.tabs.TabLayout>-->
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

@@ -23,7 +23,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,UnusedAttribute"
         tools:replace="android:allowBackup">
-        <activity android:name=".view.activity.MyVideos"></activity>
+        <activity android:name=".view.activity.ProfilePage"></activity>
+        <activity android:name=".view.activity.NotificationActivity" />
+        <activity android:name=".view.activity.MyVideos" />
         <activity android:name=".view.activity.SideMenuVid" />
         <activity android:name=".view.activity.Playlistpage" />
         <activity android:name=".view.activity.AddVideoPlaylist" />

@@ -30,6 +30,8 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.app.addviu.view.activity.ProfilePage" />
+        <activity android:name="com.app.addviu.view.activity.NotificationActivity" />
         <activity android:name="com.app.addviu.view.activity.MyVideos" />
         <activity android:name="com.app.addviu.view.activity.SideMenuVid" />
         <activity android:name="com.app.addviu.view.activity.Playlistpage" />

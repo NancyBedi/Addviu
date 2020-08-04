@@ -1487,6 +1487,7 @@ drawable exo_notification_small_icon
 drawable exo_notification_stop
 drawable facebook
 drawable film
+drawable flag
 drawable google
 drawable gradient_black
 drawable grey_round_bg
@@ -1497,8 +1498,10 @@ drawable ic_arrow_back_grey_36dp
 drawable ic_arrow_back_white
 drawable ic_arrow_drop_down_purple_36dp
 drawable ic_arrow_white_24dp
+drawable ic_baseline_search_24
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
+drawable ic_close
 drawable ic_close_grey_36dp
 drawable ic_close_white_24dp
 drawable ic_edit_black_24dp
@@ -1513,6 +1516,7 @@ drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_logo
 drawable ic_menu_arrow_down_black_24dp
 drawable ic_menu_arrow_up_black_24dp
 drawable ic_menu_black_24dp
@@ -1543,6 +1547,7 @@ drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
 drawable news
+drawable no_img
 drawable notification
 drawable notification_action_background
 drawable notification_bg
@@ -1556,6 +1561,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pattern
 drawable purple_image_button
 drawable question
 drawable reward
@@ -1699,6 +1705,7 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id close
+id closeIcon
 id closeImage
 id collapseActionView
 id commentCheckBox
@@ -1749,6 +1756,7 @@ id duration
 id edit
 id editBanner
 id editImage
+id editSearch
 id edit_query
 id emailEditText
 id emailInputlayout
@@ -1784,6 +1792,7 @@ id exo_vr
 id expand_activities_button
 id expanded_menu
 id fade
+id fb
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1794,6 +1803,7 @@ id fitToContents
 id fixed
 id fixed_height
 id fixed_width
+id flag
 id forever
 id forgotPassText
 id frameLayout
@@ -1801,6 +1811,7 @@ id fullScreenImg
 id ghost_view
 id ghost_view_holder
 id gone
+id google
 id group_divider
 id groups
 id guideline
@@ -1936,6 +1947,7 @@ id scrollLayout
 id scrollView
 id scrollable
 id searchBox
+id searchIcon
 id search_badge
 id search_bar
 id search_button
@@ -2001,6 +2013,7 @@ id textComment
 id textComments
 id textEnd
 id textHello
+id textInd
 id textName
 id textSpacerNoButtons
 id textSpacerNoTitle
@@ -2143,6 +2156,7 @@ layout activity_create_channel_screen
 layout activity_forgot_screen
 layout activity_home_screen
 layout activity_my_channels
+layout activity_my_videos
 layout activity_playlistpage
 layout activity_rewards_screen
 layout activity_side_menu_vid
@@ -2156,6 +2170,7 @@ layout channel_about_fragment
 layout channel_home_fragment
 layout channel_playlist_fragment
 layout channel_video_fragment
+layout coming_soon_dialog
 layout common_actionbar
 layout custom_dialog
 layout custom_progress_dialog
@@ -2421,6 +2436,7 @@ string my_channels
 string name
 string navigation_drawer_close
 string navigation_drawer_open
+string notifications
 string password
 string password_toggle_content_description
 string path_password_eye

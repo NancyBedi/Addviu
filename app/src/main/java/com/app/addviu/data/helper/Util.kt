@@ -206,6 +206,7 @@ open class Util {
             val a = alert.create()
             //        a.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
             a.setView(alertLayout, 0, 0, 0, 0)
+            a.setCancelable(false)
             a.show()
             msgAlert.text = title
             okButton.text = "Ok"

@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_30"
         android:src="@drawable/splash_logo"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -60,6 +61,17 @@
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forgotPassText"
+        style="@style/text_view_12_style"
+        android:text="@string/forgot_password"
+        android:padding="@dimen/margin_5"
+        android:textSize="@dimen/text_10"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+        />
+
     <Button
         android:id="@+id/btnSignIn"
         style="@style/button_style"
@@ -67,7 +79,7 @@
         android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/forgotPassText" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/signUpText"
@@ -77,20 +89,21 @@
         android:text="@string/dont_account"
         android:textSize="@dimen/text_10"
         android:textColor="@color/white"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
          />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/forgotPassText"
-        style="@style/text_view_12_style"
-        android:text="@string/forgot_password"
-        android:padding="@dimen/margin_5"
-        android:textSize="@dimen/text_10"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/signUpText"
-         />
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/forgotPassText"-->
+<!--        style="@style/text_view_12_style"-->
+<!--        android:text="@string/forgot_password"-->
+<!--        android:padding="@dimen/margin_5"-->
+<!--        android:textSize="@dimen/text_10"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/signUpText"-->
+<!--         />-->
 
 
     <LinearLayout
@@ -134,6 +147,7 @@
         
         <androidx.appcompat.widget.AppCompatImageView
             android:src="@drawable/facebook"
+            android:id="@+id/fb"
             android:layout_width="wrap_content"
             android:padding="@dimen/margin_5"
             android:layout_marginRight="@dimen/margin_10"
@@ -142,6 +156,7 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:src="@drawable/google"
+            android:id="@+id/google"
             android:layout_marginLeft="@dimen/margin_10"
             android:padding="@dimen/margin_5"
             android:layout_marginStart="@dimen/margin_10"
@@ -158,5 +173,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_white_24dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/text_view_12_style"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_width="wrap_content"
+        android:text="Sign in"
+        android:layout_marginTop="@dimen/margin_10"
+        android:textSize="@dimen/text_18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backImage"
+        android:textColor="@color/white"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/signUp"
+        android:layout_width="wrap_content"
+        style="@style/text_view_12_style"
+        android:layout_marginTop="@dimen/margin_5"
+        android:padding="@dimen/margin_5"
+        android:text="@string/dont_account"
+        android:textSize="@dimen/text_10"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

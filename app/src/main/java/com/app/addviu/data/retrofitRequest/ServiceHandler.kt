@@ -109,9 +109,27 @@ class ServiceHandler(apiClient: ApiClient) {
     }
 
 
+    fun logout(responseCallback: ResponseCallback,
+                       context: Context?) {
+        val call = builder.logout()
+        getResponse(call, responseCallback, context)
+    }
+
     fun getCategories(responseCallback: ResponseCallback,
                        context: Context?) {
         val call = builder.getCategories()
+        getResponse(call, responseCallback, context)
+    }
+
+    fun getNotifications(responseCallback: ResponseCallback,
+                      context: Context?) {
+        val call = builder.getNotifications()
+        getResponse(call, responseCallback, context)
+    }
+
+    fun clearNotifications(responseCallback: ResponseCallback,
+                         context: Context?) {
+        val call = builder.clearNotifications()
         getResponse(call, responseCallback, context)
     }
 
@@ -267,6 +285,16 @@ class ServiceHandler(apiClient: ApiClient) {
 
     fun createComment(uid:String,map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
         val call = builder.createComment(uid,map)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun search(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
+        val call = builder.search(map)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun searchTrend(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
+        val call = builder.searchTrend(map)
         getResponse(call, responseCallback, context)
     }
 

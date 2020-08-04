@@ -124,8 +124,20 @@ class DataManager(
         mServiceHandler.getUserDetails(responseCallback, context)
     }
 
+    fun logout(responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.logout(responseCallback, context)
+    }
+
     fun getCategories(responseCallback: ResponseCallback, context: Context?) {
         mServiceHandler.getCategories(responseCallback, context)
+    }
+
+    fun getNotifications(responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.getNotifications(responseCallback, context)
+    }
+
+    fun clearNotifications(responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.clearNotifications(responseCallback, context)
     }
 
     fun latesVideos(responseCallback: ResponseCallback, context: Context?) {
@@ -246,6 +258,14 @@ class DataManager(
 
     fun createComment(uid:String,map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
         mServiceHandler.createComment(uid,map,responseCallback, context)
+    }
+
+    fun search(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.search(map,responseCallback, context)
+    }
+
+    fun searchTrend(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.searchTrend(map,responseCallback, context)
     }
 
     fun getSubscribeUser(channelSlug:String,responseCallback: ResponseCallback, context: Context?){

@@ -11,9 +11,5 @@ import com.google.android.material.navigation.NavigationView
 
 interface HomeInterface {
 
-
-    fun setBottomNavigationClicks(frameLayout: FrameLayout,
-                             bottomNavigationView: BottomNavigationView,fragmentManager: FragmentManager)
-
-    fun loadFragment(fragment: Fragment, fragmentManager: FragmentManager)
+    fun loadFragment(fragment: Fragment)
 }

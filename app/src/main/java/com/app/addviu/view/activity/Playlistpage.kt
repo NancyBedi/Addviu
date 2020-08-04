@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.app.addviu.R
+import com.app.addviu.data.helper.IS_LOGIN
+import com.app.addviu.data.helper.SIGN_IN_CODE
 import com.app.addviu.view.BaseActivity
 import com.app.addviu.view.adapter.ChannelHomeAdapter
 import com.app.addviu.view.fragments.*
@@ -38,7 +40,12 @@ class Playlistpage : BaseActivity() {
         }
 
         uploadIcon.setOnClickListener {
-            startActivity(Intent(this,VideoUploadScreen::class.java))
+            if (sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
+                startActivity(Intent(this, VideoUploadScreen::class.java))
+            } else {
+                startActivityForResult(Intent(this, SignInScreen::class.java), SIGN_IN_CODE)
+            }
+//            startActivity(Intent(this,VideoUploadScreen::class.java))
         }
     }
 

@@ -1,15 +1,17 @@
 package com.app.addviu.view.fragments
 
+import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView.OnEditorActionListener
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
@@ -22,13 +24,14 @@ import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.home_fragment_layout.*
 import kotlinx.android.synthetic.main.home_screen_actionbar.*
-import java.text.FieldPosition
+
 
 class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
 
     private var homeAdapter: HomeListAdapter? = null
     private val arrayList = ArrayList<HomeData>()
     var selectedPosition = 0
+    var canSubscribe = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +40,10 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
     ): View? {
         AppController.instance?.dataManager?.getHomeVideoData(this, activity!!)
         context.searchIcon.visibility = VISIBLE
+        context.closeIcon.visibility = GONE
+        context.editSearch.visibility = GONE
+        context.textView.visibility = VISIBLE
+        context.editSearch.setText("")
         return inflater.inflate(R.layout.home_fragment_layout, container, false)
     }
 
@@ -89,18 +96,55 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun addTextChangeListener(context: HomeScreen) {
-
-        context.editSearch.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
-
-            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-                if (homeAdapter != null) {
-                    filterCarsList(charSequence.toString(), arrayList, homeAdapter!!)
-                }
+        context.editSearch.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                val map = HashMap<String, String>()
+                map.put("searchKeyword", context.editSearch.text.toString())
+                AppController.instance?.dataManager?.search(map, this, activity)
+                return@OnEditorActionListener true
             }
-            override fun afterTextChanged(editable: Editable) {}
+            false
         })
+
+        context.closeIcon.setOnClickListener{
+            context.searchIcon.visibility = VISIBLE
+            context.closeIcon.visibility = GONE
+            context.editSearch.visibility = GONE
+            context.textView.visibility = VISIBLE
+            context.editSearch.setText("")
+            AppController.instance?.dataManager?.getHomeVideoData(this, activity!!)
+        }
+
+//        context.editSearch.setOnTouchListener(View.OnTouchListener { v, event ->
+//            val DRAWABLE_LEFT = 0
+//            val DRAWABLE_TOP = 1
+//            val DRAWABLE_RIGHT = 2
+//            val DRAWABLE_BOTTOM = 3
+//            if (event.action == MotionEvent.ACTION_UP) {
+//                if (event.rawX >= context.editSearch.right - context.editSearch.compoundDrawables
+//                        .get(DRAWABLE_RIGHT).bounds.width()
+//                ) {
+//                    val map = HashMap<String, String>()
+//                    map.put("searchKeyword", context.editSearch.text.toString())
+//                    AppController.instance?.dataManager?.search(map, this, activity)
+//                    return@OnTouchListener true
+//                }
+//            }
+//            false
+//        })
+
+//        context.editSearch.addTextChangedListener(object : TextWatcher {
+//            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+//
+//            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+//                if (homeAdapter != null) {
+//                    filterCarsList(charSequence.toString(), arrayList, homeAdapter!!)
+//                }
+//            }
+//            override fun afterTextChanged(editable: Editable) {}
+//        })
     }
 
     fun filterCarsList(

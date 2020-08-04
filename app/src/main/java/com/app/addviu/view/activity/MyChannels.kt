@@ -61,6 +61,7 @@ class MyChannels : BaseActivity(), View.OnClickListener {
         if (page != null) {
             (page as AddChannelFragment?)?.setData(channelData, true)
         }
+
 //        val fragment = AddChannelFragment()
 //        fragment.setData(channelData)
     }

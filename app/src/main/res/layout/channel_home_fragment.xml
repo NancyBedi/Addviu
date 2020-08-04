@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/channelImg"
-        android:layout_width="@dimen/margin_150"
-        android:layout_height="@dimen/margin_150"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="@+id/bannerImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

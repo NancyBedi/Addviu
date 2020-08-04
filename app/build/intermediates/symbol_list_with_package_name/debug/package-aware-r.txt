@@ -577,6 +577,7 @@ attr ratingBarStyle
 attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr recyclerViewStyle
+attr reflectionColor
 attr repeat_toggle_modes
 attr resize_mode
 attr reverseLayout
@@ -1514,6 +1515,7 @@ drawable ic_home_purpule_24dp
 drawable ic_keyboard_arrow_down_white_36dp
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
+drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_logo
@@ -1527,6 +1529,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_nav_icon
 drawable ic_notifications_purpule_24dp
+drawable ic_only_logo
 drawable ic_photo_camera_white_24dp
 drawable ic_send_purpule_36dp
 drawable image_icon
@@ -1535,6 +1538,7 @@ drawable like_purpule
 drawable loading
 drawable logo_purple
 drawable logout
+drawable mask
 drawable message_icon
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -1562,6 +1566,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable pattern
+drawable purple_circle
 drawable purple_image_button
 drawable question
 drawable reward
@@ -1569,6 +1574,7 @@ drawable share
 drawable signin
 drawable signin_bg
 drawable splash_logo
+drawable spot_mask
 drawable suggest
 drawable television
 drawable test_custom_background
@@ -1749,6 +1755,7 @@ id direct
 id disableHome
 id dislikeButton
 id dobEditText
+id dot
 id drawerLayout
 id dropdown_menu
 id dummyScrollContent
@@ -1764,6 +1771,9 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id error_btn_retry
+id error_layout
+id error_txt_cause
 id exitUntilCollapsed
 id exo_ad_overlay
 id exo_artwork
@@ -1792,6 +1802,7 @@ id exo_vr
 id expand_activities_button
 id expanded_menu
 id fade
+id fb
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1803,6 +1814,7 @@ id fixed
 id fixed_height
 id fixed_width
 id flag
+id flameIcon
 id forever
 id forgotPassText
 id frameLayout
@@ -1810,6 +1822,7 @@ id fullScreenImg
 id ghost_view
 id ghost_view_holder
 id gone
+id google
 id group_divider
 id groups
 id guideline
@@ -1820,6 +1833,7 @@ id home
 id homeAsUp
 id homeMenu
 id icon
+id iconFLay
 id icon_group
 id ifRoom
 id image
@@ -1844,8 +1858,13 @@ id linear_layout
 id list
 id listMode
 id list_item
+id loadmore_errorlayout
+id loadmore_errortxt
+id loadmore_progress
+id loadmore_retry
 id logoAdd
 id logoImage
+id main_progress
 id masked
 id media_actions
 id menuIcon
@@ -1859,6 +1878,11 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id moreIcon
+id movie_desc
+id movie_poster
+id movie_progress
+id movie_title
+id movie_year
 id msgAlert
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -1922,6 +1946,7 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id recycleNotify
 id recycleSelectPlaylist
 id recycleVideo
 id recycle_playlist
@@ -1965,6 +1990,7 @@ id showCustom
 id showHome
 id showTitle
 id signInMenu
+id signUp
 id signUpText
 id skipCollapsed
 id slide
@@ -2049,6 +2075,7 @@ id transition_transform
 id trendingMenu
 id txtAbout
 id txtDesc
+id txtSignup
 id txtVid
 id txtVideo
 id txt_change
@@ -2153,8 +2180,11 @@ layout activity_channel_home
 layout activity_create_channel_screen
 layout activity_forgot_screen
 layout activity_home_screen
+layout activity_main
 layout activity_my_channels
+layout activity_my_profile
 layout activity_my_videos
+layout activity_notification
 layout activity_playlistpage
 layout activity_rewards_screen
 layout activity_side_menu_vid
@@ -2189,6 +2219,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_new_playlist
 layout download_dialog
+layout error_layout
 layout exo_list_divider
 layout exo_playback_control_view
 layout exo_player_control_view
@@ -2198,6 +2229,9 @@ layout exo_track_selection_dialog
 layout home_fragment_layout
 layout home_list_adapter
 layout home_screen_actionbar
+layout item_hero
+layout item_list
+layout item_progress
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2247,6 +2281,7 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout recycle_channel_video_item
 layout recycle_mychannel_item
+layout recycle_notify_item
 layout recycle_playlist_item
 layout recycle_select_playlist
 layout related_comment_adapter
@@ -2343,6 +2378,7 @@ string dont_account
 string email
 string entertainment_and_comedy
 string error_icon_content_description
+string error_msg_unknown
 string exo_controls_fastforward_description
 string exo_controls_fullscreen_description
 string exo_controls_hide
@@ -2434,6 +2470,7 @@ string my_channels
 string name
 string navigation_drawer_close
 string navigation_drawer_open
+string notifications
 string password
 string password_toggle_content_description
 string path_password_eye
@@ -3237,6 +3274,7 @@ styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
+styleable ShimmerView reflectionColor
 styleable Snackbar snackbarButtonStyle snackbarStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha elevation maxActionInlineWidth
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme

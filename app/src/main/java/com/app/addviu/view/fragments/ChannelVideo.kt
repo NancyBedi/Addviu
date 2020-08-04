@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.app.addviu.AppController
 import com.app.addviu.R
+import com.app.addviu.model.channelVideoModel.ChannelVidData
 import com.app.addviu.model.channelVideoModel.ChannelVideoBean
 import com.app.addviu.view.adapter.ChannelListAdapter
 import com.app.addviu.view.adapter.ChannelVidAdapter
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.channel_video_fragment.*
 
 class ChannelVideo(val channelId:String, var isUserChannel:Boolean):BaseFragment(), ResponseCallback {
     var adapter: ChannelListAdapter?=null
+    var channelVideos = ArrayList<ChannelVidData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +34,18 @@ class ChannelVideo(val channelId:String, var isUserChannel:Boolean):BaseFragment
     override fun <T> success(t: T) {
         if (t is ChannelVideoBean){
             if (t.status == 1){
-                recycleVideo.adapter = ChannelVidAdapter(imageLoader, t.data, activity!!, isUserChannel)
+                if(isUserChannel){
+                    for(i in t.data.indices){
+                        if(t.data[i].visibility.equals("public")){
+                            channelVideos.add(t.data[i])
+                        }
+                    }
+                }else{
+                    channelVideos.addAll(t.data)
+                }
+                if (t.data != null){
+                    recycleVideo.adapter = ChannelVidAdapter(imageLoader, channelVideos, activity!!, isUserChannel)
+                }
             }else{
                 Util.showToast("No Videos found!!", activity!!)
             }

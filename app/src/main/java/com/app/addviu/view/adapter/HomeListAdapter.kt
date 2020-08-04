@@ -10,11 +10,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
+import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.model.homeModel.HomeData
+import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.VideoPlayerScreen
 import com.app.addviu.view.fragments.BaseFragment
 import com.app.addviu.view.fragments.HomeFragment
+import com.app.addviu.view.fragments.TrendPagination
 import com.app.addviu.view.fragments.TrendingFragment
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
@@ -22,6 +25,7 @@ import com.nostra13.universalimageloader.core.assist.ImageSize
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener
 import kotlinx.android.synthetic.main.home_list_adapter.view.*
 import kotlinx.android.synthetic.main.home_list_adapter.view.detailText
+import kotlinx.android.synthetic.main.video_detail_fragment.*
 import kotlinx.android.synthetic.main.video_player_layout.*
 
 
@@ -94,6 +98,13 @@ class HomeListAdapter(
             imageLoader.displayImage(data.channelImage, holder.userImage, context.roundProfilePic())
         }
 
+        holder.userImage.setOnClickListener {
+               openChannel(data)
+        }
+        holder.detailText.setOnClickListener {
+            openChannel(data)
+        }
+
     }
 
     inner class ViewHolder(row: View) : RecyclerView.ViewHolder(row), View.OnClickListener {
@@ -113,6 +124,7 @@ class HomeListAdapter(
         override fun onClick(v: View?) {
             if(baseFragment is HomeFragment){
                 baseFragment.selectedPosition = adapterPosition
+//            }else if(baseFragment is TrendPagination){
             }else if(baseFragment is TrendingFragment){
                 baseFragment.selectedPosition = adapterPosition
             }
@@ -121,6 +133,14 @@ class HomeListAdapter(
             intent.putExtra("uid", data.uid)
             (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
         }
+    }
+
+    fun openChannel(data: HomeData){
+        val intent = Intent(context, ChannelPage::class.java)
+        intent.putExtra("id", data.channelId.toString())
+        intent.putExtra("name", data.channelName)
+        intent.putExtra("userChannel", true)
+        context.startActivity(intent)
     }
 
     fun updateList(homeList: ArrayList<HomeData>) {

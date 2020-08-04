@@ -8,6 +8,7 @@ import com.app.addviu.model.channelVideoModel.ChannelVideoBean
 import com.app.addviu.model.homeModel.HomeBean
 import com.app.addviu.model.homeModel.TrendingBean
 import com.app.addviu.model.latestVidModel.LatestVidBean
+import com.app.addviu.model.notificationModel.NotificationBean
 import com.app.addviu.model.playlistDetailBean.PlaylistDetailBean
 import com.app.addviu.model.relatedModel.CommentsBean
 import com.app.addviu.model.relatedModel.RelatedVideoBean
@@ -62,8 +63,17 @@ interface WebServices {
     @POST("user/details")
     fun getUserDetails(): Call<TrendingBean>
 
+    @POST("logout")
+    fun logout(): Call<CommonSuccess>
+
     @GET("category")
     fun getCategories(): Call<CategoryBean>
+
+    @GET("getNotifications")
+    fun getNotifications(): Call<NotificationBean>
+
+    @GET("clearNotifications")
+    fun clearNotifications(): Call<NotificationBean>
 
     @GET("latesVideos")
     fun latesVideos(): Call<LatestVidBean>
@@ -164,6 +174,12 @@ interface WebServices {
 
     @POST("createComment/{uid}")
     fun createComment(@Path("uid") uid: String,@Body map: HashMap<String, String>): Call<SignUpBean>
+
+    @POST("search")
+    fun search(@Body map: HashMap<String, String>): Call<HomeBean>
+
+    @POST("search")
+    fun searchTrend(@Body map: HashMap<String, String>): Call<TrendingBean>
 
     @GET("userSubscribed/{channel_slug}")
     fun getSubscribeUser(@Path("channel_slug") channelSlug: String): Call<SubscribeBean>

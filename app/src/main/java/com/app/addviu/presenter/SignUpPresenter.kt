@@ -1,5 +1,6 @@
 package com.app.addviu.presenter
 
+import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
 import com.app.addviu.AppController
@@ -40,7 +41,10 @@ class SignUpPresenter(val context: Context) :
                 sharedPrefsHelper?.put(LOGIN_TOKEN, t.data.token)
                 sharedPrefsHelper?.put(USER_ID, t.data.id)
                 sharedPrefsHelper?.put(USER_NAME, t.data.name)
-                (context as SignInScreen).finish()
+                sharedPrefsHelper?.put(USER_IMAGE,t.data.avatar)
+                sharedPrefsHelper?.put(IS_SIGN_CLICKED,true)
+                (context as SignInScreen).setResult(RESULT_OK)
+                context.finish()
             } else {
                 Util.showToast(t.message, context)
             }

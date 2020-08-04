@@ -12,8 +12,11 @@ const val USER_ID = "userId"
 const val REPLY_ADDED = "replyAdded"
 const val COMMENT_ADDED = "commentAdded"
 const val USER_NAME = "userName"
+const val USER_IMAGE = "userImage"
 const val IS_SIGN_CLICKED = "isSignClicked"
 const val REQUEST_GALLERY_VIDEO = 100
 const val READ_PERMISSION_CODE = 101
 const val REQUEST_GALLERY_IMAGE = 102
 const val CHANGE_HOME_DATA = 103
+const val SIGN_IN_CODE = 104
+

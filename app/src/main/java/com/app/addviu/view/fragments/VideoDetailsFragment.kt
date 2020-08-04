@@ -119,6 +119,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
         shareButton.setOnClickListener(this)
         channelName.setOnClickListener(this)
         textSubscriber.setOnClickListener(this)
+        channelImage.setOnClickListener(this)
     }
 
     fun setData(relatedVideo: RelatedVideo) {
@@ -305,7 +306,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
                 startActivity(Intent.createChooser(intent, "Share"))
             }
             R.id.channelImage, R.id.channelName, R.id.textSubscriber ->{
-                if (canSubscribe) {
+                if (canSubscribe || !sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
                     val intent = Intent(activity, ChannelPage::class.java)
                     intent.putExtra("id", channelId.toString())
                     intent.putExtra("name", channelName.text.toString())

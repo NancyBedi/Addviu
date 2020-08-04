@@ -14,4 +14,7 @@ class SignInData {
     @SerializedName("name")
     @Expose
     var name = ""
+    @SerializedName("avatar")
+    @Expose
+    var avatar = ""
 }

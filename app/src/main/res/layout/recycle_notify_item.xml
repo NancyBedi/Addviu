@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_5"
+    android:layout_marginBottom="@dimen/margin_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/purple_circle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/flameIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/flameIcon"/>
+
+    <ImageView
+        android:id="@+id/flameIcon"
+        android:layout_width="@dimen/margin_40"
+        android:layout_height="@dimen/margin_40"
+        android:src="@drawable/circle_user"
+        android:layout_marginStart="@dimen/margin_5"
+        app:layout_constraintLeft_toRightOf="@+id/dot"
+        app:layout_constraintTop_toTopOf="@+id/videoTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/time"
+        android:layout_marginLeft="@dimen/margin_5" />
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:src="@drawable/background"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/margin_10"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/videoTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        android:textSize="15sp"
+        android:text="Video title"
+        android:lineSpacingMultiplier="0.8"
+        android:maxLines="3"
+        android:layout_marginStart="@dimen/margin_10"
+        app:layout_constraintLeft_toRightOf="@id/flameIcon"
+        app:layout_constraintTop_toTopOf="@id/thumbnail"
+        app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
+        app:layout_constraintRight_toLeftOf="@+id/thumbnail"
+        android:layout_marginLeft="@dimen/margin_5" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        android:text="1 hour"
+        android:maxLines="3"
+        android:textSize="@dimen/text_12"
+        android:textColor="@color/dark_gray"
+        android:layout_marginStart="@dimen/margin_10"
+        app:layout_constraintLeft_toRightOf="@id/flameIcon"
+        app:layout_constraintTop_toBottomOf="@id/videoTitle"
+        android:layout_marginLeft="@dimen/margin_5" />
+
+    <View
+        android:layout_width="@dimen/margin_150"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@color/purpule"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

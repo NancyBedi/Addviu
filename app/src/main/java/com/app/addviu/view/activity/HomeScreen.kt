@@ -1,27 +1,24 @@
 package com.app.addviu.view.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
-import android.view.WindowManager
+import android.view.View.*
+import com.app.addviu.AppController
 import com.app.addviu.R
-import com.app.addviu.data.helper.CHANGE_HOME_DATA
 import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.data.helper.IS_SIGN_CLICKED
+import com.app.addviu.data.helper.SIGN_IN_CODE
+import com.app.addviu.data.helper.USER_IMAGE
 import com.app.addviu.presenter.HomePresenter
 import com.app.addviu.view.BaseActivity
-import com.app.addviu.view.fragments.AccountFragment
-import com.app.addviu.view.fragments.HomeFragment
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.google.android.material.navigation.NavigationView
-import com.nostra13.universalimageloader.core.assist.ImageSize
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.home_screen_actionbar.*
 
@@ -29,7 +26,8 @@ import kotlinx.android.synthetic.main.home_screen_actionbar.*
 class HomeScreen : BaseActivity(), View.OnClickListener,
     NavigationView.OnNavigationItemSelectedListener {
 
-    private val homePresenter = HomePresenter(this)
+    var count = 0
+    private val homePresenter = HomePresenter(this,supportFragmentManager)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,15 +41,24 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
         menuIcon.setOnClickListener(this)
         uploadIcon.setOnClickListener(this)
         searchIcon.setOnClickListener(this)
-        closeIcon.setOnClickListener(this)
+//        closeIcon.setOnClickListener(this)
     }
 
+    fun setHomeSelected() {
+        bottomNavView.selectedItemId = R.id.homeMenu
+    }
+
+    fun setTrendingSelected() {
+        bottomNavView.selectedItemId = R.id.trendingMenu
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
     private fun initViews() {
-        val homeFragment = HomeFragment(this)
-        homePresenter.previousFragment = homeFragment
-        homePresenter.loadFragment(homeFragment, supportFragmentManager)
-        homePresenter.setBottomNavigationClicks(frameLayout, bottomNavView, supportFragmentManager)
+        bottomNavView.setOnNavigationItemSelectedListener(homePresenter)
+        bottomNavView.selectedItemId = R.id.homeMenu
+        loadIconsAfterLogin()
         navigationView.setNavigationItemSelectedListener(this)
+
     }
 
     override fun onClick(p0: View?) {
@@ -69,7 +76,7 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
                 if (sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
                     startActivity(Intent(this, VideoUploadScreen::class.java))
                 } else {
-                    startActivity(Intent(this, SignInScreen::class.java))
+                    startActivityForResult(Intent(this, SignInScreen::class.java), SIGN_IN_CODE)
                 }
             }
 
@@ -80,13 +87,13 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
                 searchIcon.visibility = GONE
             }
 
-            R.id.closeIcon -> {
-                searchIcon.visibility = VISIBLE
-                closeIcon.visibility = GONE
-                editSearch.visibility = GONE
-                textView.visibility = VISIBLE
-                editSearch.setText("")
-            }
+//            R.id.closeIcon -> {
+//                searchIcon.visibility = VISIBLE
+//                closeIcon.visibility = GONE
+//                editSearch.visibility = GONE
+//                textView.visibility = VISIBLE
+//                editSearch.setText("")
+//            }
         }
     }
 
@@ -96,33 +103,21 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
         }
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
-        if (sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
-
-            imageLoader.displayImage(
-                "https://addviu.com/storage/images/channels/Food Masala_1582567340_13511259285e540fac3d6ca.webP",
-                userImage,
-                roundProfilePic()
-            )
-            bottomNavView.menu.findItem(R.id.signInMenu).setIcon(null)
-            bottomNavView.menu.findItem(R.id.signInMenu).title = ""
-            bottomNavView.menu.findItem(R.id.highViewMenu).setIcon(R.drawable.notification)
-            bottomNavView.menu.findItem(R.id.highViewMenu).title = "Notifications"
-            if (sharedPrefsHelper?.get(IS_SIGN_CLICKED, false)!!) {
-                homePresenter.loadFragment(AccountFragment(), supportFragmentManager)
-                sharedPrefsHelper?.put(IS_SIGN_CLICKED, false)
-            }
+        if (requestCode == SIGN_IN_CODE && resultCode == Activity.RESULT_OK) {
+            finish()
+            startActivity(intent)
+        } else if (requestCode == SIGN_IN_CODE && resultCode != Activity.RESULT_OK) {
+            bottomNavView.menu.findItem(R.id.signInMenu).setIcon(R.drawable.signin)
+            bottomNavView.menu.findItem(R.id.signInMenu).title = getString(R.string.sign_in)
+        } else {
+            val baseFragment = supportFragmentManager.findFragmentById(R.id.frameLayout)
+            baseFragment?.onActivityResult(requestCode, resultCode, data)
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        val fragment = supportFragmentManager.findFragmentById(R.id.frameLayout)
-        fragment?.onActivityResult(requestCode, resultCode, data)
-
-    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         drawerLayout.closeDrawer(navigationView)
@@ -151,4 +146,47 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
     }
 
 
+    private fun loadIconsAfterLogin() {
+        if (sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
+//            bottomNavView.menu.findItem(R.id.homeMenu).isChecked = true
+            bottomNavView.menu.findItem(R.id.signInMenu).setIcon(null)
+            bottomNavView.menu.findItem(R.id.signInMenu).title = ""
+            bottomNavView.menu.findItem(R.id.highViewMenu).setIcon(R.drawable.notification)
+            bottomNavView.menu.findItem(R.id.highViewMenu).title = getString(R.string.notifications)
+            if (sharedPrefsHelper?.get(USER_IMAGE, "")!!.isNotEmpty()) {
+                imageLoader.displayImage(
+                    sharedPrefsHelper?.get(USER_IMAGE, ""),
+                    userImage,
+                    roundProfilePic()
+                )
+            }else{
+                imageLoader.displayImage(
+                    "drawable://"+ R.drawable.circle_user,
+                    userImage,
+                    roundProfilePic()
+                )
+//                bottomNavView.menu.findItem(R.id.signInMenu).setIcon(R.drawable.circle_user)
+            }
+            if (sharedPrefsHelper?.get(IS_SIGN_CLICKED, false)!!) {
+                bottomNavView.selectedItemId = R.id.signInMenu
+                sharedPrefsHelper?.put(IS_SIGN_CLICKED, false)
+            }
+        }
+    }
+
+    override fun onBackPressed() {
+        count ++
+        if (count == 2){
+            count = 0
+            finish()
+        }else{
+//            val valX: Float = navigationView.x
+//            if (valX > 0) {
+                drawerLayout.closeDrawer(navigationView)
+//            }else{
+                Util.showToast("Press Again to exit", this)
+//            }
+//            drawerLayout.closeDrawer(navigationView)
+        }
+    }
 }
