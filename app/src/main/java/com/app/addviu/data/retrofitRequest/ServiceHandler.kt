@@ -25,13 +25,42 @@ class ServiceHandler(apiClient: ApiClient) {
 //        getResponse(call, responseCallback, context)
 //    }
 
-    fun getHomeVideoData(responseCallback: ResponseCallback, context: Context?) {
-        val call = builder.getHomeVideoList()
+    fun getHomeVideoData(pageId:Int, responseCallback: ResponseCallback, context: Context?) {
+        val call = builder.getHomeVideoList(pageId)
         getResponse(call, responseCallback, context)
     }
 
-    fun getTrendingVideoData(pageId:Int,responseCallback: ResponseCallback, context: Context?) {
+    fun getTrendingVideoData(pageId:Int, responseCallback: ResponseCallback, context: Context?) {
         val call = builder.getTrendingVideoList(pageId)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun latesVideos(pageId:Int, responseCallback: ResponseCallback, context: Context?) {
+        val call = builder.latesVideos(pageId)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun entertainmentAndComedyVideos(pageId:Int, responseCallback: ResponseCallback,
+                                     context: Context?) {
+        val call = builder.entertainmentAndComedyVideos(pageId)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun latestNewsVideos(pageId:Int, responseCallback: ResponseCallback,
+                         context: Context?) {
+        val call = builder.latestNewsVideos(pageId)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun womenSpecialVideos(pageId:Int, responseCallback: ResponseCallback,
+                           context: Context?) {
+        val call = builder.womenSpecialVideos(pageId)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun suggestedVideos(pageId:Int, responseCallback: ResponseCallback,
+                        context: Context?) {
+        val call = builder.suggestedVideos(pageId)
         getResponse(call, responseCallback, context)
     }
 
@@ -133,36 +162,11 @@ class ServiceHandler(apiClient: ApiClient) {
         getResponse(call, responseCallback, context)
     }
 
-    fun latesVideos(responseCallback: ResponseCallback,
-                      context: Context?) {
-        val call = builder.latesVideos()
-        getResponse(call, responseCallback, context)
-    }
-
-    fun entertainmentAndComedyVideos(responseCallback: ResponseCallback,
-                    context: Context?) {
-        val call = builder.entertainmentAndComedyVideos()
-        getResponse(call, responseCallback, context)
-    }
-
-    fun latestNewsVideos(responseCallback: ResponseCallback,
-                                     context: Context?) {
-        val call = builder.latestNewsVideos()
-        getResponse(call, responseCallback, context)
-    }
-
-    fun womenSpecialVideos(responseCallback: ResponseCallback,
-                         context: Context?) {
-        val call = builder.womenSpecialVideos()
-        getResponse(call, responseCallback, context)
-    }
-
-    fun suggestedVideos(responseCallback: ResponseCallback,
-                           context: Context?) {
-        val call = builder.suggestedVideos()
-        getResponse(call, responseCallback, context)
-    }
-
+//    fun latesVideos(responseCallback: ResponseCallback,
+//                      context: Context?) {
+//        val call = builder.latesVideos()
+//        getResponse(call, responseCallback, context)
+//    }
 
     fun getUserChannels(userId:Int,responseCallback: ResponseCallback,
                       context: Context?) {
@@ -297,6 +301,13 @@ class ServiceHandler(apiClient: ApiClient) {
         val call = builder.searchTrend(map)
         getResponse(call, responseCallback, context)
     }
+
+    fun userSubscribedChannels(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
+        val call = builder.userSubscribedChannels(map)
+        getResponse(call, responseCallback, context)
+    }
+
+
 
     fun getSubscribeUser(channelSlug:String,responseCallback: ResponseCallback, context: Context?){
         val call = builder.getSubscribeUser(channelSlug)

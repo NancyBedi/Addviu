@@ -64,6 +64,7 @@
         style="@style/edit_text_style"
         android:textSize="@dimen/text_20"
         android:enabled="false"
+        android:gravity="center"
         android:layout_marginTop="@dimen/margin_5"
         app:layout_constraintTop_toBottomOf="@id/channelImg"
         app:layout_constraintLeft_toLeftOf="@id/channelImg"

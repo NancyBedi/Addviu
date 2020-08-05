@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.latestVidModel.LatestVidListData
@@ -23,7 +24,7 @@ class SideMenuVid : BaseActivity() {
     private val sideMenuPresenter = SideMenuPresenter(this)
     var title = ""
     val arrayList = ArrayList<LatestVidListData>()
-    private var visibleThreshold = 0
+    public var visibleThreshold = 0
     private var lastVisibleItem = 0
     private var totalItemCount: Int = 0
     private var isLoading = false
@@ -65,7 +66,7 @@ class SideMenuVid : BaseActivity() {
                         if (!isLoading && totalItemCount <= lastVisibleItem + 1) {
                             if (lastPage > currentPage) {
                                 currentPage += 1
-//                                loadNextPage()
+                                loadNextPage(currentPage)
                                 isLoading = true
                             }
                         }
@@ -74,23 +75,53 @@ class SideMenuVid : BaseActivity() {
             }
         })
 
+        loadFirstPage()
+    }
 
+    public fun setDataInList(homeList: ArrayList<LatestVidListData>) {
+        if (!isLoading)
+            arrayList.clear()
+        arrayList.addAll(homeList)
+        latestVidAdapter?.notifyDataSetChanged()
+        isLoading = false
+    }
 
+    private fun loadFirstPage() {
         when(title){
             "Latest Videos" ->{
-                sideMenuPresenter.getLatestVid()
+                sideMenuPresenter.getLatestVid(1)
             }
             "Entertainment and Comedy" ->{
-                sideMenuPresenter.getEntertainVid()
+                sideMenuPresenter.getEntertainVid(1)
             }
             "Latest News" ->{
-                sideMenuPresenter.getLatestNewsVid()
+                sideMenuPresenter.getLatestNewsVid(1)
             }
             "Women's Special" ->{
-                sideMenuPresenter.getWomenVid()
+                sideMenuPresenter.getWomenVid(1)
             }
             "Suggested Videos" ->{
-                sideMenuPresenter.getSuggestVid()
+                sideMenuPresenter.getSuggestVid(1)
+            }
+        }
+    }
+
+    private fun loadNextPage(currentPage:Int) {
+        when(title){
+            "Latest Videos" ->{
+                sideMenuPresenter.getLatestVid(currentPage)
+            }
+            "Entertainment and Comedy" ->{
+                sideMenuPresenter.getEntertainVid(currentPage)
+            }
+            "Latest News" ->{
+                sideMenuPresenter.getLatestNewsVid(currentPage)
+            }
+            "Women's Special" ->{
+                sideMenuPresenter.getWomenVid(currentPage)
+            }
+            "Suggested Videos" ->{
+                sideMenuPresenter.getSuggestVid(currentPage)
             }
         }
     }

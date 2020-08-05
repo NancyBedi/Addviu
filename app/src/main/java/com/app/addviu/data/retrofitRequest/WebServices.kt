@@ -7,11 +7,13 @@ import com.app.addviu.model.channelDetailBean.ChannelDetailBean
 import com.app.addviu.model.channelVideoModel.ChannelVideoBean
 import com.app.addviu.model.homeModel.HomeBean
 import com.app.addviu.model.homeModel.TrendingBean
+import com.app.addviu.model.homeVideoModel.HomeVideoBean
 import com.app.addviu.model.latestVidModel.LatestVidBean
 import com.app.addviu.model.notificationModel.NotificationBean
 import com.app.addviu.model.playlistDetailBean.PlaylistDetailBean
 import com.app.addviu.model.relatedModel.CommentsBean
 import com.app.addviu.model.relatedModel.RelatedVideoBean
+import com.app.addviu.model.subscribedChannel.SubscribedChannelBean
 import com.app.addviu.model.userModel.SignInBean
 import com.app.addviu.model.userModel.SignUpBean
 import com.app.addviu.model.videoModel.*
@@ -26,10 +28,25 @@ interface WebServices {
 //    fun getStates(): Call<GetStateBean>
 
     @POST("home")
-    fun getHomeVideoList(): Call<HomeBean>
+    fun getHomeVideoList(@Query("page") pageId: Int): Call<HomeVideoBean>
 
     @GET("trendingVideos")
     fun getTrendingVideoList(@Query("page") pageId: Int): Call<TrendingBean>
+
+    @GET("latesVideos")
+    fun latesVideos(@Query("page") pageId: Int): Call<LatestVidBean>
+
+    @GET("entertainmentAndComedyVideos")
+    fun entertainmentAndComedyVideos(@Query("page") pageId: Int): Call<LatestVidBean>
+
+    @GET("latestNewsVideos")
+    fun latestNewsVideos(@Query("page") pageId: Int): Call<LatestVidBean>
+
+    @GET("womenSpecialVideos")
+    fun womenSpecialVideos(@Query("page") pageId: Int): Call<LatestVidBean>
+
+    @GET("suggestedVideos")
+    fun suggestedVideos(@Query("page") pageId: Int): Call<LatestVidBean>
 
     @FormUrlEncoded
     @POST("register")
@@ -75,20 +92,8 @@ interface WebServices {
     @GET("clearNotifications")
     fun clearNotifications(): Call<NotificationBean>
 
-    @GET("latesVideos")
-    fun latesVideos(): Call<LatestVidBean>
-
-    @GET("entertainmentAndComedyVideos")
-    fun entertainmentAndComedyVideos(): Call<LatestVidBean>
-
-    @GET("latestNewsVideos")
-    fun latestNewsVideos(): Call<LatestVidBean>
-
-    @GET("womenSpecialVideos")
-    fun womenSpecialVideos(): Call<LatestVidBean>
-
-    @GET("suggestedVideos")
-    fun suggestedVideos(): Call<LatestVidBean>
+//    @GET("latesVideos")
+//    fun latesVideos(): Call<LatestVidBean>
 
     @FormUrlEncoded
     @POST("getUserChannels")
@@ -180,6 +185,9 @@ interface WebServices {
 
     @POST("search")
     fun searchTrend(@Body map: HashMap<String, String>): Call<TrendingBean>
+
+    @POST("userSubscribedChannels")
+    fun userSubscribedChannels(@Body map: HashMap<String, String>): Call<SubscribedChannelBean>
 
     @GET("userSubscribed/{channel_slug}")
     fun getSubscribeUser(@Path("channel_slug") channelSlug: String): Call<SubscribeBean>

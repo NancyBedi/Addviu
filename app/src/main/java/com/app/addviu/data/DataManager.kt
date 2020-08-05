@@ -35,12 +35,32 @@ class DataManager(
 //    }
 
 
-    fun getHomeVideoData(responseCallback: ResponseCallback, context: Context?) {
-        mServiceHandler.getHomeVideoData(responseCallback, context)
+    fun getHomeVideoData(pageId:Int, responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.getHomeVideoData(pageId, responseCallback, context)
     }
 
     fun getTrendingVideoData(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
         mServiceHandler.getTrendingVideoData(pageId, responseCallback, context)
+    }
+
+    fun latesVideos(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.latesVideos(pageId, responseCallback, context)
+    }
+
+    fun entertainmentAndComedyVideos(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.entertainmentAndComedyVideos(pageId, responseCallback, context)
+    }
+
+    fun latestNewsVideos(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.latestNewsVideos(pageId, responseCallback, context)
+    }
+
+    fun womenSpecialVideos(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.womenSpecialVideos(pageId, responseCallback, context)
+    }
+
+    fun suggestedVideos(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.suggestedVideos(pageId, responseCallback, context)
     }
 
     fun signUpUser(
@@ -140,25 +160,9 @@ class DataManager(
         mServiceHandler.clearNotifications(responseCallback, context)
     }
 
-    fun latesVideos(responseCallback: ResponseCallback, context: Context?) {
-        mServiceHandler.latesVideos(responseCallback, context)
-    }
-
-    fun entertainmentAndComedyVideos(responseCallback: ResponseCallback, context: Context?) {
-        mServiceHandler.entertainmentAndComedyVideos(responseCallback, context)
-    }
-
-    fun latestNewsVideos(responseCallback: ResponseCallback, context: Context?) {
-        mServiceHandler.latestNewsVideos(responseCallback, context)
-    }
-
-    fun womenSpecialVideos(responseCallback: ResponseCallback, context: Context?) {
-        mServiceHandler.womenSpecialVideos(responseCallback, context)
-    }
-
-    fun suggestedVideos(responseCallback: ResponseCallback, context: Context?) {
-        mServiceHandler.suggestedVideos(responseCallback, context)
-    }
+//    fun latesVideos(responseCallback: ResponseCallback, context: Context?) {
+//        mServiceHandler.latesVideos(responseCallback, context)
+//    }
 
     fun getUserChannels(responseCallback: ResponseCallback, context: Context?) {
         mServiceHandler.getUserChannels(mSharedPrefsHelper[USER_ID,0]!!,responseCallback, context)
@@ -266,6 +270,10 @@ class DataManager(
 
     fun searchTrend(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
         mServiceHandler.searchTrend(map,responseCallback, context)
+    }
+
+    fun userSubscribedChannels(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.userSubscribedChannels(map,responseCallback, context)
     }
 
     fun getSubscribeUser(channelSlug:String,responseCallback: ResponseCallback, context: Context?){

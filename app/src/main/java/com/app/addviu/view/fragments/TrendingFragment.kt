@@ -124,6 +124,9 @@ class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallba
             visibleThreshold = t.data.perPage
             setDataInList(t.data.data)
         } else if (t is HomeBean) {
+//            totalItemsAvailable = t.data.total
+//            lastPage = t.data.lastPage
+//            visibleThreshold = t.data.perPage
             setDataInList(t.data)
         }
     }
@@ -164,7 +167,6 @@ class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallba
             context.editSearch.setText("")
             AppController.instance?.dataManager?.getTrendingVideoData(1, this, activity)
         }
-
     }
 
     fun filterCarsList(

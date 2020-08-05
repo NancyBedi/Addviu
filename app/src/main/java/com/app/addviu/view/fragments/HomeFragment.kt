@@ -12,11 +12,15 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
 import com.app.addviu.model.homeModel.HomeBean
 import com.app.addviu.model.homeModel.HomeData
+import com.app.addviu.model.homeVideoModel.HomeVideoBean
+import com.app.addviu.model.homeVideoModel.Success
 import com.app.addviu.model.relatedModel.RelatedVideo
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.adapter.HomeListAdapter
@@ -32,13 +36,23 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
     private val arrayList = ArrayList<HomeData>()
     var selectedPosition = 0
     var canSubscribe = ""
+    var linearLayoutManager: LinearLayoutManager? = null
+    private val PAGE_START = 1
+    private var currentPage = PAGE_START
+
+    private var visibleThreshold = 0
+    private var lastVisibleItem = 0
+    private var totalItemCount: Int = 0
+    private var isLoading = false
+    var totalItemsAvailable = 0
+    var lastPage = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        AppController.instance?.dataManager?.getHomeVideoData(this, activity!!)
+        loadFirstPage()
         context.searchIcon.visibility = VISIBLE
         context.closeIcon.visibility = GONE
         context.editSearch.visibility = GONE
@@ -49,27 +63,66 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        setProgressVisible(progress_circular, recyclerView)
+//        homeAdapter = HomeListAdapter(imageLoader, arrayList, activity!!, this)
+//        recyclerView.adapter = homeAdapter
+        linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = linearLayoutManager
         homeAdapter = HomeListAdapter(imageLoader, arrayList, activity!!, this)
         recyclerView.adapter = homeAdapter
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                totalItemCount = linearLayoutManager!!.itemCount
+                var lastVisibleItemarray = linearLayoutManager!!.findLastVisibleItemPosition()
+                if (lastVisibleItemarray > 0) {
+                    lastVisibleItem = if (lastVisibleItemarray == 3) {
+                        lastVisibleItemarray
+                    } else {
+                        lastVisibleItemarray
+                    }
+                    if (totalItemCount < totalItemsAvailable) {
+                        if (!isLoading && totalItemCount <= lastVisibleItem + 1) {
+                            if (lastPage > currentPage) {
+                                currentPage += 1
+                                loadNextPage()
+                                isLoading = true
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
         addTextChangeListener(context)
     }
 
+    private fun loadFirstPage() {
+        AppController.instance?.dataManager?.getHomeVideoData(1,this, activity!!)
+    }
+
+    private fun loadNextPage() {
+        AppController.instance?.dataManager?.getHomeVideoData(currentPage,this, activity!!)
+    }
+
     private fun setDataInList(homeList: ArrayList<HomeData>) {
-        arrayList.clear()
+        if (!isLoading)
+            arrayList.clear()
         arrayList.addAll(homeList)
         homeAdapter?.notifyDataSetChanged()
+        isLoading = false
     }
 
     override fun <T> success(t: T) {
-//        setProgressGone(progress_circular, recyclerView)
-        if (t is HomeBean) {
-            setDataInList(t.data)
+        if (t is HomeVideoBean) {
+            totalItemsAvailable = t.success.total
+            lastPage = t.success.lastPage
+            visibleThreshold = t.success.perPage
+            setDataInList(t.success.data)
         }
     }
 
     override fun failure(t: Throwable) {
-//        setProgressGone(progress_circular, recyclerView)
         Util.showToast(t.toString(), activity!!)
     }
 
@@ -114,7 +167,8 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
             context.editSearch.visibility = GONE
             context.textView.visibility = VISIBLE
             context.editSearch.setText("")
-            AppController.instance?.dataManager?.getHomeVideoData(this, activity!!)
+            loadFirstPage()
+//            AppController.instance?.dataManager?.getHomeVideoData(1,this, activity!!)
         }
 
 //        context.editSearch.setOnTouchListener(View.OnTouchListener { v, event ->

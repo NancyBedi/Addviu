@@ -19,7 +19,7 @@ class SignInScreen : BaseActivity(), View.OnClickListener {
         setContentView(R.layout.activity_sign_in_screen)
         val layoutParams = backImage.layoutParams as ConstraintLayout.LayoutParams
         layoutParams.topMargin = statusBarHeight
-        
+
         setClickListeners()
     }
 

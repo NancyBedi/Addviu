@@ -204,12 +204,12 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\like_grey.png"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_error_layout.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\error_layout.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_recycle_mychannel_item.xml.flat",
@@ -262,6 +262,10 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_suggest.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\suggest.png"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_subscribed_channel_fragment.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\subscribed_channel_fragment.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_pattern.png.flat",
@@ -372,12 +376,12 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\menu\\image_menu.xml"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_back_black_24dp.xml.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_arrow_back_black_24dp.xml"
-    },
-    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_recycle_notify_item.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\recycle_notify_item.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_back_black_24dp.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_arrow_back_black_24dp.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -564,12 +568,16 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\item_progress.xml"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up_screen.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_sign_up_screen.xml"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_video.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\video.png"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up_screen.xml.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_sign_up_screen.xml"
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_only_logo.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_only_logo.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_pattern.png.flat",
@@ -578,10 +586,6 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_recycle_channel_video_item.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\recycle_channel_video_item.xml"
-    },
-    {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_only_logo.xml.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_only_logo.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_suggest.png.flat",

@@ -19,9 +19,14 @@ class SideMenuPresenter(val context: Context): ResponseCallback, SideMenuInterfa
     override fun <T> success(t: T) {
         if (t is LatestVidBean) {
             if (t.status == 1) {
-                (context as SideMenuVid).arrayList.clear()
-                (context).arrayList.addAll(t.data.data)
-                (context).latestVidAdapter?.notifyDataSetChanged()
+//                (context as SideMenuVid).arrayList.clear()
+//                (context).arrayList.addAll(t.data.data)
+
+                (context as SideMenuVid).totalItemsAvailable = t.data.total
+                context.lastPage = t.data.lastPage
+                context.visibleThreshold = t.data.perPage
+                context.setDataInList(t.data.data)
+//                (context).latestVidAdapter?.notifyDataSetChanged()
             }else{
                 Util.showToast(t.message, context)
             }
@@ -32,24 +37,24 @@ class SideMenuPresenter(val context: Context): ResponseCallback, SideMenuInterfa
 
     }
 
-    override fun getLatestVid() {
-        AppController.instance?.dataManager?.latesVideos(this, context)
+    override fun getLatestVid(page:Int) {
+        AppController.instance?.dataManager?.latesVideos(page, this, context)
     }
 
-    override fun getEntertainVid() {
-        AppController.instance?.dataManager?.entertainmentAndComedyVideos(this, context)
+    override fun getEntertainVid(page:Int) {
+        AppController.instance?.dataManager?.entertainmentAndComedyVideos(page, this, context)
     }
 
-    override fun getLatestNewsVid() {
-        AppController.instance?.dataManager?.latestNewsVideos(this, context)
+    override fun getLatestNewsVid(page:Int) {
+        AppController.instance?.dataManager?.latestNewsVideos(page, this, context)
     }
 
-    override fun getWomenVid() {
-        AppController.instance?.dataManager?.womenSpecialVideos(this, context)
+    override fun getWomenVid(page:Int) {
+        AppController.instance?.dataManager?.womenSpecialVideos(page, this, context)
     }
 
-    override fun getSuggestVid() {
-        AppController.instance?.dataManager?.suggestedVideos(this, context)
+    override fun getSuggestVid(page:Int) {
+        AppController.instance?.dataManager?.suggestedVideos(page, this, context)
     }
 
 
