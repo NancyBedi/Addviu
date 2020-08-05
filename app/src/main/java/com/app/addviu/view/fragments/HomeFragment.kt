@@ -110,6 +110,7 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
             arrayList.clear()
         arrayList.addAll(homeList)
         homeAdapter?.notifyDataSetChanged()
+        
         isLoading = false
     }
 
