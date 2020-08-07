@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import com.app.addviu.AppController
 import com.app.addviu.model.CreateChannelBean
+import com.app.addviu.model.subscribedChannel.SubscribedChannelData
 import com.app.addviu.view.activity.VideoUploadScreen
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
@@ -137,6 +138,11 @@ class ServiceHandler(apiClient: ApiClient) {
         getResponse(call, responseCallback, context)
     }
 
+    fun userDetails(responseCallback: ResponseCallback,
+                       context: Context?) {
+        val call = builder.userDetails()
+        getResponse(call, responseCallback, context)
+    }
 
     fun logout(responseCallback: ResponseCallback,
                        context: Context?) {
@@ -208,6 +214,16 @@ class ServiceHandler(apiClient: ApiClient) {
 
     fun updateChannelBanner(builder1:MultipartBody.Builder,channelId:String,responseCallback: ResponseCallback, context: Context?){
         val call = builder.updateChannelBanner(channelId, builder1.build())
+        getResponse(call, responseCallback, context)
+    }
+
+    fun updateImage(builder1:MultipartBody.Builder, responseCallback: ResponseCallback, context: Context?){
+        val call = builder.updateImage(builder1.build())
+        getResponse(call, responseCallback, context)
+    }
+
+    fun updateBanner(builder1:MultipartBody.Builder, responseCallback: ResponseCallback, context: Context?){
+        val call = builder.updateBanner(builder1.build())
         getResponse(call, responseCallback, context)
     }
 
@@ -297,8 +313,23 @@ class ServiceHandler(apiClient: ApiClient) {
         getResponse(call, responseCallback, context)
     }
 
+    fun removeImage(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
+        val call = builder.removeImage(map)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun removeBanner(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
+        val call = builder.removeBanner(map)
+        getResponse(call, responseCallback, context)
+    }
+
     fun searchTrend(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
         val call = builder.searchTrend(map)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun userUpdate(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
+        val call = builder.userUpdate(map)
         getResponse(call, responseCallback, context)
     }
 

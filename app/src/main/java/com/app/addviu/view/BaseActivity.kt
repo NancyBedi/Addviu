@@ -110,6 +110,11 @@ open class BaseActivity : AppCompatActivity() {
             .displayer(RoundedBitmapDisplayer(200)).build()
     }
 
+    fun circleProfilePic(): DisplayImageOptions {
+        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.circle_user)
+            .displayer(RoundedBitmapDisplayer(250)).build()
+    }
+
     open fun setFullScreen() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.decorView.systemUiVisibility = (

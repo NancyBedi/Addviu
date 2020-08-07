@@ -3,6 +3,7 @@ package com.app.addviu.presenter
 import android.content.Context
 import android.content.Intent
 import android.view.MenuItem
+import android.view.View.GONE
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -20,6 +21,7 @@ import com.app.addviu.view.fragments.*
 import com.app.addviu.view.viewInterface.HomeInterface
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.home_screen_actionbar.*
 
 
 class HomePresenter(private val context: Context,private val fragmentManager: FragmentManager) : HomeInterface,
@@ -58,6 +60,7 @@ BottomNavigationView.OnNavigationItemSelectedListener{
                 return true
             }
             R.id.signInMenu -> {
+
                 (context as HomeScreen).count = 0
                 if (sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
                     val currentFragment = fragmentManager.findFragmentById(R.id.frameLayout)
@@ -84,12 +87,17 @@ BottomNavigationView.OnNavigationItemSelectedListener{
             }
             R.id.rewardsMenu -> {
                 (context as HomeScreen).count = 0
+//                context.searchIcon.visibility = GONE
+//                context.closeIcon.visibility = GONE
 //                context.startActivity(Intent(context, JokVokHome::class.java))
                 Util.comingSoonDialog(context, "Coming Soon")
                 return true
             }
             R.id.highViewMenu -> {
                 (context as HomeScreen).count = 0
+                context.searchIcon.visibility = GONE
+                context.closeIcon.visibility = GONE
+                context.editSearch.visibility = GONE
                 baseFragment = NotificationFragment()
                 previousFragment = baseFragment
                 loadFragment(baseFragment)

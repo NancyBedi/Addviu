@@ -5,6 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txtNoSubscriber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_10"
+        android:textColor="@color/dark_gray"
+        android:drawableTop="@drawable/ic_no_data"
+        android:text="No Subscribed Channels Found!!"/>
+
+    <TextView
+        android:id="@+id/txtRec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_view_14_style"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/text_16"
+        android:gravity="center"
+        android:textColor="@color/purpule"
+        android:layout_marginTop="@dimen/margin_20"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_10"
+        app:layout_constraintTop_toBottomOf="@+id/txtNoSubscriber"
+        android:text="Here is a List of Suggested Channels for You.."/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
@@ -14,8 +41,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="@dimen/margin_10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRec"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
     <ProgressBar

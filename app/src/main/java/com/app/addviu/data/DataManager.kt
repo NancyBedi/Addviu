@@ -144,6 +144,10 @@ class DataManager(
         mServiceHandler.getUserDetails(responseCallback, context)
     }
 
+    fun userDetails(responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.userDetails(responseCallback, context)
+    }
+
     fun logout(responseCallback: ResponseCallback, context: Context?) {
         mServiceHandler.logout(responseCallback, context)
     }
@@ -192,10 +196,16 @@ class DataManager(
         mServiceHandler.updatePlaylist(builder,responseCallback, context)
     }
 
-
-
     fun updateChannelBanner(builder:MultipartBody.Builder,channelId:String,responseCallback: ResponseCallback, context: Context?){
         mServiceHandler.updateChannelBanner(builder, channelId, responseCallback, context)
+    }
+
+    fun updateImage(builder:MultipartBody.Builder,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.updateImage(builder, responseCallback, context)
+    }
+
+    fun updateBanner(builder:MultipartBody.Builder,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.updateBanner(builder, responseCallback, context)
     }
 
     fun removeChannelBanner(channelId:String,responseCallback: ResponseCallback, context: Context?){
@@ -268,8 +278,20 @@ class DataManager(
         mServiceHandler.search(map,responseCallback, context)
     }
 
+    fun removeImage(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.removeImage(map,responseCallback, context)
+    }
+
+    fun removeBanner(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.removeBanner(map,responseCallback, context)
+    }
+
     fun searchTrend(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
         mServiceHandler.searchTrend(map,responseCallback, context)
+    }
+
+    fun userUpdate(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.userUpdate(map,responseCallback, context)
     }
 
     fun userSubscribedChannels(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){

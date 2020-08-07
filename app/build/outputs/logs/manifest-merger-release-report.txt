@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\8a666c5746bce678a31422141d9fe57d\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\dcb4a406237f41df95b873a29d0cc632\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.2.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\8a9ace0c7acedf8dcec50a31149144af\jetified-core-ktx-1.2.0\AndroidManifest.xml:2:1-9:12
@@ -12,6 +12,7 @@ MERGED from [com.emredavarci:CircleProgressBar:1.0.8] C:\Users\Laptop\.gradle\ca
 MERGED from [com.google.android.exoplayer:exoplayer-ui:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\7726a46e2b0d17a4bd7f0364b088ac8f\jetified-exoplayer-ui-2.11.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\ae6b0bf9d0e0acd0b1476e953fd63e46\jetified-exoplayer-core-2.11.1\AndroidManifest.xml:17:1-26:12
+MERGED from [com.romainpiel.shimmer:library:1.4.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\de4e6db121260ed6ac82bdd390072a47\jetified-library-1.4.0\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\633e1b68c1496aecff78683fb7fa6127\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\dabfaec9f1bd032269e80f944f80fd61\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\520f47f6ccac385eaf0cf60d98f309c3\jetified-play-services-ads-identifier-17.0.0\AndroidManifest.xml:17:1-24:12
@@ -39,22 +40,22 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Laptop\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\1298272e50fdf18ca7e7325e0b0b1a1a\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\8a2a465308a7c1800b950f782e63cea6\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\c1fc06b84d23b254d33b0f557e906d3e\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
-INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
+INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
 	package
 		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:4:5-29
 		INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml
 		INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
 		INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-81:12
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:1-83:12
 		INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:2:11-69
@@ -81,13 +82,15 @@ ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
 		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:10:22-77
 application
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:12:5-79:19
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:12:5-81:19
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\8a666c5746bce678a31422141d9fe57d\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\8a666c5746bce678a31422141d9fe57d\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\9a97079e0a953b54cfb38be330cd3abd\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\9a97079e0a953b54cfb38be330cd3abd\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:24:5-31:19
+MERGED from [com.romainpiel.shimmer:library:1.4.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\de4e6db121260ed6ac82bdd390072a47\jetified-library-1.4.0\AndroidManifest.xml:11:5-20
+MERGED from [com.romainpiel.shimmer:library:1.4.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\de4e6db121260ed6ac82bdd390072a47\jetified-library-1.4.0\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\520f47f6ccac385eaf0cf60d98f309c3\jetified-play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\520f47f6ccac385eaf0cf60d98f309c3\jetified-play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\bb89cb2b1813eb5be23b41a1d6b15587\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
@@ -124,124 +127,132 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\La
 		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:23:9-44
 	android:name
 		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:13:9-38
+activity#com.app.addviu.view.activity.ProfilePage
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:9-72
+	android:name
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:19-60
+activity#com.app.addviu.view.activity.NotificationActivity
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:27:9-72
+	android:name
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:27:19-69
 activity#com.app.addviu.view.activity.MyVideos
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:9-69
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:9-60
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:19-57
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:19-57
 activity#com.app.addviu.view.activity.SideMenuVid
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:27:9-63
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:29:9-63
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:27:19-60
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:29:19-60
 activity#com.app.addviu.view.activity.Playlistpage
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:9-64
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:9-64
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:19-61
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:19-61
 activity#com.app.addviu.view.activity.AddVideoPlaylist
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:29:9-68
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:31:9-68
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:29:19-65
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:31:19-65
 activity#com.app.addviu.view.activity.ChannelPage
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:9-63
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:32:9-63
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:19-60
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:32:19-60
 activity#com.app.addviu.view.activity.CreateChannelScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:31:9-71
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:33:9-71
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:31:19-68
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:33:19-68
 activity#com.app.addviu.view.activity.MyChannels
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:32:9-34:55
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:34:9-36:55
 	android:windowSoftInputMode
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:34:13-52
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:36:13-52
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:33:13-53
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:35:13-53
 activity#com.app.addviu.view.activity.VideoPlayerScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:35:9-37:62
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:37:9-39:62
 	android:configChanges
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:37:13-59
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:39:13-59
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:36:13-60
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:38:13-60
 activity#com.app.addviu.view.activity.VideoUploadScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:38:9-69
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:9-69
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:38:19-66
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:19-66
 activity#com.app.addviu.view.activity.ForgotScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:39:9-64
-	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:39:19-61
-activity#com.app.addviu.view.activity.SignInScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:9-64
-	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:19-61
-activity#com.app.addviu.view.activity.SignUpScreen
 ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:41:9-64
 	android:name
 		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:41:19-61
+activity#com.app.addviu.view.activity.SignInScreen
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:42:9-64
+	android:name
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:42:19-61
+activity#com.app.addviu.view.activity.SignUpScreen
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:43:9-64
+	android:name
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:43:19-61
 activity#com.app.addviu.view.activity.HomeScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:42:9-44:62
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:44:9-46:62
 	android:configChanges
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:44:13-59
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:46:13-59
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:43:13-53
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:45:13-53
 activity#com.app.addviu.view.activity.RewardsScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:45:9-65
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:47:9-65
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:45:19-62
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:47:19-62
 activity#com.app.addviu.view.activity.SplashScreen
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:46:9-52:20
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:9-54:20
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:46:19-61
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:19-61
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:47:13-51:29
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:17-69
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:25-66
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:17-77
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:27-74
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:52:27-74
 provider#androidx.core.content.FileProvider
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:54:9-62:20
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:56:9-64:20
 	android:grantUriPermissions
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:58:13-47
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:60:13-47
 	android:authorities
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:56:13-66
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:58:13-66
 	android:exported
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:57:13-37
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:59:13-37
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:55:13-62
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:57:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:59:13-61:58
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:61:13-63:58
 	android:resource
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:61:17-55
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:63:17-55
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:60:17-67
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:62:17-67
 meta-data#preloaded_fonts
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:64:9-66:57
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:66:9-68:57
 	android:resource
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:66:13-54
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:68:13-54
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:65:13-43
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:67:13-43
 provider#com.app.addviu.data.helper.LocalStorageProvider
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:68:9-78:20
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:70:9-80:20
 	android:grantUriPermissions
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:73:13-47
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:75:13-47
 	android:enabled
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:71:13-49
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:73:13-49
 	android:authorities
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:70:13-72
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:72:13-72
 	android:exported
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:72:13-36
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:74:13-36
 	android:permission
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:74:13-69
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:76:13-69
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:69:13-61
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:71:13-61
 intent-filter#action:name:android.content.action.DOCUMENTS_PROVIDER
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:75:13-77:29
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:77:13-79:29
 action#android.content.action.DOCUMENTS_PROVIDER
-ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:76:17-84
+ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:78:17-84
 	android:name
-		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:76:25-81
+		ADDED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:78:25-81
 uses-sdk
 INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml
@@ -262,6 +273,8 @@ MERGED from [com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\
 MERGED from [com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\ae6b0bf9d0e0acd0b1476e953fd63e46\jetified-exoplayer-core-2.11.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\ae6b0bf9d0e0acd0b1476e953fd63e46\jetified-exoplayer-core-2.11.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.romainpiel.shimmer:library:1.4.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\de4e6db121260ed6ac82bdd390072a47\jetified-library-1.4.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.romainpiel.shimmer:library:1.4.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\de4e6db121260ed6ac82bdd390072a47\jetified-library-1.4.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\633e1b68c1496aecff78683fb7fa6127\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\633e1b68c1496aecff78683fb7fa6127\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\dabfaec9f1bd032269e80f944f80fd61\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41

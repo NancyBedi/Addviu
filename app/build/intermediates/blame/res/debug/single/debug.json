@@ -256,6 +256,10 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\circle_shape.xml"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_no_data.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_no_data.xml"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_google.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xhdpi\\google.png"
     },
@@ -504,6 +508,10 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\highly_view.png"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_purple.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_edit_purple.xml"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_curved_white.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\curved_white.xml"
     },
@@ -546,6 +554,10 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_reward.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-mdpi\\reward.png"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_right.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_arrow_right.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_share.png.flat",
@@ -630,6 +642,10 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_circle_user.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\circle_user.png"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_dummy_bnr.jpg.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\dummy_bnr.jpg"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_video_upload_screen.xml.flat",

@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/margin_150"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_launcher_background"
+        app:srcCompat="@drawable/dummy_bnr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +58,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
+        android:id="@+id/userName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         style="@style/text_view_14_style"
@@ -99,10 +100,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/margin_10"
-        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_white_24dp"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
         tools:ignore="ContentDescription" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -110,10 +111,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/margin_10"
-        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_file_upload_white_24dp"
+        app:srcCompat="@drawable/ic_file_upload_black_24dp"
         tools:ignore="ContentDescription" />
 
 

@@ -123,44 +123,6 @@ class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(
             .displayer(RoundedBitmapDisplayer(250)).build()
     }
 
-    fun saveBitmapToFile(file: File): File? {
-        return try {
-            // BitmapFactory options to downsize the image
-            val o = BitmapFactory.Options()
-            o.inJustDecodeBounds = true
-            o.inSampleSize = 6
-            // factor of downsizing the image
-            var inputStream = FileInputStream(file)
-            //Bitmap selectedBitmap = null;
-            BitmapFactory.decodeStream(inputStream, null, o)
-            inputStream.close()
-
-            // The new size we want to scale to
-            val REQUIRED_SIZE = 75
-
-            // Find the correct scale value. It should be the power of 2.
-            var scale = 1
-            while (o.outWidth / scale / 2 >= REQUIRED_SIZE &&
-                o.outHeight / scale / 2 >= REQUIRED_SIZE
-            ) {
-                scale *= 2
-            }
-            val o2 = BitmapFactory.Options()
-            o2.inSampleSize = scale
-            inputStream = FileInputStream(file)
-            val selectedBitmap = BitmapFactory.decodeStream(inputStream, null, o2)
-            inputStream.close()
-
-            // here i override the original image file
-            file.createNewFile()
-            val outputStream = FileOutputStream(file)
-            selectedBitmap!!.compress(Bitmap.CompressFormat.JPEG, 50, outputStream)
-            file
-        } catch (e: java.lang.Exception) {
-            null
-        }
-    }
-
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 //        super.onActivityResult(requestCode, resultCode, data)
@@ -171,7 +133,7 @@ class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(
             REQUEST_GALLERY_IMAGE -> try {
                 selectedImage = data?.data
                 val file = File(RealPathUtil.getRealPath(activity, selectedImage))
-                imageFile = saveBitmapToFile(file)!!
+                imageFile = Util.saveBitmapToFile(file)!!
                 if (type.equals("channelImg")){
                     imageLoader.displayImage(selectedImage.toString(), channelImg, circleProfilePic())
                     updateChannelImage()

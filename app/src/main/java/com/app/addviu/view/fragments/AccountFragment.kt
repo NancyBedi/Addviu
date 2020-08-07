@@ -45,21 +45,6 @@ AccountFragment : BaseFragment(), ResponseCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textName.text = sharedPrefsHelper?.get(USER_NAME,"")
-        if (sharedPrefsHelper?.get(USER_IMAGE, "")!!.isNotEmpty()) {
-            imageLoader.displayImage(
-                sharedPrefsHelper?.get(USER_IMAGE, ""),
-                userImage,
-                roundProfilePic()
-            )
-        }else{
-            imageLoader.displayImage(
-                "drawable://"+ R.drawable.circle_user,
-                userImage,
-                roundProfilePic()
-            )
-        }
-
         val arrayList = ArrayList<AccountData>()
 
         arrayList.add(AccountData(R.drawable.television,"My Channels"))
@@ -95,5 +80,23 @@ AccountFragment : BaseFragment(), ResponseCallback {
         val intent = Intent(context, HomeScreen::class.java)
         context?.startActivity(intent)
         (context as HomeScreen).finish()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        textName.text = sharedPrefsHelper?.get(USER_NAME,"")
+        if (sharedPrefsHelper?.get(USER_IMAGE, "")!!.isNotEmpty()) {
+            imageLoader.displayImage(
+                sharedPrefsHelper?.get(USER_IMAGE, ""),
+                userImage,
+                roundProfilePic()
+            )
+        }else{
+            imageLoader.displayImage(
+                "drawable://"+ R.drawable.circle_user,
+                userImage,
+                roundProfilePic()
+            )
+        }
     }
 }

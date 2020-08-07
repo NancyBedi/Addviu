@@ -17,6 +17,7 @@ import com.app.addviu.data.helper.CHANGE_HOME_DATA
 import com.app.addviu.model.homeModel.HomeBean
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.homeModel.TrendingBean
+import com.app.addviu.model.homeVideoModel.HomeVideoBean
 import com.app.addviu.model.relatedModel.RelatedVideo
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.adapter.HomeListAdapter
@@ -123,11 +124,11 @@ class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallba
             lastPage = t.data.lastPage
             visibleThreshold = t.data.perPage
             setDataInList(t.data.data)
-        } else if (t is HomeBean) {
-//            totalItemsAvailable = t.data.total
-//            lastPage = t.data.lastPage
-//            visibleThreshold = t.data.perPage
-            setDataInList(t.data)
+        } else if (t is HomeVideoBean) {
+            totalItemsAvailable = t.success.total
+            lastPage = t.success.lastPage
+            visibleThreshold = t.success.perPage
+            setDataInList(t.success.data)
         }
     }
 
@@ -165,7 +166,8 @@ class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallba
             context.editSearch.visibility = View.GONE
             context.textView.visibility = View.VISIBLE
             context.editSearch.setText("")
-            AppController.instance?.dataManager?.getTrendingVideoData(1, this, activity)
+            loadFirstPage()
+//            AppController.instance?.dataManager?.getTrendingVideoData(1, this, activity)
         }
     }
 

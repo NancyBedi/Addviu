@@ -14,6 +14,7 @@ import com.app.addviu.model.playlistDetailBean.PlaylistDetailBean
 import com.app.addviu.model.relatedModel.CommentsBean
 import com.app.addviu.model.relatedModel.RelatedVideoBean
 import com.app.addviu.model.subscribedChannel.SubscribedChannelBean
+import com.app.addviu.model.userDetailModel.UserDetailBean
 import com.app.addviu.model.userModel.SignInBean
 import com.app.addviu.model.userModel.SignUpBean
 import com.app.addviu.model.videoModel.*
@@ -80,6 +81,10 @@ interface WebServices {
     @POST("user/details")
     fun getUserDetails(): Call<TrendingBean>
 
+    @POST("userDetails")
+    fun userDetails(): Call<UserDetailBean>
+
+
     @POST("logout")
     fun logout(): Call<CommonSuccess>
 
@@ -120,6 +125,12 @@ interface WebServices {
 
     @POST("updateChannelBanner/{channel_id}")
     fun updateChannelBanner(@Path("channel_id") channel_id: String, @Body requestBody: RequestBody): Call<SignUpBean>
+
+    @POST("users/updateImage")
+    fun updateImage(@Body requestBody: RequestBody): Call<SignUpBean>
+
+    @POST("users/updateBanner")
+    fun updateBanner(@Body requestBody: RequestBody): Call<SignUpBean>
 
     @POST("removeChannelBanner/{channel_id}")
     fun removeChannelBanner(@Path("channel_id") channel_id: String): Call<SignUpBean>
@@ -181,10 +192,19 @@ interface WebServices {
     fun createComment(@Path("uid") uid: String,@Body map: HashMap<String, String>): Call<SignUpBean>
 
     @POST("search")
-    fun search(@Body map: HashMap<String, String>): Call<HomeBean>
+    fun search(@Body map: HashMap<String, String>): Call<HomeVideoBean>
+
+    @POST("users/removeImage")
+    fun removeImage(@Body map: HashMap<String, String>): Call<CommonSuccess>
+
+    @POST("users/removeBanner")
+    fun removeBanner(@Body map: HashMap<String, String>): Call<CommonSuccess>
 
     @POST("search")
     fun searchTrend(@Body map: HashMap<String, String>): Call<TrendingBean>
+
+    @POST("userUpdate")
+    fun userUpdate(@Body map: HashMap<String, String>): Call<CommonSuccess>
 
     @POST("userSubscribedChannels")
     fun userSubscribedChannels(@Body map: HashMap<String, String>): Call<SubscribedChannelBean>

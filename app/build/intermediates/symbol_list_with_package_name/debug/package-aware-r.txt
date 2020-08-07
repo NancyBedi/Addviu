@@ -1447,6 +1447,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable dislike_grey
 drawable dislike_purpule
+drawable dummy_bnr
 drawable exo_controls_fastforward
 drawable exo_controls_fullscreen_enter
 drawable exo_controls_fullscreen_exit
@@ -1498,6 +1499,7 @@ drawable ic_arrow_back_black_24dp
 drawable ic_arrow_back_grey_36dp
 drawable ic_arrow_back_white
 drawable ic_arrow_drop_down_purple_36dp
+drawable ic_arrow_right
 drawable ic_arrow_white_24dp
 drawable ic_baseline_search_24
 drawable ic_calendar_black_24dp
@@ -1507,6 +1509,7 @@ drawable ic_close_grey_36dp
 drawable ic_close_white_24dp
 drawable ic_edit_black_24dp
 drawable ic_edit_icon
+drawable ic_edit_purple
 drawable ic_file_upload_black_24dp
 drawable ic_file_upload_white_24dp
 drawable ic_fullscreen_exit_white_36dp
@@ -1528,6 +1531,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_nav_icon
+drawable ic_no_data
 drawable ic_notifications_purpule_24dp
 drawable ic_only_logo
 drawable ic_photo_camera_white_24dp
@@ -1763,6 +1767,7 @@ id duration
 id edit
 id editBanner
 id editImage
+id editProfile
 id editSearch
 id edit_query
 id emailEditText
@@ -2075,6 +2080,8 @@ id transition_transform
 id trendingMenu
 id txtAbout
 id txtDesc
+id txtNoSubscriber
+id txtRec
 id txtSignup
 id txtVid
 id txtVideo
@@ -2092,6 +2099,7 @@ id uploadVideoLayout
 id useLogo
 id userCamera
 id userImage
+id userName
 id vidLay
 id videoContainer
 id videoExampleLayout

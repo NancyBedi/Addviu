@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/margin_150"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_launcher_background"
+        app:srcCompat="@drawable/dummy_bnr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

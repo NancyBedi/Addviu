@@ -344,6 +344,32 @@ open class Util {
             return folder.absolutePath
         }
 
+        fun selectDate(editText: EditText, context: Context) {
+            val calendar = Calendar.getInstance()
+            val year1 = calendar.get(Calendar.YEAR)
+            val month2 = calendar.get(Calendar.MONTH)
+            val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+            val datePickerDialog = DatePickerDialog(
+                context,
+                DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
+                    var month1 = month
+                    var mDay = day.toString()
+                    month1 += 1
+                    var mnth = month1.toString()
+                    if (mDay.length == 1) {
+                        mDay = "0$mDay"
+                    }
+                    if (mnth.length == 1) {
+                        mnth = "0$mnth"
+                    }
+                    editText.setText("$mDay/$mnth/$year")
+
+                }, year1, month2, dayOfMonth
+            )
+//        datePickerDialog.datePicker.minDate = System.currentTimeMillis()
+            datePickerDialog.show()
+        }
+
         fun showDatePickerDialog(context: Context, dateEditText: EditText, ageEditText: EditText) {
             val c = Calendar.getInstance()
             val year = c.get(Calendar.YEAR)

@@ -54,7 +54,7 @@ class SubscribedChannelAdapter(
         holder.channelName.text = data.channelName
         holder.txtsubscriber.text = "${data.subscribers} Subscribers"
         holder.txtVideo.text = "${data.noOfVideos} Videos"
-        if (data.coverImage.isEmpty()) {
+        if (data.coverImage.isNullOrEmpty()) {
             imageLoader.displayImage(
                 "drawable://" + R.drawable.circle_user,
                 holder.channelImage,

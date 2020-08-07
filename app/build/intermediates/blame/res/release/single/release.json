@@ -1,19 +1,19 @@
 [
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_like_purpule.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\like_purpule.png"
-    },
-    {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_google.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xhdpi\\google.png"
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_highly_view.png.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\highly_view.png"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_pattern.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\pattern.png"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_highly_view.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\highly_view.png"
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_google.png.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xhdpi\\google.png"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_like_purpule.png.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\like_purpule.png"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_recycle_playlist_item.xml.flat",
@@ -22,6 +22,14 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_file_upload_white_24dp.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_file_upload_white_24dp.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_item_progress.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\item_progress.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_only_logo.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_only_logo.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_dialog_new_playlist.xml.flat",
@@ -40,12 +48,12 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_forgot_screen.xml"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_delete_icon.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\delete_icon.png"
-    },
-    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_suggest.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\suggest.png"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_delete_icon.png.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\delete_icon.png"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_comedy.png.flat",
@@ -152,16 +160,24 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\navigation_header.xml"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_my_profile.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_my_profile.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_item_list.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\item_list.xml"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_no_img.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\no_img.png"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_women.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\women.png"
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_error_layout.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\error_layout.xml"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_women.png.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\women.png"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_comedy.png.flat",
@@ -208,12 +224,20 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\button_style_bg.xml"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_no_data.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_no_data.xml"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_fullscreen_exit_white_36dp.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_fullscreen_exit_white_36dp.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_playlistpage.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_playlistpage.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_subscribed_channel_fragment.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\subscribed_channel_fragment.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_related_video_adapter.xml.flat",
@@ -260,6 +284,10 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xhdpi\\facebook.png"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_purple_circle.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\purple_circle.xml"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\font_poppins.ttf.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\font\\poppins.ttf"
     },
@@ -304,16 +332,16 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_my_channels.xml"
     },
     {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\menu_main_nav_menu.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\menu\\main_nav_menu.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_close_grey_36dp.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_close_grey_36dp.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_main.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_sign_up_screen.xml.flat",
@@ -420,6 +448,10 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\purple_image_button.xml"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_dummy_bnr.jpg.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xxhdpi\\dummy_bnr.jpg"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_channel_about_fragment.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\channel_about_fragment.xml"
     },
@@ -446,6 +478,18 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_account_fragment_layout.xml.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\account_fragment_layout.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_notification.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\activity_notification.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_edit_purple.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_edit_purple.xml"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_recycle_notify_item.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\recycle_notify_item.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_rewards_screen.xml.flat",
@@ -504,6 +548,10 @@
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-xhdpi\\loading.png"
     },
     {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_arrow_right.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable\\ic_arrow_right.xml"
+    },
+    {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_image_icon.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-mdpi\\image_icon.png"
     },
@@ -518,10 +566,6 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_trending.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-mdpi\\trending.png"
-    },
-    {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_notifications_purpule_24dp.xml.flat",
@@ -558,14 +602,6 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_image_icon.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-hdpi\\image_icon.png"
-    },
-    {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_add_white_48dp.xml.flat",
@@ -666,6 +702,10 @@
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_signin.png.flat",
         "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\drawable-mdpi\\signin.png"
+    },
+    {
+        "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_item_hero.xml.flat",
+        "source": "F:\\Naxtre\\AddViu\\app\\src\\main\\res\\layout\\item_hero.xml"
     },
     {
         "merged": "F:\\Naxtre\\AddViu\\app\\build\\intermediates\\res\\merged\\release\\layout_recycle_channel_video_item.xml.flat",

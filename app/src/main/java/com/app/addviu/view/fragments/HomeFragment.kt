@@ -110,6 +110,7 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
             arrayList.clear()
         arrayList.addAll(homeList)
         homeAdapter?.notifyDataSetChanged()
+
         isLoading = false
     }
 
@@ -167,7 +168,7 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
             context.editSearch.visibility = GONE
             context.textView.visibility = VISIBLE
             context.editSearch.setText("")
-            loadFirstPage()
+//            loadFirstPage()
 //            AppController.instance?.dataManager?.getHomeVideoData(1,this, activity!!)
         }
 
