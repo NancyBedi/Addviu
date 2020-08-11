@@ -12,6 +12,7 @@ import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.model.homeModel.AccountData
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.MyChannels
+import com.app.addviu.view.activity.ProfilePage
 import com.app.addviu.view.activity.SignInScreen
 import com.app.addviu.view.fragments.AccountFragment
 import com.app.addviu.view.viewInterface.YesClick
@@ -67,6 +68,8 @@ class AccountListAdapter(private val imageLoader: ImageLoader,
             val data = mainList[adapterPosition]
             if(data.title == "My Channels"){
                 context.startActivity(Intent(context,MyChannels::class.java))
+            }else if(data.title == "My Profile"){
+                context.startActivity(Intent(context,ProfilePage::class.java))
             }else if(data.title == "Logout"){
                 Util.showDeleteDialog(context,"Are you sure you want to logout ?", this@AccountListAdapter)
             }

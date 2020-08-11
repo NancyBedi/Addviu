@@ -36,7 +36,7 @@ class ProfilePresenter (val context: Context): ResponseCallback, ProfileInterfac
                         context.roundProfilePic()
                     )
                 }else{
-                    (context as ProfilePage).imageLoader.displayImage(t.data.avatar, context.userImage)
+                    (context as ProfilePage).imageLoader.displayImage(t.data.avatar, context.userImage, context.roundProfilePic())
                 }
                 if(t.data.banner.isNullOrEmpty()){
                     (context as ProfilePage).imageLoader.displayImage(

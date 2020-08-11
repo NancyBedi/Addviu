@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.addviu"
-    android:versionCode="2"
-    android:versionName="1.01" >
+    android:versionCode="4"
+    android:versionName="1.03" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -29,28 +29,54 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.app.addviu.view.activity.ProfilePage" />
-        <activity android:name="com.app.addviu.view.activity.NotificationActivity" />
-        <activity android:name="com.app.addviu.view.activity.MyVideos" />
-        <activity android:name="com.app.addviu.view.activity.SideMenuVid" />
-        <activity android:name="com.app.addviu.view.activity.Playlistpage" />
-        <activity android:name="com.app.addviu.view.activity.AddVideoPlaylist" />
-        <activity android:name="com.app.addviu.view.activity.ChannelPage" />
-        <activity android:name="com.app.addviu.view.activity.CreateChannelScreen" />
+        <activity
+            android:name="com.app.addviu.view.activity.ProfilePage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.MyVideos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.SideMenuVid"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.Playlistpage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.AddVideoPlaylist"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.ChannelPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.CreateChannelScreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.app.addviu.view.activity.MyChannels"
             android:windowSoftInputMode="adjustPan" /> <!-- <activity android:name=".view.activity.CommentsScreen" /> -->
         <activity
             android:name="com.app.addviu.view.activity.VideoPlayerScreen"
             android:configChanges="screenSize|orientation" />
-        <activity android:name="com.app.addviu.view.activity.VideoUploadScreen" />
-        <activity android:name="com.app.addviu.view.activity.ForgotScreen" />
-        <activity android:name="com.app.addviu.view.activity.SignInScreen" />
-        <activity android:name="com.app.addviu.view.activity.SignUpScreen" />
+        <activity
+            android:name="com.app.addviu.view.activity.VideoUploadScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.ForgotScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.SignInScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.addviu.view.activity.SignUpScreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.app.addviu.view.activity.HomeScreen"
             android:configChanges="screenSize|orientation" />
-        <activity android:name="com.app.addviu.view.activity.RewardsScreen" />
+        <activity
+            android:name="com.app.addviu.view.activity.RewardsScreen"
+            android:screenOrientation="portrait" />
         <activity android:name="com.app.addviu.view.activity.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

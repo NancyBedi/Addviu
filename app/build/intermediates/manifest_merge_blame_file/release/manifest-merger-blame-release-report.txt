@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.app.addviu"
-4    android:versionCode="2"
-5    android:versionName="1.01" >
+4    android:versionCode="4"
+5    android:versionName="1.03" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
@@ -27,7 +27,7 @@
 15-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:10:22-77
 16
 17    <application
-17-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:12:5-81:19
+17-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:12:5-94:19
 18        android:name="com.app.addviu.AppController"
 18-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:13:9-38
 19        android:allowBackup="false"
@@ -52,137 +52,176 @@
 28-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:22:9-40
 29        android:usesCleartextTraffic="true" >
 29-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:23:9-44
-30        <activity android:name="com.app.addviu.view.activity.ProfilePage" />
-30-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:9-72
-30-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:19-60
-31        <activity android:name="com.app.addviu.view.activity.NotificationActivity" />
-31-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:27:9-72
-31-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:27:19-69
-32        <activity android:name="com.app.addviu.view.activity.MyVideos" />
-32-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:9-60
-32-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:19-57
-33        <activity android:name="com.app.addviu.view.activity.SideMenuVid" />
-33-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:29:9-63
-33-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:29:19-60
-34        <activity android:name="com.app.addviu.view.activity.Playlistpage" />
-34-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:9-64
-34-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:19-61
-35        <activity android:name="com.app.addviu.view.activity.AddVideoPlaylist" />
-35-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:31:9-68
-35-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:31:19-65
-36        <activity android:name="com.app.addviu.view.activity.ChannelPage" />
-36-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:32:9-63
-36-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:32:19-60
-37        <activity android:name="com.app.addviu.view.activity.CreateChannelScreen" />
-37-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:33:9-71
-37-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:33:19-68
-38        <activity
-38-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:34:9-36:55
-39            android:name="com.app.addviu.view.activity.MyChannels"
-39-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:35:13-53
-40            android:windowSoftInputMode="adjustPan" /> <!-- <activity android:name=".view.activity.CommentsScreen" /> -->
-40-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:36:13-52
-41        <activity
-41-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:37:9-39:62
-42            android:name="com.app.addviu.view.activity.VideoPlayerScreen"
-42-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:38:13-60
-43            android:configChanges="screenSize|orientation" />
-43-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:39:13-59
-44        <activity android:name="com.app.addviu.view.activity.VideoUploadScreen" />
-44-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:9-69
-44-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:19-66
-45        <activity android:name="com.app.addviu.view.activity.ForgotScreen" />
-45-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:41:9-64
-45-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:41:19-61
-46        <activity android:name="com.app.addviu.view.activity.SignInScreen" />
-46-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:42:9-64
-46-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:42:19-61
-47        <activity android:name="com.app.addviu.view.activity.SignUpScreen" />
-47-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:43:9-64
-47-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:43:19-61
+30        <activity
+30-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:9-27:51
+31            android:name="com.app.addviu.view.activity.ProfilePage"
+31-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:26:19-60
+32            android:screenOrientation="portrait" />
+32-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:27:13-49
+33        <activity
+33-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:9-29:51
+34            android:name="com.app.addviu.view.activity.NotificationActivity"
+34-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:28:19-69
+35            android:screenOrientation="portrait" />
+35-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:29:13-49
+36        <activity
+36-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:9-31:51
+37            android:name="com.app.addviu.view.activity.MyVideos"
+37-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:30:19-57
+38            android:screenOrientation="portrait" />
+38-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:31:13-49
+39        <activity
+39-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:32:9-33:51
+40            android:name="com.app.addviu.view.activity.SideMenuVid"
+40-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:32:19-60
+41            android:screenOrientation="portrait" />
+41-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:33:13-49
+42        <activity
+42-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:34:9-35:51
+43            android:name="com.app.addviu.view.activity.Playlistpage"
+43-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:34:19-61
+44            android:screenOrientation="portrait" />
+44-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:35:13-49
+45        <activity
+45-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:36:9-37:51
+46            android:name="com.app.addviu.view.activity.AddVideoPlaylist"
+46-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:36:19-65
+47            android:screenOrientation="portrait" />
+47-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:37:13-49
 48        <activity
-48-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:44:9-46:62
-49            android:name="com.app.addviu.view.activity.HomeScreen"
-49-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:45:13-53
-50            android:configChanges="screenSize|orientation" />
-50-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:46:13-59
-51        <activity android:name="com.app.addviu.view.activity.RewardsScreen" />
-51-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:47:9-65
-51-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:47:19-62
-52        <activity android:name="com.app.addviu.view.activity.SplashScreen" >
-52-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:9-54:20
-52-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:19-61
-53            <intent-filter>
-53-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:49:13-53:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:17-69
-54-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:52:17-77
-56-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:52:27-74
-57            </intent-filter>
-58        </activity>
-59
-60        <provider
-60-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:56:9-64:20
-61            android:name="androidx.core.content.FileProvider"
-61-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:57:13-62
-62            android:authorities="@string/file_provider_authority"
-62-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:58:13-66
-63            android:exported="false"
-63-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:59:13-37
-64            android:grantUriPermissions="true" >
-64-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:60:13-47
-65            <meta-data
-65-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:61:13-63:58
-66                android:name="android.support.FILE_PROVIDER_PATHS"
-66-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:62:17-67
-67                android:resource="@xml/provider_paths" />
-67-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:63:17-55
-68        </provider>
-69
-70        <meta-data
-70-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:66:9-68:57
-71            android:name="preloaded_fonts"
-71-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:67:13-43
-72            android:resource="@array/preloaded_fonts" />
-72-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:68:13-54
-73
-74        <provider
-74-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:70:9-80:20
-75            android:name="com.app.addviu.data.helper.LocalStorageProvider"
-75-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:71:13-61
-76            android:authorities="com.app.addviu.localstorage.documents"
-76-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:72:13-72
-77            android:enabled="@bool/use_provider"
-77-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:73:13-49
-78            android:exported="true"
-78-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:74:13-36
-79            android:grantUriPermissions="true"
-79-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:75:13-47
-80            android:permission="android.permission.MANAGE_DOCUMENTS" >
-80-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:76:13-69
-81            <intent-filter>
-81-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:77:13-79:29
-82                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
-82-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:78:17-84
-82-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:78:25-81
+48-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:38:9-39:51
+49            android:name="com.app.addviu.view.activity.ChannelPage"
+49-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:38:19-60
+50            android:screenOrientation="portrait" />
+50-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:39:13-49
+51        <activity
+51-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:9-41:51
+52            android:name="com.app.addviu.view.activity.CreateChannelScreen"
+52-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:40:19-68
+53            android:screenOrientation="portrait" />
+53-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:41:13-49
+54        <activity
+54-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:42:9-44:55
+55            android:name="com.app.addviu.view.activity.MyChannels"
+55-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:43:13-53
+56            android:windowSoftInputMode="adjustPan" /> <!-- <activity android:name=".view.activity.CommentsScreen" /> -->
+56-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:44:13-52
+57        <activity
+57-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:45:9-47:62
+58            android:name="com.app.addviu.view.activity.VideoPlayerScreen"
+58-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:46:13-60
+59            android:configChanges="screenSize|orientation" />
+59-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:47:13-59
+60        <activity
+60-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:9-49:51
+61            android:name="com.app.addviu.view.activity.VideoUploadScreen"
+61-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:48:19-66
+62            android:screenOrientation="portrait" />
+62-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:49:13-49
+63        <activity
+63-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:9-51:51
+64            android:name="com.app.addviu.view.activity.ForgotScreen"
+64-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:50:19-61
+65            android:screenOrientation="portrait" />
+65-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:51:13-49
+66        <activity
+66-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:52:9-53:51
+67            android:name="com.app.addviu.view.activity.SignInScreen"
+67-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:52:19-61
+68            android:screenOrientation="portrait" />
+68-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:53:13-49
+69        <activity
+69-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:54:9-55:51
+70            android:name="com.app.addviu.view.activity.SignUpScreen"
+70-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:54:19-61
+71            android:screenOrientation="portrait" />
+71-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:55:13-49
+72        <activity
+72-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:56:9-58:62
+73            android:name="com.app.addviu.view.activity.HomeScreen"
+73-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:57:13-53
+74            android:configChanges="screenSize|orientation" />
+74-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:58:13-59
+75        <activity
+75-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:59:9-60:51
+76            android:name="com.app.addviu.view.activity.RewardsScreen"
+76-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:59:19-62
+77            android:screenOrientation="portrait" />
+77-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:60:13-49
+78        <activity android:name="com.app.addviu.view.activity.SplashScreen" >
+78-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:61:9-67:20
+78-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:61:19-61
+79            <intent-filter>
+79-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:62:13-66:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:63:17-69
+80-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:63:25-66
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:65:17-77
+82-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:65:27-74
 83            </intent-filter>
-84        </provider>
+84        </activity>
 85
-86        <meta-data
-86-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:25:9-27:36
-87            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-87-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:26:13-69
-88            android:value="true" />
-88-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:27:13-33
-89        <meta-data
-89-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:28:9-30:69
-90            android:name="com.google.android.gms.version"
-90-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:29:13-58
-91            android:value="@integer/google_play_services_version" />
-91-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:30:13-66
-92    </application>
-93
-94</manifest>
+86        <provider
+86-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:69:9-77:20
+87            android:name="androidx.core.content.FileProvider"
+87-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:70:13-62
+88            android:authorities="@string/file_provider_authority"
+88-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:71:13-66
+89            android:exported="false"
+89-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:72:13-37
+90            android:grantUriPermissions="true" >
+90-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:73:13-47
+91            <meta-data
+91-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:74:13-76:58
+92                android:name="android.support.FILE_PROVIDER_PATHS"
+92-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:75:17-67
+93                android:resource="@xml/provider_paths" />
+93-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:76:17-55
+94        </provider>
+95
+96        <meta-data
+96-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:79:9-81:57
+97            android:name="preloaded_fonts"
+97-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:80:13-43
+98            android:resource="@array/preloaded_fonts" />
+98-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:81:13-54
+99
+100        <provider
+100-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:83:9-93:20
+101            android:name="com.app.addviu.data.helper.LocalStorageProvider"
+101-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:84:13-61
+102            android:authorities="com.app.addviu.localstorage.documents"
+102-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:85:13-72
+103            android:enabled="@bool/use_provider"
+103-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:86:13-49
+104            android:exported="true"
+104-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:87:13-36
+105            android:grantUriPermissions="true"
+105-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:88:13-47
+106            android:permission="android.permission.MANAGE_DOCUMENTS" >
+106-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:89:13-69
+107            <intent-filter>
+107-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:90:13-92:29
+108                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+108-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:91:17-84
+108-->F:\Naxtre\AddViu\app\src\main\AndroidManifest.xml:91:25-81
+109            </intent-filter>
+110        </provider>
+111
+112        <meta-data
+112-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:25:9-27:36
+113            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+113-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:26:13-69
+114            android:value="true" />
+114-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:27:13-33
+115        <meta-data
+115-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:28:9-30:69
+116            android:name="com.google.android.gms.version"
+116-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:29:13-58
+117            android:value="@integer/google_play_services_version" />
+117-->[com.google.android.exoplayer:extension-ima:2.11.1] C:\Users\Laptop\.gradle\caches\transforms-2\files-2.1\0c7ee574aaa550d5d440db809788045f\jetified-extension-ima-2.11.1\AndroidManifest.xml:30:13-66
+118    </application>
+119
+120</manifest>

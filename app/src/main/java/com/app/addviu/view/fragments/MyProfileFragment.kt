@@ -50,13 +50,23 @@ class MyProfileFragment:BaseFragment(), ResponseCallback, View.OnClickListener {
     override fun <T> success(t: T) {
         if (t is UserDetailBean){
             if (t.status == 1){
-                savedData = t.data
-                (context as ProfilePage).userName.text = t.data.name
-                nameEditText.setText(t.data.name)
-                contactEditText.setText(t.data.contact)
-                emailEditText.setText(t.data.email)
-                dobEditText.setText(t.data.dateOfBirth)
-                sharedPrefsHelper?.put(USER_NAME,t.data.name)
+                if (t.data != null) {
+                    savedData = t.data
+                    if (!t.data.name.isNullOrEmpty()) {
+                        (context as ProfilePage).userName.text = t.data.name
+                        nameEditText.setText(t.data.name)
+                        sharedPrefsHelper?.put(USER_NAME, t.data.name)
+                    }
+                    if (!t.data.contact.isNullOrEmpty()) {
+                        contactEditText.setText(t.data.contact)
+                    }
+                    if (!t.data.email.isNullOrEmpty()){
+                        emailEditText.setText(t.data.email)
+                    }
+                    if (!t.data.dateOfBirth.isNullOrEmpty()) {
+                        dobEditText.setText(t.data.dateOfBirth)
+                    }
+                }
             }else{
                 Util.showToast("Service Error Occurred please try again later", activity!!)
             }

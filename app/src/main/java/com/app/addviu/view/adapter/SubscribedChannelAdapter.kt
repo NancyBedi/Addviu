@@ -51,9 +51,15 @@ class SubscribedChannelAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mainList[position]
-        holder.channelName.text = data.channelName
-        holder.txtsubscriber.text = "${data.subscribers} Subscribers"
-        holder.txtVideo.text = "${data.noOfVideos} Videos"
+        if(!data.channelName.isNullOrEmpty()) {
+            holder.channelName.text = data.channelName
+        }
+        if (data.subscribers != null) {
+            holder.txtsubscriber.text = "${data.subscribers} Subscribers"
+        }
+        if (data.noOfVideos != null) {
+            holder.txtVideo.text = "${data.noOfVideos} Videos"
+        }
         if (data.coverImage.isNullOrEmpty()) {
             imageLoader.displayImage(
                 "drawable://" + R.drawable.circle_user,

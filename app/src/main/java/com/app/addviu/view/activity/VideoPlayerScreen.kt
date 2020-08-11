@@ -2,17 +2,18 @@ package com.app.addviu.view.activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Color
+import android.media.AudioManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.View.*
-import androidx.fragment.app.FragmentTransaction
 import com.app.addviu.R
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.relatedModel.RelatedVideo
@@ -47,13 +48,13 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
     private var dataSourceFactory: DataSource.Factory? = null
     private var videoPlayerPresenter: VideoPlayerPresenter? = null
     private var videoUid = ""
-    var relatedVideo:RelatedVideo?=null
+    var relatedVideo: RelatedVideo? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.video_player_layout)
-        videoUid = intent.getStringExtra("uid")?:""
+        videoUid = intent.getStringExtra("uid") ?: ""
         videoPlayerPresenter = VideoPlayerPresenter(this)
         initializePlayer()
         addFramgent()
@@ -85,7 +86,7 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
         addFramgent()
     }
 
-    fun vimeoExtraction(videoFilename:String) {
+    fun vimeoExtraction(videoFilename: String) {
         VimeoExtractor.getInstance()
             .fetchVideoWithURL(videoFilename, null, object : OnVimeoExtractionListener {
                 override fun onSuccess(video: VimeoVideo?) {
@@ -135,9 +136,9 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
                 )
             )
         mediaSourceFactory = ProgressiveMediaSource.Factory(dataSourceFactory)
-        player?.playWhenReady = true
-
-
+        if (requestAudioFocusForMyApp(this)) {
+            player?.playWhenReady = true
+        }
         // Create the MediaSource for the content you wish to play.
     }
 
@@ -175,6 +176,7 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
             intent.putExtra("data", relatedVideo)
             setResult(Activity.RESULT_OK, intent)
             super.onBackPressed()
+//            releaseAudioFocusForMyApp(this)
             overridePendingTransition(0, R.anim.top_to_bottom)
         }
     }
@@ -241,6 +243,31 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
                 videoExampleLayout.keepScreenOn = true
             }
         }
+    }
+
+    private fun requestAudioFocusForMyApp(context: Context): Boolean {
+        val am: AudioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+
+        // Request audio focus for playback
+        val result: Int = am.requestAudioFocus(
+            null,  // Use the music stream.
+            AudioManager.STREAM_MUSIC,  // Request permanent focus.
+            AudioManager.AUDIOFOCUS_GAIN
+        )
+        return if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+            Log.d("AudioFocus", "Audio focus received")
+            true
+        } else {
+            Log.d("AudioFocus", "Audio focus NOT received")
+            false
+        }
+    }
+
+
+    fun releaseAudioFocusForMyApp(context: Context) {
+        val am =
+            context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        am.abandonAudioFocus(null)
     }
 
 }

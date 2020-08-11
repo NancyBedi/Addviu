@@ -39,8 +39,8 @@ class MyChannelFragment:BaseFragment(), ResponseCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        if (isVisible){
-//            showList()
-//        }
+////            showList()
+////        }
     }
 
     override fun <T> success(t: T) {

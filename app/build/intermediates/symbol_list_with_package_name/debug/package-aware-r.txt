@@ -1544,6 +1544,7 @@ drawable logo_purple
 drawable logout
 drawable mask
 drawable message_icon
+drawable mprofile
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down

@@ -51,10 +51,16 @@ class ChannelListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mainList[position]
-        holder.channelName.text = data.channelName
-        holder.txtsubscriber.text = "${data.subscribers} Subscribers"
-        holder.txtVideo.text = "${data.no_of_videos} Videos"
-        if (data.coverImage.isEmpty()) {
+        if (!data.channelName.isNullOrEmpty()) {
+            holder.channelName.text = data.channelName
+        }
+        if (data.subscribers != null) {
+            holder.txtsubscriber.text = "${data.subscribers} Subscribers"
+        }
+        if (data.no_of_videos != null) {
+            holder.txtVideo.text = "${data.no_of_videos} Videos"
+        }
+        if (data.coverImage.isNullOrEmpty()) {
             imageLoader.displayImage(
                 "drawable://" + R.drawable.circle_user,
                 holder.channelImage,
@@ -63,11 +69,8 @@ class ChannelListAdapter(
         } else {
             imageLoader.displayImage(data.coverImage, holder.channelImage, roundProfilePic())
         }
-        holder.moreIcon.setOnClickListener {
-//            val wrapper =
-//                ContextThemeWrapper(context, R.style.PopupMenu)
-//            val popupMenu: PopupMenu = PopupMenu(wrapper,holder.moreIcon)
 
+        holder.moreIcon.setOnClickListener {
             val popupMenu: PopupMenu = PopupMenu(activity.activity, holder.moreIcon)
             popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
 
@@ -105,15 +108,12 @@ class ChannelListAdapter(
 
         override fun onClick(v: View?) {
             val data = mainList[adapterPosition]
-//            if(data.title == "My Channels"){
             val intent = Intent(context, ChannelPage::class.java)
-//            intent.putExtra("channelData", data)
             intent.putExtra("name",data.channelName)
             intent.putExtra("banner",data.banner)
             intent.putExtra("coverImg",data.coverImage)
             intent.putExtra("id",data.id.toString())
             context.startActivity(intent)
-//            }
         }
     }
 
@@ -130,8 +130,4 @@ class ChannelListAdapter(
             activity.activity
         )
     }
-
-//    fun getChannelData(){
-//        val channelData = ChannelData()
-//    }
 }

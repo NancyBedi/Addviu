@@ -178,12 +178,12 @@ class ProfilePage : BaseActivity(), View.OnClickListener, YesClick {
         builder.setType(MultipartBody.FORM)
         if (selectedImage?.path != null) {
             builder.addFormDataPart(
-                "cover_image",
+                "avatar",
                 imageFile.name,
                 imageFile.asRequestBody("multipart/form-data".toMediaTypeOrNull())
             )
         } else {
-            builder.addFormDataPart("cover_image", "")
+            builder.addFormDataPart("avatar", "")
         }
         builder.addFormDataPart("user_id", sharedPrefsHelper?.get(USER_ID, 0).toString())
         presenter.updateImage(builder)

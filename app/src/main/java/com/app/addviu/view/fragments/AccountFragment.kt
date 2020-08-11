@@ -47,6 +47,7 @@ AccountFragment : BaseFragment(), ResponseCallback {
 
         val arrayList = ArrayList<AccountData>()
 
+        arrayList.add(AccountData(R.drawable.mprofile,"My Profile"))
         arrayList.add(AccountData(R.drawable.television,"My Channels"))
 //        arrayList.add(AccountData(R.drawable.film,"My Videos"))
 //        arrayList.add(AccountData(R.drawable.question,"Help"))
