@@ -19,4 +19,7 @@ const val READ_PERMISSION_CODE = 101
 const val REQUEST_GALLERY_IMAGE = 102
 const val CHANGE_HOME_DATA = 103
 const val SIGN_IN_CODE = 104
+const val RC_SIGN_IN = 1
+const val FILTER = 301
+
 

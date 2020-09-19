@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3.1k Subscribers"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintLeft_toRightOf="@id/thumbnail"
         app:layout_constraintBottom_toBottomOf="@id/thumbnail"
         android:layout_marginStart="@dimen/margin_10"

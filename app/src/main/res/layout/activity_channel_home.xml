@@ -9,7 +9,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_50"
-        android:background="@color/tab_color"
+        android:background="@drawable/gradient_back"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -27,7 +27,7 @@
             android:id="@+id/textTitle"
             style="@style/text_view_14_style"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_16"
             android:layout_marginStart="@dimen/margin_5"
             android:layout_toEndOf="@+id/backImage"

@@ -62,5 +62,11 @@
     <string name="channel_desc">A Channel Description (also known as a “AddViu About Page”) is a brief outline of what type of content you publish on your channel. It appears on your Channel Page and in AddViu\'s search results. ... And a well-written Channel Description can also convert visitors into subscribers.</string>
     <string name="notifications">Notifications</string>
     <string name="error_msg_unknown">Retry</string>
+    <!--    <string name="client_id">934944287233-a6ar851eb3ja74v8m3umgi7lcg46ma3d.apps.googleusercontent.com</string>-->
+    <!--    <string name="client_id">934944287233-9ps8imq44tramfai71hqis9l4jm79mg8.apps.googleusercontent.com</string>-->
+    <string name="client_id">934944287233-9ps8imq44tramfai71hqis9l4jm79mg8.apps.googleusercontent.com</string>
+    <string name="client_secret">UaRwMxpQ0CkD750-YwevNfom</string>
+    <string name="_15_minutes"><![CDATA[< 15 minutes]]></string>
+    <string name="m15_minutes"><![CDATA[> 15 minutes]]></string>
 
 </resources>

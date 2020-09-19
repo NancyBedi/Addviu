@@ -43,8 +43,6 @@ class SideMenuVid : BaseActivity() {
             finish()
         }
         textTitle.text = title
-//        latestVidAdapter = LatestVidAdapter(imageLoader, arrayList, this)
-//        recyclerView.adapter = latestVidAdapter
 
         linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = linearLayoutManager

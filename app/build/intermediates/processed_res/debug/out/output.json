@@ -1,1 +1,28 @@
-[{"outputType":{"type":"PROCESSED_RES"},"apkData":{"type":"MAIN","splits":[],"versionCode":4,"versionName":"1.03","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug","dirName":""},"path":"resources-debug.ap_","properties":{"packageId":"com.app.addviu","split":"","minSdkVersion":"16"}}]
+{
+  "version": 1,
+  "applicationId": "com.app.addviu",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "PROCESSED_RES"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 6,
+        "versionName": "1.05",
+        "outputFile": "app-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "resources-debug.ap_",
+      "properties": {
+        "packageId": "com.app.addviu",
+        "split": "",
+        "minSdkVersion": "16"
+      }
+    }
+  ]
+}

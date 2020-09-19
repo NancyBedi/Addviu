@@ -36,6 +36,10 @@ class Notification {
     @Expose
     var channelName: String = ""
 
+    @SerializedName("channel_image")
+    @Expose
+    var channelImage: String = ""
+
     @SerializedName("notification_id")
     @Expose
     var notificationId = 0

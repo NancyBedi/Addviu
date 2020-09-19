@@ -12,4 +12,6 @@ import com.google.android.material.navigation.NavigationView
 interface HomeInterface {
 
     fun loadFragment(fragment: Fragment)
+
+    fun notificationCount()
 }

@@ -132,6 +132,7 @@ class MyProfileFragment:BaseFragment(), ResponseCallback, View.OnClickListener {
         map["password_confirmation"] = confirmPassEditText.text.toString()
         AppController.instance?.dataManager?.userUpdate(map, this, activity)
     }
+
     private fun checkValidation(): Boolean {
 
         if (Util.checkEmpty(nameEditText, "Name", activity!!)) {

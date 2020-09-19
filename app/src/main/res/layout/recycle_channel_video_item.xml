@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/margin_5"
+    android:background="@color/white"
     android:layout_marginBottom="@dimen/margin_10"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -60,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_10"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/roboto_regular"
         android:text="3.1k views"
         android:textColor="@color/dark_gray"
         android:textSize="12sp"

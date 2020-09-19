@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
+    android:background="@color/white"
     android:paddingTop="@dimen/margin_5"
     android:paddingBottom="@dimen/margin_5"
     android:layout_marginBottom="@dimen/margin_10">
@@ -47,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3.1k Subscribers"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/roboto_regular"
             android:textSize="@dimen/text_12"
             android:textColor="@color/dark_gray" />
 
@@ -58,7 +59,7 @@
             android:layout_height="wrap_content"
             android:text="0 Videos"
             android:textSize="@dimen/text_12"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/roboto_regular"
             android:textColor="@color/dark_gray" />
 
     </LinearLayout>

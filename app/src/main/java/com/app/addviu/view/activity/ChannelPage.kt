@@ -26,6 +26,7 @@ class ChannelPage : BaseActivity() {
     var banner = ""
     var coverImg = ""
     var isUserChannel = false
+    var fromNotify = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,7 @@ class ChannelPage : BaseActivity() {
 
         name = intent.getStringExtra("name")?:""
         channelId = intent.getStringExtra("id")?:""
+        fromNotify = intent.getBooleanExtra("fromNotify", false)
 //        banner = intent.getStringExtra("banner")?:""
 //        coverImg = intent.getStringExtra("coverImg")?:""
         isUserChannel = intent.getBooleanExtra("userChannel", false)
@@ -45,7 +47,7 @@ class ChannelPage : BaseActivity() {
 
         viewPager.setAdapter(adapter)
         tabLayout.setupWithViewPager(viewPager)
-        if (isUserChannel){
+        if (isUserChannel || fromNotify){
             viewPager.setCurrentItem(1, true)
         }
         backImage.setOnClickListener {

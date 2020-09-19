@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="3dp"
+    android:background="@color/white"
     app:cardPreventCornerOverlap="false">
 
     <ImageView

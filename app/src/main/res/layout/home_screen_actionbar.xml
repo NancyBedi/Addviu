@@ -6,9 +6,8 @@
     android:elevation="@dimen/margin_10"
     android:id="@+id/toolbar"
     android:layout_height="@dimen/margin_45"
-    android:background="@color/tab_color"
+    android:background="@drawable/gradient_back"
     tools:ignore="UnusedAttribute">
-
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/menuIcon"
@@ -35,6 +34,7 @@
         android:gravity="center_vertical"
         android:text="@string/ADDVIU"
         android:textSize="@dimen/text_20"
+        android:textColor="@color/white"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/uploadIcon"
@@ -99,7 +99,8 @@
         android:paddingTop="@dimen/margin_10"
         android:paddingBottom="@dimen/margin_10"
         android:paddingLeft="@dimen/margin_15"
-        android:paddingRight="@dimen/margin_15"        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingRight="@dimen/margin_15"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_file_upload_black_24dp" />

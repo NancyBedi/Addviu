@@ -11,12 +11,18 @@ import kotlinx.android.synthetic.main.activity_sign_up_screen.*
 
 class SignUpScreen : BaseActivity(), View.OnClickListener {
 
+    var name = ""
+    var email = ""
     private val signUpPresenter = SignUpPresenter(this)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_screen)
+        Util.fullScreen(this)
+        name = intent.getStringExtra("name")?:""
+        email = intent.getStringExtra("email")?:""
+        nameEditText.setText(name)
+        emailEditText.setText(email)
         val layoutParams = backImage.layoutParams as ConstraintLayout.LayoutParams
         layoutParams.topMargin = statusBarHeight
         setClickListeners()

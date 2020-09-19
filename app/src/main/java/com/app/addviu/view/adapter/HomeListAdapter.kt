@@ -32,8 +32,8 @@ import kotlinx.android.synthetic.main.video_player_layout.*
 class HomeListAdapter(
     private val imageLoader: ImageLoader,
     private var dashList: ArrayList<HomeData>,
-    val context: Context,val baseFragment: BaseFragment
-) :
+    val context: Context,val baseFragment: BaseFragment,
+    val type: String) :
     RecyclerView.Adapter<HomeListAdapter.ViewHolder>() {
 
     private var contactView: View? = null

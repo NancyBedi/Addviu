@@ -47,6 +47,10 @@ class DataManager(
         mServiceHandler.latesVideos(pageId, responseCallback, context)
     }
 
+    fun highlyViewedVideos(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.highlyViewedVideos(pageId, responseCallback, context)
+    }
+
     fun entertainmentAndComedyVideos(pageId: Int, responseCallback: ResponseCallback, context: Context?) {
         mServiceHandler.entertainmentAndComedyVideos(pageId, responseCallback, context)
     }
@@ -158,6 +162,10 @@ class DataManager(
 
     fun getNotifications(responseCallback: ResponseCallback, context: Context?) {
         mServiceHandler.getNotifications(responseCallback, context)
+    }
+
+    fun notificationCount(responseCallback: ResponseCallback, context: Context?) {
+        mServiceHandler.notificationCount(responseCallback, context)
     }
 
     fun clearNotifications(responseCallback: ResponseCallback, context: Context?) {
@@ -278,6 +286,10 @@ class DataManager(
         mServiceHandler.search(map,responseCallback, context)
     }
 
+    fun googleLogin(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
+        mServiceHandler.googleLogin(map,responseCallback, context)
+    }
+
     fun removeImage(map: HashMap<String, String>,responseCallback: ResponseCallback, context: Context?){
         mServiceHandler.removeImage(map,responseCallback, context)
     }
@@ -305,7 +317,6 @@ class DataManager(
     fun subscribeChannel(channelSlug:String,responseCallback: ResponseCallback, context: Context?){
         mServiceHandler.subscribeChannel(channelSlug,responseCallback, context)
     }
-
 
     fun getVideoVotes(uid:String,responseCallback: ResponseCallback, context: Context?){
         mServiceHandler.getVideoVotes(uid,responseCallback, context)

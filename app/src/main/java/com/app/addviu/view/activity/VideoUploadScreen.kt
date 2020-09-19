@@ -62,6 +62,7 @@ class VideoUploadScreen : BaseActivity(), UploadCallback, View.OnClickListener, 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_upload_screen)
 
+        Util.fullScreen(this)
         if (intent != null && intent.hasExtra("videoData")) {
             channelVidData = intent.getParcelableExtra("videoData")!!
         }

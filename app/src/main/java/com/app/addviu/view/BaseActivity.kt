@@ -7,15 +7,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.REQUEST_GALLERY_IMAGE
@@ -58,8 +55,9 @@ open class BaseActivity : AppCompatActivity() {
         }
 
         setFullScreen()
-    }
+        setStatusBarGradiant()
 
+    }
 
     @TargetApi(Build.VERSION_CODES.M)
     fun requestPermissionsSafely(permissions: Array<String>, requestCode: Int, activity: Activity) {
@@ -101,17 +99,20 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     fun profilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.loading)
+        return DisplayImageOptions.Builder().cacheOnDisk(true)
+            .showImageOnLoading(R.drawable.loading)
             .displayer(SimpleBitmapDisplayer()).build()
     }
 
     fun roundProfilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.circle_user)
+        return DisplayImageOptions.Builder().cacheOnDisk(true)
+            .showImageOnLoading(R.drawable.circle_user)
             .displayer(RoundedBitmapDisplayer(200)).build()
     }
 
     fun circleProfilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.circle_user)
+        return DisplayImageOptions.Builder().cacheOnDisk(true)
+            .showImageOnLoading(R.drawable.circle_user)
             .displayer(RoundedBitmapDisplayer(250)).build()
     }
 
@@ -134,5 +135,15 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-
+    open fun setStatusBarGradiant() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window = window
+            val background = resources.getDrawable(R.drawable.gradient_back)
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+            window.statusBarColor = resources.getColor(android.R.color.transparent)
+            //            window.setNavigationBarColor(getResources().getColor(android.R.color.transparent));
+            window.setBackgroundDrawable(background)
+        }
+    }
 }

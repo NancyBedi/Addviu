@@ -2,13 +2,18 @@ package com.app.addviu.view.activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.*
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.IS_LOGIN
@@ -18,23 +23,29 @@ import com.app.addviu.data.helper.USER_IMAGE
 import com.app.addviu.presenter.HomePresenter
 import com.app.addviu.view.BaseActivity
 import com.app.naxtre.mvvmfinal.data.helper.Util
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.home_screen_actionbar.*
+import kotlinx.android.synthetic.main.custom_badge_layout.view.*
+import kotlinx.android.synthetic.main.navigation_header.view.*
 
 
 class HomeScreen : BaseActivity(), View.OnClickListener,
     NavigationView.OnNavigationItemSelectedListener {
-
+    var notificationsBadge: View? = null
     var count = 0
     private val homePresenter = HomePresenter(this,supportFragmentManager)
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
         initViews()
         setClickListeners()
+//        bottomNavView.imageView
+//        bottomNavView.nameTxt
     }
 
     private fun setClickListeners() {
@@ -61,6 +72,7 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.menuIcon -> {
@@ -81,10 +93,14 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
             }
 
             R.id.searchIcon -> {
-                closeIcon.visibility = VISIBLE
-                editSearch.visibility = VISIBLE
-                textView.visibility = GONE
-                searchIcon.visibility = GONE
+                val intent = Intent(this, SearchActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in,R.anim.no_anim)
+
+//                closeIcon.visibility = VISIBLE
+//                        editSearch.visibility = VISIBLE
+//                textView.visibility = GONE
+//                searchIcon.visibility = GONE
             }
 
 //            R.id.closeIcon -> {
@@ -160,6 +176,8 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
                     roundProfilePic()
                 )
             }else{
+//                userImage.setImageResource(R.drawable.circle_user)
+//                userImage.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.circle_user))
                 imageLoader.displayImage(
                     "drawable://"+ R.drawable.circle_user,
                     userImage,
@@ -188,5 +206,49 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
 //            }
 //            drawerLayout.closeDrawer(navigationView)
         }
+    }
+
+    public fun getBadge(): View {
+        if (notificationsBadge != null) {
+            return notificationsBadge!!
+        }
+        val mbottomNavigationMenuView = bottomNavView.getChildAt(0) as BottomNavigationMenuView
+        notificationsBadge = LayoutInflater.from(this).inflate(
+            R.layout.custom_badge_layout,
+            mbottomNavigationMenuView, false
+        )
+        return notificationsBadge!!
+    }
+
+    public fun addBadge(count: String) {
+        getBadge()
+        notificationsBadge?.badge?.text = count
+        bottomNavView?.addView(notificationsBadge)
+
+    }
+
+    public fun removeBadge() {
+        bottomNavView.removeView(notificationsBadge)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (sharedPrefsHelper?.get(IS_LOGIN, false)!!) {
+            homePresenter.notificationCount()
+            if (sharedPrefsHelper?.get(USER_IMAGE, "")!!.isNotEmpty()) {
+                imageLoader.displayImage(
+                    sharedPrefsHelper?.get(USER_IMAGE, ""),
+                    userImage,
+                    roundProfilePic()
+                )
+            }else{
+                imageLoader.displayImage(
+                    "drawable://"+ R.drawable.circle_user,
+                    userImage,
+                    roundProfilePic()
+                )
+            }
+        }
+//        loadIconsAfterLogin()
     }
 }

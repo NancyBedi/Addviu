@@ -21,7 +21,7 @@ class ForgotScreen : BaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_screen)
-
+        Util.fullScreen(this)
         val layoutParams = backImage.layoutParams as ConstraintLayout.LayoutParams
         layoutParams.topMargin = statusBarHeight
         setClickListeners()

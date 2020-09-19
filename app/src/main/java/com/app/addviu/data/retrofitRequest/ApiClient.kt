@@ -38,7 +38,7 @@ class ApiClient(val sharedPrefsHelper: SharedPrefsHelper) {
 
     private fun setHttpClient() {
         val logging = HttpLoggingInterceptor()
-//        logging.level = HttpLoggingInterceptor.Level.BODY
+        logging.level = HttpLoggingInterceptor.Level.BODY
         httpClient = OkHttpClient.Builder()
         httpClient?.connectTimeout(20, TimeUnit.SECONDS)?.writeTimeout(20, TimeUnit.SECONDS)
             ?.readTimeout(30, TimeUnit.SECONDS)

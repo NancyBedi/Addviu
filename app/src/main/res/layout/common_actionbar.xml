@@ -5,7 +5,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="@dimen/margin_40"
-    android:background="@color/tab_color"
+    android:background="@drawable/gradient_back"
     android:elevation="@dimen/margin_10"
     tools:ignore="UnusedAttribute">
 
@@ -26,7 +26,7 @@
         android:id="@+id/textTitle"
         style="@style/text_view_14_style"
         android:layout_centerVertical="true"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_marginStart="@dimen/margin_5"
         android:layout_toEndOf="@+id/backImage"
         android:layout_toRightOf="@+id/backImage"

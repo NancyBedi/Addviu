@@ -17,7 +17,9 @@ import com.app.addviu.model.channelVideosModel.Channel
 import com.app.addviu.view.activity.*
 import com.app.addviu.view.viewInterface.YesClick
 import com.app.naxtre.mvvmfinal.data.helper.Util
+import com.nostra13.universalimageloader.core.DisplayImageOptions
 import com.nostra13.universalimageloader.core.ImageLoader
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer
 import kotlinx.android.synthetic.main.recycle_channel_video_item.view.*
 
 class ChannelVidAdapter (private val imageLoader: ImageLoader,
@@ -66,7 +68,7 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
             holder.txtsubscriber.text = "${data.created_date} . ${data.viewsCount} views"
         }
         if (!data.thumbnailUrl.isNullOrEmpty()) {
-            imageLoader.displayImage(data.thumbnailUrl, holder.thumbnail)
+            imageLoader.displayImage(data.thumbnailUrl, holder.thumbnail, profilePic())
         }
         if (!isUserChannel) {
             holder.btnMore.visibility = VISIBLE
@@ -138,4 +140,11 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
     override fun yesClick() {
 //        AppController.instance?.dataManager?
     }
+
+    fun profilePic(): DisplayImageOptions {
+        return DisplayImageOptions.Builder().cacheOnDisk(true)
+            .showImageOnLoading(R.drawable.loading)
+            .displayer(SimpleBitmapDisplayer()).build()
+    }
+
 }

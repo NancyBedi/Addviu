@@ -10,6 +10,7 @@ import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
 import com.app.addviu.model.latestVidModel.LatestVidListData
 import com.app.addviu.model.notificationModel.Notification
+import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.SideMenuVid
 import com.app.addviu.view.activity.VideoPlayerScreen
@@ -45,15 +46,19 @@ class NotificationAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = dashList[position]
-
+//                if(empty($notificationArray['comment_id']) && $notificationArray['id'] == $notificationArray['notification_video_id'] && $notificationArray['user_id'] == $notificationArray['notification_user_id']){  ** for published videos**    }
+//                elseif(!empty($notificationArray['comment_id'])){     ** display comments***    }
+//                else{ *** for subscribed vidoes ****}
         holder.videoTitle.text = data.title
         holder.time.text = data.createdAt
 
-        imageLoader.displayImage(
-            data.thumbnailUrl,
-            holder.flameIcon,
-            (context as HomeScreen).roundProfilePic()
-        )
+        if (!data.channelImage.isNullOrEmpty()) {
+            imageLoader.displayImage(
+                data.channelImage,
+                holder.flameIcon,
+                (context as HomeScreen).roundProfilePic()
+            )
+        }
         imageLoader.displayImage(
             data.thumbnailUrl,
             holder.thumbnail,
@@ -76,14 +81,27 @@ class NotificationAdapter(
 
         override fun onClick(v: View?) {
             val data = dashList[adapterPosition]
-//            val intent = Intent(context, VideoPlayerScreen::class.java)
-//            intent.putExtra("uid", data.uid)
-//            (context as SideMenuVid).startActivityForResult(intent, CHANGE_HOME_DATA)
+            val intent = Intent(context, VideoPlayerScreen::class.java)
+            intent.putExtra("uid", data.uid)
+            (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
+//            if (data.id == data.notificationVideoId && data.userId == data.notificationUserId ) {
+//                val intent = Intent(context, ChannelPage::class.java)
+//                intent.putExtra("name", data.channelName)
+//                intent.putExtra("fromNotify", true)
+//                intent.putExtra("id", data.channelId.toString())
+//                context.startActivity(intent)
+//            }else{
+//                val intent = Intent(context, ChannelPage::class.java)
+//                intent.putExtra("id", data.channelId.toString())
+//                intent.putExtra("name", data.channelName)
+//                intent.putExtra("userChannel", true)
+//                context.startActivity(intent)
+//            }
         }
     }
 
     fun curvePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.circle_user)
+        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.loading)
             .displayer(RoundedBitmapDisplayer(10)).build()
     }
 }

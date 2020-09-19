@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.viewpager.widget.ViewPager
 import com.app.addviu.AppController
 import com.app.addviu.R
+import com.app.addviu.data.helper.USER_IMAGE
 import com.app.addviu.data.helper.USER_NAME
 import com.app.addviu.model.CommonSuccess
 import com.app.addviu.model.userDetailModel.UserDetailBean
@@ -37,6 +38,7 @@ class ProfilePresenter (val context: Context): ResponseCallback, ProfileInterfac
                     )
                 }else{
                     (context as ProfilePage).imageLoader.displayImage(t.data.avatar, context.userImage, context.roundProfilePic())
+                    context.sharedPrefsHelper?.put(USER_IMAGE, t.data.avatar)
                 }
                 if(t.data.banner.isNullOrEmpty()){
                     (context as ProfilePage).imageLoader.displayImage(

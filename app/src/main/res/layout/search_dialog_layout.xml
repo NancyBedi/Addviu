@@ -49,7 +49,7 @@
                 android:paddingRight="@dimen/margin_15"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_marginRight="@dimen/margin_20"
                 android:textColorHint="@color/l_d_gray"
                 android:background="@drawable/white_edit_curve"

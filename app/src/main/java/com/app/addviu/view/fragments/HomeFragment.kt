@@ -67,7 +67,7 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
 //        recyclerView.adapter = homeAdapter
         linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = linearLayoutManager
-        homeAdapter = HomeListAdapter(imageLoader, arrayList, activity!!, this)
+        homeAdapter = HomeListAdapter(imageLoader, arrayList, activity!!, this, "home")
         recyclerView.adapter = homeAdapter
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -168,8 +168,6 @@ class HomeFragment(val context:HomeScreen) : BaseFragment(), ResponseCallback {
             context.editSearch.visibility = GONE
             context.textView.visibility = VISIBLE
             context.editSearch.setText("")
-//            loadFirstPage()
-//            AppController.instance?.dataManager?.getHomeVideoData(1,this, activity!!)
         }
 
 //        context.editSearch.setOnTouchListener(View.OnTouchListener { v, event ->

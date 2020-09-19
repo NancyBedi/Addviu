@@ -23,28 +23,56 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,UnusedAttribute"
         tools:replace="android:allowBackup">
-        <activity android:name=".view.activity.ProfilePage"></activity>
-        <activity android:name=".view.activity.NotificationActivity" />
-        <activity android:name=".view.activity.MyVideos" />
-        <activity android:name=".view.activity.SideMenuVid" />
-        <activity android:name=".view.activity.Playlistpage" />
-        <activity android:name=".view.activity.AddVideoPlaylist" />
-        <activity android:name=".view.activity.ChannelPage" />
-        <activity android:name=".view.activity.CreateChannelScreen" />
+        <activity android:name=".view.activity.FilterActivity"></activity>
+        <activity android:name=".view.activity.SearchActivity" />
+        <activity
+            android:name=".view.activity.ProfilePage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.MyVideos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.SideMenuVid"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.Playlistpage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.AddVideoPlaylist"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.ChannelPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.CreateChannelScreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.MyChannels"
             android:windowSoftInputMode="adjustPan" /> <!-- <activity android:name=".view.activity.CommentsScreen" /> -->
         <activity
             android:name=".view.activity.VideoPlayerScreen"
             android:configChanges="screenSize|orientation" />
-        <activity android:name=".view.activity.VideoUploadScreen" />
-        <activity android:name=".view.activity.ForgotScreen" />
-        <activity android:name=".view.activity.SignInScreen" />
-        <activity android:name=".view.activity.SignUpScreen" />
+        <activity
+            android:name=".view.activity.VideoUploadScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.ForgotScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.SignInScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.SignUpScreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.HomeScreen"
             android:configChanges="screenSize|orientation" />
-        <activity android:name=".view.activity.RewardsScreen" />
+        <activity
+            android:name=".view.activity.RewardsScreen"
+            android:screenOrientation="portrait" />
         <activity android:name=".view.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

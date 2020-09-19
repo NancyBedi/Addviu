@@ -29,17 +29,12 @@ import kotlinx.android.synthetic.main.home_screen_actionbar.*
 
 class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallback {
 
-        private var homeAdapter: HomeListAdapter? = null
-//    private var homeAdapter: TrendAdapter? = null
+    private var homeAdapter: HomeListAdapter? = null
     private val arrayList = ArrayList<HomeData>()
     var selectedPosition = 0
     var linearLayoutManager: LinearLayoutManager? = null
 
-    private val TAG = "MainActivity"
     private val PAGE_START = 1
-    private val TOTAL_PAGES = 5
-
-    var isLastPage = false
     private var currentPage = PAGE_START
 
     private var visibleThreshold = 0
@@ -68,7 +63,7 @@ class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallba
 
         linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = linearLayoutManager
-        homeAdapter = HomeListAdapter(imageLoader, arrayList, activity!!, this)
+        homeAdapter = HomeListAdapter(imageLoader, arrayList, activity!!, this, "home")
         recyclerView.adapter = homeAdapter
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {

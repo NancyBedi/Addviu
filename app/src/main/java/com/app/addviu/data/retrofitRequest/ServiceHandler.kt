@@ -41,6 +41,12 @@ class ServiceHandler(apiClient: ApiClient) {
         getResponse(call, responseCallback, context)
     }
 
+    fun highlyViewedVideos(pageId:Int, responseCallback: ResponseCallback, context: Context?) {
+        val call = builder.highlyViewedVideos(pageId)
+        getResponse(call, responseCallback, context)
+    }
+
+
     fun entertainmentAndComedyVideos(pageId:Int, responseCallback: ResponseCallback,
                                      context: Context?) {
         val call = builder.entertainmentAndComedyVideos(pageId)
@@ -162,11 +168,26 @@ class ServiceHandler(apiClient: ApiClient) {
         getResponse(call, responseCallback, context)
     }
 
-    fun clearNotifications(responseCallback: ResponseCallback,
+
+    fun notificationCount(responseCallback: ResponseCallback,
                          context: Context?) {
+        val call = builder.notificationCount()
+        getResponse(call, responseCallback, context)
+    }
+
+    fun clearNotifications(responseCallback: ResponseCallback,
+                          context: Context?) {
         val call = builder.clearNotifications()
         getResponse(call, responseCallback, context)
     }
+
+
+//
+//    fun clearNotifications(responseCallback: ResponseCallback,
+//                         context: Context?) {
+//        val call = builder.clearNotifications()
+//        getResponse(call, responseCallback, context)
+//    }
 
 //    fun latesVideos(responseCallback: ResponseCallback,
 //                      context: Context?) {
@@ -310,6 +331,11 @@ class ServiceHandler(apiClient: ApiClient) {
 
     fun search(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
         val call = builder.search(map)
+        getResponse(call, responseCallback, context)
+    }
+
+    fun googleLogin(map:HashMap<String,String>,responseCallback: ResponseCallback, context: Context?){
+        val call = builder.googleLogin(map)
         getResponse(call, responseCallback, context)
     }
 

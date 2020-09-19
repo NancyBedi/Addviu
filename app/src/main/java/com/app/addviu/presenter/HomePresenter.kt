@@ -14,18 +14,44 @@ import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.data.helper.IS_SIGN_CLICKED
 import com.app.addviu.data.helper.SIGN_IN_CODE
 import com.app.addviu.data.helper.SharedPrefsHelper
+import com.app.addviu.model.notifyCountMOdel.NotifyCountBean
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.RewardsScreen
 import com.app.addviu.view.activity.SignInScreen
 import com.app.addviu.view.fragments.*
 import com.app.addviu.view.viewInterface.HomeInterface
+import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.home_screen_actionbar.*
 
 
 class HomePresenter(private val context: Context,private val fragmentManager: FragmentManager) : HomeInterface,
-BottomNavigationView.OnNavigationItemSelectedListener{
+BottomNavigationView.OnNavigationItemSelectedListener, ResponseCallback{
+
+    override fun <T> success(t: T) {
+        if (t is NotifyCountBean){
+            if (t.status == 1){
+                if (t.data.notificationCount > 0){
+                    if (context is HomeScreen){
+                        sharedPrefsHelper?.put("count", t.data.notificationCount.toString())
+                        if (!t.data.notificationCount.toString().equals(sharedPrefsHelper?.get("count", ""))) {
+                            context.addBadge(t.data.notificationCount.toString())
+                        }
+                    }
+                }else{
+                    if (context is HomeScreen){
+                        context.removeBadge()
+                    }
+                }
+            }else{
+                Util.showToast("No new notification", context)
+            }
+        }
+    }
+
+    override fun failure(t: Throwable) {
+    }
 
     private var sharedPrefsHelper: SharedPrefsHelper? = null
     var previousFragment:BaseFragment? = null
@@ -38,6 +64,10 @@ BottomNavigationView.OnNavigationItemSelectedListener{
         val transaction: FragmentTransaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.frameLayout, fragment)
         transaction.commit()
+    }
+
+    override fun notificationCount() {
+        AppController.instance?.dataManager?.notificationCount(this, null)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -106,5 +136,4 @@ BottomNavigationView.OnNavigationItemSelectedListener{
         }
         return false
     }
-
 }

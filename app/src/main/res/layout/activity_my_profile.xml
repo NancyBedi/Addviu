@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".view.activity.RewardsScreen">
 
     <ImageView
@@ -85,7 +86,7 @@
         app:tabIndicatorColor="@color/purpule"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/purpule"
-        app:tabTextAppearance="@style/text_view_12_style" />
+        app:tabTextAppearance="@style/text_view_14_style" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

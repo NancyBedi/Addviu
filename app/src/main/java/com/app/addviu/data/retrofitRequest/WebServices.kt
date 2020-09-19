@@ -10,9 +10,11 @@ import com.app.addviu.model.homeModel.TrendingBean
 import com.app.addviu.model.homeVideoModel.HomeVideoBean
 import com.app.addviu.model.latestVidModel.LatestVidBean
 import com.app.addviu.model.notificationModel.NotificationBean
+import com.app.addviu.model.notifyCountMOdel.NotifyCountBean
 import com.app.addviu.model.playlistDetailBean.PlaylistDetailBean
 import com.app.addviu.model.relatedModel.CommentsBean
 import com.app.addviu.model.relatedModel.RelatedVideoBean
+import com.app.addviu.model.searchFilterModel.SearchFilterBean
 import com.app.addviu.model.subscribedChannel.SubscribedChannelBean
 import com.app.addviu.model.userDetailModel.UserDetailBean
 import com.app.addviu.model.userModel.SignInBean
@@ -36,6 +38,9 @@ interface WebServices {
 
     @GET("latesVideos")
     fun latesVideos(@Query("page") pageId: Int): Call<LatestVidBean>
+
+    @GET("highlyViewedVideos")
+    fun highlyViewedVideos(@Query("page") pageId: Int): Call<TrendingBean>
 
     @GET("entertainmentAndComedyVideos")
     fun entertainmentAndComedyVideos(@Query("page") pageId: Int): Call<LatestVidBean>
@@ -94,8 +99,14 @@ interface WebServices {
     @GET("getNotifications")
     fun getNotifications(): Call<NotificationBean>
 
-    @GET("clearNotifications")
-    fun clearNotifications(): Call<NotificationBean>
+    @GET("notificationCount")
+    fun notificationCount(): Call<NotifyCountBean>
+
+    @POST("clearNotifications")
+    fun clearNotifications(): Call<CommonSuccess>
+
+//    @GET("clearNotifications")
+//    fun clearNotifications(): Call<CommonSuccess>
 
 //    @GET("latesVideos")
 //    fun latesVideos(): Call<LatestVidBean>
@@ -192,7 +203,10 @@ interface WebServices {
     fun createComment(@Path("uid") uid: String,@Body map: HashMap<String, String>): Call<SignUpBean>
 
     @POST("search")
-    fun search(@Body map: HashMap<String, String>): Call<HomeVideoBean>
+    fun search(@Body map: HashMap<String, String>): Call<SearchFilterBean>
+
+    @POST("googleLogin")
+    fun googleLogin(@Body map: HashMap<String, String>): Call<SignInBean>
 
     @POST("users/removeImage")
     fun removeImage(@Body map: HashMap<String, String>): Call<CommonSuccess>
@@ -201,7 +215,7 @@ interface WebServices {
     fun removeBanner(@Body map: HashMap<String, String>): Call<CommonSuccess>
 
     @POST("search")
-    fun searchTrend(@Body map: HashMap<String, String>): Call<TrendingBean>
+    fun searchTrend(@Body map: HashMap<String, String>): Call<SearchFilterBean>
 
     @POST("userUpdate")
     fun userUpdate(@Body map: HashMap<String, String>): Call<CommonSuccess>
