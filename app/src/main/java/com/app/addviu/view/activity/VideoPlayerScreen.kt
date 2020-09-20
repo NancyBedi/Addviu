@@ -69,7 +69,7 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
         bundle.putString("uid", videoUid)
         val videoDetailsFragment = VideoDetailsFragment()
         videoDetailsFragment.arguments = bundle
-        fragmentTransaction.replace(R.id.detailContainer, videoDetailsFragment, "detailsFragment")
+//        fragmentTransaction.replace(R.id.detailContainer, videoDetailsFragment, "detailsFragment")
         fragmentTransaction.commit()
     }
 

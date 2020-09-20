@@ -23,7 +23,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,UnusedAttribute"
         tools:replace="android:allowBackup">
-        <activity android:name=".view.activity.FilterActivity"></activity>
+        <activity android:name=".view.activity.FilterActivity"/>
         <activity android:name=".view.activity.SearchActivity" />
         <activity
             android:name=".view.activity.ProfilePage"

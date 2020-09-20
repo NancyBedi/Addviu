@@ -21,7 +21,6 @@ import com.app.addviu.R
 import com.app.addviu.data.helper.REQUEST_GALLERY_IMAGE
 import com.app.addviu.data.helper.RealPathUtil
 import com.app.addviu.model.CommonSuccess
-import com.app.addviu.model.channelDetailBean.ChannelDetailBean
 import com.app.addviu.model.playlistDetailBean.PlaylistDetailBean
 import com.app.addviu.model.userModel.SignUpBean
 import com.app.addviu.view.adapter.ChannelListAdapter

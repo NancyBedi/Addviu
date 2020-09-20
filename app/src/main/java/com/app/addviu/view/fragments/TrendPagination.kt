@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.addviu.AppController
 import com.app.addviu.R
@@ -25,7 +24,6 @@ import com.app.addviu.view.viewInterface.PaginationScrollListener
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_video_upload_screen.*
 import kotlinx.android.synthetic.main.error_layout.*
 import kotlinx.android.synthetic.main.home_screen_actionbar.*
 

@@ -2,7 +2,6 @@ package com.app.addviu.view.activity
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.app.addviu.R
@@ -18,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_channel_home.*
 import kotlinx.android.synthetic.main.activity_channel_home.backImage
 import kotlinx.android.synthetic.main.activity_channel_home.tabLayout
 import kotlinx.android.synthetic.main.activity_channel_home.viewPager
-import kotlinx.android.synthetic.main.activity_rewards_screen.*
 
 class ChannelPage : BaseActivity() {
     var name = ""

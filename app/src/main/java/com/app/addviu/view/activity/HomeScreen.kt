@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.Color
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,9 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.*
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import androidx.fragment.app.Fragment
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.app.addviu.AppController
@@ -20,39 +24,45 @@ import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.data.helper.IS_SIGN_CLICKED
 import com.app.addviu.data.helper.SIGN_IN_CODE
 import com.app.addviu.data.helper.USER_IMAGE
+import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.presenter.HomePresenter
 import com.app.addviu.view.BaseActivity
+import com.app.addviu.view.fragments.HomeFragment
+import com.app.addviu.view.fragments.TrendingFragment
+import com.app.addviu.view.fragments.VideoDetailsFragment
+import com.app.addviu.view.fragments.VideoPlayerFragment
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.navigation.NavigationView
+import com.hoanganhtuan95ptit.draggable.DraggablePanel
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.home_screen_actionbar.*
 import kotlinx.android.synthetic.main.custom_badge_layout.view.*
 import kotlinx.android.synthetic.main.navigation_header.view.*
+import kotlinx.android.synthetic.main.layout_top.*
 
 
-class HomeScreen : BaseActivity(), View.OnClickListener,
+class HomeScreen : BaseActivity(), OnClickListener,
     NavigationView.OnNavigationItemSelectedListener {
     var notificationsBadge: View? = null
     var count = 0
-    private val homePresenter = HomePresenter(this,supportFragmentManager)
+    private val homePresenter = HomePresenter(this, supportFragmentManager)
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
         initViews()
         setClickListeners()
-//        bottomNavView.imageView
-//        bottomNavView.nameTxt
     }
 
     private fun setClickListeners() {
         menuIcon.setOnClickListener(this)
         uploadIcon.setOnClickListener(this)
         searchIcon.setOnClickListener(this)
-//        closeIcon.setOnClickListener(this)
+        ivPlay.setOnClickListener(this)
+        ivPause.setOnClickListener(this)
+        ivClose.setOnClickListener(this)
     }
 
     fun setHomeSelected() {
@@ -72,7 +82,80 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        val orientation = resources.configuration.orientation
+        val isLandscape =
+            orientation == Configuration.ORIENTATION_LANDSCAPE
+        if (isLandscape) {
+            draggablePanel.mTempHeight = MATCH_PARENT
+        } else {
+            draggablePanel.mTempHeight = WRAP_CONTENT
+        }
+
+    }
+
+    fun initializeDraggablePanel(homeData: HomeData) {
+
+        homeData.viewsCount = homeData.viewsCount + 1
+
+        val baseFragment = supportFragmentManager.findFragmentById(R.id.frameLayout)
+        if (baseFragment is TrendingFragment) {
+            baseFragment.changeData(homeData)
+        }else if(baseFragment is HomeFragment){
+            baseFragment.changeData(homeData)
+        }
+
+
+        tvTitle.text = homeData.title
+
+        val bundle1 = Bundle()
+        bundle1.putParcelable("data", homeData)
+
+        val videoPlayerFragment = VideoPlayerFragment(draggablePanel)
+        videoPlayerFragment.arguments = bundle1
+
+        val bundle = Bundle()
+        bundle.putString("uid", homeData.uid)
+        val videoDetailsFragment = VideoDetailsFragment()
+        videoDetailsFragment.arguments = bundle
+
+        if (draggablePanel.mCurrentState == DraggablePanel.State.MIN) {
+            removeVideoPlayer()
+        }
+
+        supportFragmentManager.beginTransaction().replace(R.id.frameTop, videoPlayerFragment)
+            .commit() // add frame top
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameBottom, videoDetailsFragment, "detailsFragment")
+            .commit() // add frame bottom
+
+        draggablePanel.maximize()
+
+        draggablePanel.setDraggableListener(object : DraggablePanel.DraggableListener {
+
+            override fun onChangeState(state: DraggablePanel.State) {
+                super.onChangeState(state)
+                if (state == DraggablePanel.State.MIN) {
+                    (getTopFragment() as VideoPlayerFragment).hideControls()
+                } else if (state == DraggablePanel.State.MAX) {
+                    (getTopFragment() as VideoPlayerFragment).showControls()
+                }
+            }
+
+        })
+    }
+
+    fun removeVideoPlayer() {
+        (getTopFragment() as VideoPlayerFragment).releasePlayer()
+        (getTopFragment() as VideoPlayerFragment).adsLoader?.release()
+    }
+
+    fun getTopFragment(): Fragment? {
+        return supportFragmentManager.findFragmentById(R.id.frameTop)
+    }
+
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.menuIcon -> {
@@ -82,6 +165,19 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
                 } else {
                     drawerLayout.closeDrawer(navigationView)
                 }
+            }
+            R.id.ivPlay -> {
+                ivPause.visibility = VISIBLE
+                ivPlay.visibility = GONE
+                (getTopFragment() as VideoPlayerFragment).playVideo()
+            }
+            R.id.ivPause -> {
+                onPauseVideo()
+                (getTopFragment() as VideoPlayerFragment).pauseVideo()
+            }
+            R.id.ivClose -> {
+                removeVideoPlayer()
+                draggablePanel.close()
             }
 
             R.id.uploadIcon -> {
@@ -111,6 +207,12 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
 //                editSearch.setText("")
 //            }
         }
+    }
+
+    fun onPauseVideo(){
+        ivPause.visibility = GONE
+        ivPlay.visibility = VISIBLE
+
     }
 
     override fun setFullScreen() {
@@ -176,8 +278,6 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
                     roundProfilePic()
                 )
             }else{
-//                userImage.setImageResource(R.drawable.circle_user)
-//                userImage.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.circle_user))
                 imageLoader.displayImage(
                     "drawable://"+ R.drawable.circle_user,
                     userImage,
@@ -193,18 +293,18 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
     }
 
     override fun onBackPressed() {
-        count ++
-        if (count == 2){
+        if (count == 1) {
+            removeVideoPlayer()
             count = 0
             finish()
-        }else{
-//            val valX: Float = navigationView.x
-//            if (valX > 0) {
+        } else {
+            if (draggablePanel.mCurrentState == DraggablePanel.State.MAX) {
+                draggablePanel.minimize()
+            } else {
+                count++
                 drawerLayout.closeDrawer(navigationView)
-//            }else{
                 Util.showToast("Press Again to exit", this)
-//            }
-//            drawerLayout.closeDrawer(navigationView)
+            }
         }
     }
 
@@ -220,14 +320,14 @@ class HomeScreen : BaseActivity(), View.OnClickListener,
         return notificationsBadge!!
     }
 
-    public fun addBadge(count: String) {
+    fun addBadge(count: String) {
         getBadge()
         notificationsBadge?.badge?.text = count
         bottomNavView?.addView(notificationsBadge)
 
     }
 
-    public fun removeBadge() {
+    fun removeBadge() {
         bottomNavView.removeView(notificationsBadge)
     }
 

@@ -1,21 +1,13 @@
 package com.app.addviu.data
 
 import android.content.Context
-import android.os.Build
-import androidx.annotation.RequiresApi
-import com.app.addviu.data.helper.FileUtils
 import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.data.helper.USER_ID
 import com.app.addviu.data.retrofitRequest.ProgressRequestBody
 import com.app.addviu.data.retrofitRequest.ServiceHandler
-import com.app.addviu.model.CreateChannelBean
-import com.app.addviu.view.activity.MyChannels
 import com.app.addviu.view.activity.VideoUploadScreen
 import com.app.addviu.view.viewInterface.ResponseCallback
-import okhttp3.MediaType
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import java.io.File
 
 

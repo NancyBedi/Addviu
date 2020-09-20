@@ -1,24 +1,17 @@
 package com.app.addviu.view.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
-import com.app.addviu.data.helper.CHANGE_HOME_DATA
-import com.app.addviu.model.latestVidModel.LatestVidListData
 import com.app.addviu.model.notificationModel.Notification
 import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.HomeScreen
-import com.app.addviu.view.activity.SideMenuVid
-import com.app.addviu.view.activity.VideoPlayerScreen
 import com.nostra13.universalimageloader.core.DisplayImageOptions
 import com.nostra13.universalimageloader.core.ImageLoader
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer
-import kotlinx.android.synthetic.main.home_list_adapter.view.*
 import kotlinx.android.synthetic.main.recycle_notify_item.view.*
 
 class NotificationAdapter(

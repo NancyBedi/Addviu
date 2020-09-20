@@ -4,7 +4,6 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
 import com.app.addviu.R
 import com.app.addviu.data.helper.USER_NAME
 import com.app.addviu.model.videoModel.CategoryData
@@ -12,7 +11,6 @@ import com.app.addviu.model.videoModel.ChannelData
 import com.app.addviu.presenter.ChannelPresenter
 import com.app.addviu.view.BaseActivity
 import com.app.addviu.view.fragments.AddChannelFragment
-import com.app.addviu.view.fragments.MyChannelFragment
 import com.app.addviu.view.searchDailog.OnSearchItemSelected
 import com.app.addviu.view.searchDailog.SearchListItem
 import com.app.addviu.view.searchDailog.SearchableDialog

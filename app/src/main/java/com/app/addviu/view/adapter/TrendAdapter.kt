@@ -18,7 +18,6 @@ import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.VideoPlayerScreen
 import com.app.addviu.view.fragments.BaseFragment
 import com.app.addviu.view.fragments.HomeFragment
-import com.app.addviu.view.fragments.TrendPagination
 import com.app.addviu.view.fragments.TrendingFragment
 import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.home_list_adapter.view.*

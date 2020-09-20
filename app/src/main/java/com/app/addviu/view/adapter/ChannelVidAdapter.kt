@@ -2,7 +2,6 @@ package com.app.addviu.view.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
 import com.app.addviu.model.channelVideoModel.ChannelVidData
-import com.app.addviu.model.channelVideosModel.Channel
 import com.app.addviu.view.activity.*
 import com.app.addviu.view.viewInterface.YesClick
 import com.app.naxtre.mvvmfinal.data.helper.Util

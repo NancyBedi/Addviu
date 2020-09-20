@@ -6,10 +6,7 @@ import androidx.viewpager.widget.ViewPager
 import com.app.addviu.AppController
 import com.app.addviu.model.videoModel.CategoryBean
 import com.app.addviu.view.activity.MyChannels
-import com.app.addviu.view.activity.VideoUploadScreen
 import com.app.addviu.view.adapter.ChannelPagerAdapter
-import com.app.addviu.view.adapter.RewardsPagerAdapter
-import com.app.addviu.view.fragments.AddChannelFragment
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.addviu.view.viewInterface.RewardsInterface
 import com.google.android.material.tabs.TabLayout

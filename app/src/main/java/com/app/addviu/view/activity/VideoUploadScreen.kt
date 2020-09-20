@@ -25,10 +25,8 @@ import com.app.addviu.view.viewInterface.UploadCallback
 import com.app.addviu.view.viewInterface.UploadVideoRequest
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.activity_video_upload_screen.*
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import java.io.File

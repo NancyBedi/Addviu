@@ -131,15 +131,7 @@ class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallba
         Util.showToast(t.toString(), activity!!)
     }
 
-    fun changeData(relatedVideo: RelatedVideo) {
-        val homeData = HomeData()
-        homeData.uid = relatedVideo.uid
-        homeData.title = relatedVideo.title
-        homeData.channelName = relatedVideo.channel.channelName
-        homeData.viewsCount = relatedVideo.viewsCount
-        homeData.createdDate = relatedVideo.createdDate
-        homeData.thumbnailUrl = relatedVideo.thumbnailUrl
-        homeData.channelImage = relatedVideo.channel.coverImage
+    fun changeData(homeData: HomeData) {
         arrayList[selectedPosition] = homeData
         homeAdapter?.notifyItemChanged(selectedPosition)
     }
@@ -184,12 +176,12 @@ class TrendingFragment(val context: HomeScreen) : BaseFragment(), ResponseCallba
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == CHANGE_HOME_DATA && resultCode == Activity.RESULT_OK) {
-            val relatedVideo = data?.getParcelableExtra<RelatedVideo>("data")
-            relatedVideo?.let { it ->
-                changeData(it)
-            }
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        if (requestCode == CHANGE_HOME_DATA && resultCode == Activity.RESULT_OK) {
+//            val relatedVideo = data?.getParcelableExtra<RelatedVideo>("data")
+//            relatedVideo?.let { it ->
+//                changeData(it)
+//            }
+//        }
+//    }
 }

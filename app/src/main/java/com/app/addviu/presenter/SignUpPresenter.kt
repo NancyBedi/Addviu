@@ -2,7 +2,6 @@ package com.app.addviu.presenter
 
 import android.app.Activity.RESULT_OK
 import android.content.Context
-import android.content.Intent
 import com.app.addviu.AppController
 import com.app.addviu.data.helper.*
 import com.app.addviu.model.CommonSuccess
@@ -14,7 +13,6 @@ import com.app.addviu.view.activity.SignUpScreen
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.addviu.view.viewInterface.SignUpInterface
 import com.app.naxtre.mvvmfinal.data.helper.Util
-import retrofit2.Call
 
 class SignUpPresenter(val context: Context) :
     ResponseCallback, SignUpInterface {

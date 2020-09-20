@@ -14,11 +14,9 @@ import com.app.addviu.R
 import com.app.addviu.model.videoModel.PlaylistData
 import com.app.addviu.view.activity.Playlistpage
 import com.app.addviu.view.fragments.ChannelPlaylist
-import com.app.addviu.view.viewInterface.PlaylistClick
 import com.app.addviu.view.viewInterface.YesClick
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
-import kotlinx.android.synthetic.main.channel_home_fragment.*
 import kotlinx.android.synthetic.main.recycle_playlist_item.view.*
 
 class PlaylistAdapter(

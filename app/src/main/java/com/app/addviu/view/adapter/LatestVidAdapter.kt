@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
-import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.latestVidModel.LatestVidListData
 import com.app.addviu.view.activity.ChannelPage
-import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.SideMenuVid
 import com.app.addviu.view.activity.VideoPlayerScreen
 import com.nostra13.universalimageloader.core.ImageLoader
