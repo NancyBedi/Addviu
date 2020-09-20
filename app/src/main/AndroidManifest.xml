@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".AppController"
+        android:name="com.app.addviu.AppController"
         android:allowBackup="false"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
@@ -23,29 +23,29 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,UnusedAttribute"
         tools:replace="android:allowBackup">
-        <activity android:name=".view.activity.ProfilePage"></activity>
-        <activity android:name=".view.activity.NotificationActivity" />
-        <activity android:name=".view.activity.MyVideos" />
-        <activity android:name=".view.activity.SideMenuVid" />
-        <activity android:name=".view.activity.Playlistpage" />
-        <activity android:name=".view.activity.AddVideoPlaylist" />
-        <activity android:name=".view.activity.ChannelPage" />
-        <activity android:name=".view.activity.CreateChannelScreen" />
+        <activity android:name="com.app.addviu.view.activity.ProfilePage"></activity>
+        <activity android:name="com.app.addviu.view.activity.NotificationActivity" />
+        <activity android:name="com.app.addviu.view.activity.MyVideos" />
+        <activity android:name="com.app.addviu.view.activity.SideMenuVid" />
+        <activity android:name="com.app.addviu.view.activity.Playlistpage" />
+        <activity android:name="com.app.addviu.view.activity.AddVideoPlaylist" />
+        <activity android:name="com.app.addviu.view.activity.ChannelPage" />
+        <activity android:name="com.app.addviu.view.activity.CreateChannelScreen" />
         <activity
-            android:name=".view.activity.MyChannels"
+            android:name="com.app.addviu.view.activity.MyChannels"
             android:windowSoftInputMode="adjustPan" /> <!-- <activity android:name=".view.activity.CommentsScreen" /> -->
         <activity
-            android:name=".view.activity.VideoPlayerScreen"
+            android:name="com.app.addviu.view.activity.VideoPlayerScreen"
             android:configChanges="screenSize|orientation" />
-        <activity android:name=".view.activity.VideoUploadScreen" />
-        <activity android:name=".view.activity.ForgotScreen" />
-        <activity android:name=".view.activity.SignInScreen" />
-        <activity android:name=".view.activity.SignUpScreen" />
+        <activity android:name="com.app.addviu.view.activity.VideoUploadScreen" />
+        <activity android:name="com.app.addviu.view.activity.ForgotScreen" />
+        <activity android:name="com.app.addviu.view.activity.SignInScreen" />
+        <activity android:name="com.app.addviu.view.activity.SignUpScreen" />
         <activity
-            android:name=".view.activity.HomeScreen"
+            android:name="com.app.addviu.view.activity.HomeScreen"
             android:configChanges="screenSize|orientation" />
-        <activity android:name=".view.activity.RewardsScreen" />
-        <activity android:name=".view.activity.SplashScreen">
+        <activity android:name="com.app.addviu.view.activity.RewardsScreen" />
+        <activity android:name="com.app.addviu.view.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -68,7 +68,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <provider
-            android:name=".data.helper.LocalStorageProvider"
+            android:name="com.app.addviu.data.helper.LocalStorageProvider"
             android:authorities="com.app.addviu.localstorage.documents"
             android:enabled="@bool/use_provider"
             android:exported="true"

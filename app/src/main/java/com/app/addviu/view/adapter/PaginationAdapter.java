@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.addviu.R;
 import com.app.addviu.model.homeModel.HomeData;
 import com.app.addviu.view.fragments.TrendPagination;
-import com.app.addviu.view.viewInterface.PaginationAdapterCallback;
 
 import org.jetbrains.annotations.NotNull;
 

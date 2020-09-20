@@ -62,6 +62,20 @@
 
     </RelativeLayout>
 
+    <com.hoanganhtuan95ptit.example.custom.DraggableSource
+        android:id="@+id/draggablePanel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:height_when_max="@dimen/margin_230"
+        app:height_when_min="@dimen/margin_80"
+        app:margin_edge_when_min="0dp"
+        app:margin_bottom_when_min="@dimen/margin_50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:state="CLOSE" />
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"

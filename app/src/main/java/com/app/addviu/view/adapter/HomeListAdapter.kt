@@ -1,32 +1,21 @@
 package com.app.addviu.view.adapter
 
-import android.R.attr.displayOptions
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
-import com.app.addviu.data.helper.CHANGE_HOME_DATA
-import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.HomeScreen
-import com.app.addviu.view.activity.VideoPlayerScreen
 import com.app.addviu.view.fragments.BaseFragment
 import com.app.addviu.view.fragments.HomeFragment
-import com.app.addviu.view.fragments.TrendPagination
 import com.app.addviu.view.fragments.TrendingFragment
-import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
-import com.nostra13.universalimageloader.core.assist.ImageSize
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener
 import kotlinx.android.synthetic.main.home_list_adapter.view.*
 import kotlinx.android.synthetic.main.home_list_adapter.view.detailText
-import kotlinx.android.synthetic.main.video_detail_fragment.*
-import kotlinx.android.synthetic.main.video_player_layout.*
 
 
 class HomeListAdapter(
@@ -129,9 +118,10 @@ class HomeListAdapter(
                 baseFragment.selectedPosition = adapterPosition
             }
             val data = dashList[adapterPosition]
-            val intent = Intent(context, VideoPlayerScreen::class.java)
-            intent.putExtra("uid", data.uid)
-            (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
+            (context as HomeScreen).initializeDraggablePanel(data)
+//            val intent = Intent(context, VideoPlayerScreen::class.java)
+//            intent.putExtra("uid", data.uid)
+//            (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
         }
     }
 

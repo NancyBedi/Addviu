@@ -29,11 +29,8 @@ import androidx.core.content.FileProvider
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.DIRECTORY_NAME
-import com.app.addviu.model.videoModel.PlaylistData
 import com.app.addviu.view.viewInterface.AlertDialogListener
-import com.app.addviu.view.viewInterface.PlaylistClick
 import com.app.addviu.view.viewInterface.YesClick
-import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.select_image_dialog.view.*
 import java.io.File
 import java.io.FileInputStream

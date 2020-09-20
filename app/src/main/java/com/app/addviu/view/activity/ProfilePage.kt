@@ -1,7 +1,6 @@
 package com.app.addviu.view.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.app.addviu.R
@@ -10,7 +9,6 @@ import com.app.addviu.data.helper.SIGN_IN_CODE
 import com.app.addviu.view.BaseActivity
 import com.app.addviu.view.adapter.ChannelHomeAdapter
 import com.app.addviu.view.fragments.*
-import kotlinx.android.synthetic.main.activity_channel_home.*
 import kotlinx.android.synthetic.main.activity_channel_home.backImage
 import kotlinx.android.synthetic.main.activity_channel_home.tabLayout
 import kotlinx.android.synthetic.main.activity_channel_home.viewPager

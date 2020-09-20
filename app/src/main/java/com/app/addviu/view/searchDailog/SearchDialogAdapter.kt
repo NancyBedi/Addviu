@@ -3,10 +3,8 @@ package com.app.addviu.view.searchDailog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
-import kotlinx.android.synthetic.main.activity_video_upload_screen.view.*
 import kotlinx.android.synthetic.main.sender_single_item.view.*
 
 class SearchDialogAdapter internal constructor(

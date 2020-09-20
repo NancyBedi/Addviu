@@ -1,14 +1,9 @@
 package com.app.addviu.presenter
 
 import android.content.Context
-import android.database.Cursor
-import android.net.Uri
-import android.provider.MediaStore
 import android.util.Log
-import android.widget.ProgressBar
 import com.app.addviu.AppController
 import com.app.addviu.data.helper.CircleProgressBar
-import com.app.addviu.data.helper.RealPathUtil
 import com.app.addviu.model.userModel.SignUpBean
 import com.app.addviu.model.videoModel.*
 import com.app.addviu.view.activity.VideoUploadScreen
@@ -16,7 +11,6 @@ import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.addviu.view.viewInterface.VideoUploadInterface
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import okhttp3.MultipartBody
-import retrofit2.Call
 import java.io.File
 
 

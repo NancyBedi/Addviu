@@ -1,8 +1,6 @@
 package com.app.addviu.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.view.BaseActivity
 import com.app.addviu.view.viewInterface.ResponseCallback

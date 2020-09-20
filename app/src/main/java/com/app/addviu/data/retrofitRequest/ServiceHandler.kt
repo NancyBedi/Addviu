@@ -3,7 +3,6 @@ package com.app.addviu.data.retrofitRequest
 import android.app.Activity
 import android.content.Context
 import com.app.addviu.AppController
-import com.app.addviu.model.CreateChannelBean
 import com.app.addviu.view.activity.VideoUploadScreen
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util

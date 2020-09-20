@@ -1,19 +1,12 @@
 package com.app.addviu.presenter
 
 import android.content.Context
-import androidx.fragment.app.FragmentManager
-import androidx.viewpager.widget.ViewPager
 import com.app.addviu.AppController
 import com.app.addviu.model.latestVidModel.LatestVidBean
-import com.app.addviu.model.videoModel.CategoryBean
-import com.app.addviu.view.activity.MyChannels
 import com.app.addviu.view.activity.SideMenuVid
-import com.app.addviu.view.adapter.ChannelPagerAdapter
 import com.app.addviu.view.viewInterface.ResponseCallback
-import com.app.addviu.view.viewInterface.RewardsInterface
 import com.app.addviu.view.viewInterface.SideMenuInterface
 import com.app.naxtre.mvvmfinal.data.helper.Util
-import com.google.android.material.tabs.TabLayout
 
 class SideMenuPresenter(val context: Context): ResponseCallback, SideMenuInterface {
     override fun <T> success(t: T) {

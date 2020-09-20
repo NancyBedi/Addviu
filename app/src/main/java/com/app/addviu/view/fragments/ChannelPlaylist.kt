@@ -13,7 +13,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.app.addviu.AppController
@@ -25,14 +24,10 @@ import com.app.addviu.model.DeleteCommonBean
 import com.app.addviu.model.userModel.SignUpBean
 import com.app.addviu.model.videoModel.PlaylistBean
 import com.app.addviu.model.videoModel.PlaylistData
-import com.app.addviu.view.activity.MyChannels
 import com.app.addviu.view.adapter.ChannelListAdapter
 import com.app.addviu.view.adapter.PlaylistAdapter
-import com.app.addviu.view.viewInterface.PlaylistClick
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
-import kotlinx.android.synthetic.main.add_channel_layout.*
-import kotlinx.android.synthetic.main.channel_home_fragment.*
 import kotlinx.android.synthetic.main.channel_playlist_fragment.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody

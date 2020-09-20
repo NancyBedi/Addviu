@@ -8,20 +8,8 @@ import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.FragmentManager
-import androidx.viewpager.widget.ViewPager
-import com.app.addviu.AppController
-import com.app.addviu.R
-import com.app.addviu.model.relatedModel.RelatedVideoBean
-import com.app.addviu.model.videoModel.UploadDataBean
-import com.app.addviu.view.activity.VideoPlayerScreen
-import com.app.addviu.view.adapter.RewardsPagerAdapter
-import com.app.addviu.view.viewInterface.ResponseCallback
-import com.app.addviu.view.viewInterface.RewardsInterface
 import com.app.addviu.view.viewInterface.VideoPlayerInterface
 import com.google.android.exoplayer2.ui.PlayerView
-import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.video_player_layout.*
 
 class VideoPlayerPresenter(val context: Context) : VideoPlayerInterface{
 
@@ -60,19 +48,19 @@ class VideoPlayerPresenter(val context: Context) : VideoPlayerInterface{
                 )
             }
         }
-        for (i in 0 until videoExampleLayout.childCount) {
-            val view: View = videoExampleLayout.getChildAt(i)
-            // If it's not the video element, hide or show it, depending on fullscreen status.
-            if (view.id != R.id.videoContainer && view.id != R.id.fullScreenImg &&
-                view.id != R.id.backImage
-            ) {
-                if (isFullscreen) {
-                    view.visibility = View.GONE
-                } else {
-                    view.visibility = View.VISIBLE
-                }
-            }
-        }
+//        for (i in 0 until videoExampleLayout.childCount) {
+//            val view: View = videoExampleLayout.getChildAt(i)
+//            // If it's not the video element, hide or show it, depending on fullscreen status.
+//            if (view.id != R.id.videoContainer && view.id != R.id.fullScreenImg &&
+//                view.id != R.id.backImage
+//            ) {
+//                if (isFullscreen) {
+//                    view.visibility = View.GONE
+//                } else {
+//                    view.visibility = View.VISIBLE
+//                }
+//            }
+//        }
     }
 
     override fun getRelatedVideos(uid:String) {

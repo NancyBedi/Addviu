@@ -10,9 +10,7 @@ import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.model.homeModel.AccountData
-import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.MyChannels
-import com.app.addviu.view.activity.SignInScreen
 import com.app.addviu.view.fragments.AccountFragment
 import com.app.addviu.view.viewInterface.YesClick
 import com.app.naxtre.mvvmfinal.data.helper.Util

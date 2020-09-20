@@ -2,13 +2,10 @@ package com.app.addviu.view.fragments
 
 import android.Manifest
 import android.app.Activity
-import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -18,7 +15,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.PopupMenu
-import android.widget.PopupWindow
 import androidx.annotation.RequiresApi
 import com.app.addviu.AppController
 import com.app.addviu.R
@@ -40,7 +36,6 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
-import java.util.zip.Inflater
 
 
 class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(), ResponseCallback, YesClick

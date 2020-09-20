@@ -12,7 +12,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.View.*
-import androidx.fragment.app.FragmentTransaction
 import com.app.addviu.R
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.relatedModel.RelatedVideo
@@ -68,7 +67,7 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
         bundle.putString("uid", videoUid)
         val videoDetailsFragment = VideoDetailsFragment()
         videoDetailsFragment.arguments = bundle
-        fragmentTransaction.replace(R.id.detailContainer, videoDetailsFragment, "detailsFragment")
+//        fragmentTransaction.replace(R.id.detailContainer, videoDetailsFragment, "detailsFragment")
         fragmentTransaction.commit()
     }
 

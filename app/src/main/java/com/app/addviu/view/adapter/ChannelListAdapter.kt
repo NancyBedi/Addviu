@@ -2,17 +2,14 @@ package com.app.addviu.view.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.model.videoModel.ChannelData
-import com.app.addviu.view.BaseActivity
 import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.MyChannels
 import com.app.addviu.view.fragments.MyChannelFragment

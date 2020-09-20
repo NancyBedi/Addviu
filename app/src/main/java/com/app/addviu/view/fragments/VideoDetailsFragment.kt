@@ -4,20 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.ScrollView
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.FragmentTransaction
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.COMMENT_ADDED
 import com.app.addviu.data.helper.IS_LOGIN
-import com.app.addviu.data.helper.USER_NAME
 import com.app.addviu.data.helper.WEB_URL
-import com.app.addviu.model.homeModel.AccountData
-import com.app.addviu.model.homeModel.HomeBean
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.relatedModel.RelatedVideo
 import com.app.addviu.model.relatedModel.RelatedVideoBean
@@ -26,15 +20,10 @@ import com.app.addviu.model.userModel.SignUpBean
 import com.app.addviu.model.videoModel.SubscribeBean
 import com.app.addviu.model.videoModel.VotesBean
 import com.app.addviu.view.activity.ChannelPage
+import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.SignInScreen
-import com.app.addviu.view.activity.VideoPlayerScreen
-import com.app.addviu.view.adapter.AccountListAdapter
-import com.app.addviu.view.adapter.HomeListAdapter
 import com.app.addviu.view.adapter.RelatedVideoAdapter
 import com.app.addviu.view.viewInterface.ResponseCallback
-import com.app.naxtre.mvvmfinal.data.helper.Util
-import kotlinx.android.synthetic.main.account_fragment_layout.*
-import kotlinx.android.synthetic.main.home_fragment_layout.*
 import kotlinx.android.synthetic.main.home_fragment_layout.recyclerView
 import kotlinx.android.synthetic.main.video_detail_fragment.*
 
@@ -126,8 +115,8 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
         data = relatedVideo
         channelSlug = relatedVideo.channel.slug
         getVotesSubscribeUser()
-        (activity as VideoPlayerScreen).vimeoExtraction(data?.videoFilename ?: "")
-        (activity as VideoPlayerScreen).relatedVideo = data
+//        (activity as VideoPlayerScreen).vimeoExtraction(data?.videoFilename ?: "")
+//        (activity as VideoPlayerScreen).relatedVideo = data
         videoTitle.text = relatedVideo.title
         detailText.text =
             relatedVideo.viewsCount.toString().plus(" views")
@@ -151,7 +140,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
             imageLoader.displayImage(
                 data.video.channel.coverImage,
                 channelImage,
-                (activity!! as VideoPlayerScreen).roundProfilePic()
+                (activity!! as HomeScreen).roundProfilePic()
             )
         }
     }
@@ -160,7 +149,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
         if (t is RelatedVideoBean) {
             if (t.status == 1) {
                 setDataInList(t.data)
-                (activity as VideoPlayerScreen).setVideoPlayerVisible()
+//                (activity as HomeScreen).setVideoPlayerVisible()
             }
         } else if (t is SignUpBean) {
             if (t.status == 1) {
@@ -251,7 +240,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
                 videoCommentsFragment.arguments = bundle
                 fragmentTransaction?.hide(fragmentManager.findFragmentByTag("detailsFragment")!!)
                 fragmentTransaction?.add(
-                    R.id.detailContainer,
+                    R.id.frameBottom,
                     videoCommentsFragment,
                     "commentsFragment"
                 )

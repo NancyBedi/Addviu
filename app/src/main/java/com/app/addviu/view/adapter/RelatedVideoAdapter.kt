@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.model.homeModel.HomeData
-import com.app.addviu.view.activity.VideoPlayerScreen
+import com.app.addviu.view.activity.HomeScreen
 import com.nostra13.universalimageloader.core.ImageLoader
 
 import kotlinx.android.synthetic.main.related_video_adapter.view.*
@@ -72,7 +72,7 @@ class RelatedVideoAdapter(
         imageLoader.displayImage(
             data.thumbnailUrl,
             holder.bannerImage,
-            (context as VideoPlayerScreen).profilePic()
+            (context as HomeScreen).profilePic()
         )
 
 
@@ -93,7 +93,13 @@ class RelatedVideoAdapter(
 
 
         override fun onClick(v: View?) {
-            (context as VideoPlayerScreen).setRelatedVideoSelected(dashList[adapterPosition])
+            val data = dashList[adapterPosition]
+            val homeData = HomeData()
+            homeData.uid = data.uid
+            homeData.channelSlug = data.channelSlug
+            homeData.videoFilename = data.videoFilename
+            homeData.viewsCount = data.viewsCount
+            (context as HomeScreen).initializeDraggablePanel(homeData)
         }
     }
 }

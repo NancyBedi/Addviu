@@ -15,8 +15,8 @@ import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.data.helper.USER_ID
 import com.app.addviu.model.relatedModel.CommentsData
+import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.SignInScreen
-import com.app.addviu.view.activity.VideoPlayerScreen
 import com.app.addviu.view.fragments.BaseFragment
 import com.app.addviu.view.fragments.VideoCommentsFragment
 import com.app.addviu.view.fragments.VideoRepliesFragment
@@ -71,7 +71,7 @@ class CommentsAdapter(
             imageLoader.displayImage(
                 data.channel.coverImage,
                 holder.channelImage,
-                (context as VideoPlayerScreen).roundProfilePic()
+                (context as HomeScreen).roundProfilePic()
             )
         }
 
@@ -105,7 +105,7 @@ class CommentsAdapter(
             when (v?.id!!) {
                 R.id.commentCount, R.id.repliesCount -> {
                     if (type == "comments") {
-                        val fragmentManager = (context as VideoPlayerScreen).supportFragmentManager
+                        val fragmentManager = (context as HomeScreen).supportFragmentManager
                         val fragmentTransaction = fragmentManager.beginTransaction()
                         fragmentTransaction.hide(fragmentManager.findFragmentByTag("commentsFragment")!!)
                         val bundle = Bundle()
@@ -114,7 +114,7 @@ class CommentsAdapter(
                         val videoRepliesFragment = VideoRepliesFragment()
                         videoRepliesFragment.arguments = bundle
                         fragmentTransaction.add(
-                            R.id.detailContainer,
+                            R.id.frameBottom,
                             videoRepliesFragment,
                             "repliesFragment"
                         )

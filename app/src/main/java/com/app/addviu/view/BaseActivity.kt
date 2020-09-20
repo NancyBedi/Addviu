@@ -7,15 +7,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.view.WindowManager
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.REQUEST_GALLERY_IMAGE

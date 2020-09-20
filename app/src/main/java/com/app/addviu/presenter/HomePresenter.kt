@@ -3,18 +3,15 @@ package com.app.addviu.presenter
 import android.content.Context
 import android.content.Intent
 import android.view.MenuItem
-import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.app.addviu.AppController
 import com.app.addviu.R
 import com.app.addviu.data.helper.IS_LOGIN
-import com.app.addviu.data.helper.IS_SIGN_CLICKED
 import com.app.addviu.data.helper.SIGN_IN_CODE
 import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.view.activity.HomeScreen
-import com.app.addviu.view.activity.RewardsScreen
 import com.app.addviu.view.activity.SignInScreen
 import com.app.addviu.view.fragments.*
 import com.app.addviu.view.viewInterface.HomeInterface
@@ -77,7 +74,8 @@ BottomNavigationView.OnNavigationItemSelectedListener{
                         return true
                     }
                 } else {
-                    (context as HomeScreen).startActivityForResult(Intent(context, SignInScreen::class.java),
+                    context.onPauseVideo()
+                    context.startActivityForResult(Intent(context, SignInScreen::class.java),
                         SIGN_IN_CODE)
                     return false
                 }
