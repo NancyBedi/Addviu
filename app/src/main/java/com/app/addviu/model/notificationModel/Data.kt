@@ -1,5 +1,6 @@
 package com.app.addviu.model.notificationModel
 
+import com.app.addviu.model.homeModel.HomeData
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -10,5 +11,5 @@ class Data {
 
     @SerializedName("notifications")
     @Expose
-    var notifications = ArrayList<Notification>()
+    var notifications = ArrayList<HomeData>()
 }

@@ -78,7 +78,7 @@ class VideoUploadScreen : BaseActivity(), UploadCallback, View.OnClickListener, 
             channelEditText.setText(channelVidData.channelName)
             playlistEditText.setText(channelVidData.playlistName)
             statusEditText.setText(channelVidData.visibility)
-            imageLoader.displayImage(channelVidData.thumbnailUrl, thumbImage, profilePic())
+            imageLoader.displayImage(channelVidData.thumbnailUrl, thumbImage, Util.profilePic())
             imageIcon.visibility = GONE
             btnPublish.isEnabled = true
             btnPublish.text = "Save"
@@ -403,7 +403,7 @@ class VideoUploadScreen : BaseActivity(), UploadCallback, View.OnClickListener, 
                 }
             } else if (requestCode == REQUEST_GALLERY_IMAGE) {
                 uriImage = data?.data
-                imageLoader.displayImage(uriImage.toString(), thumbImage, profilePic())
+                imageLoader.displayImage(uriImage.toString(), thumbImage, Util.profilePic())
                 imageIcon.visibility = GONE
             }
         }

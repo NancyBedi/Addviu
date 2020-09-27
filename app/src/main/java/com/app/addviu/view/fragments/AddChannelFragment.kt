@@ -179,7 +179,7 @@ class AddChannelFragment : BaseFragment(), ResponseCallback, View.OnClickListene
                 categoryEditText.setText("")
                 desEditText.setText("")
                 imageIcon.visibility = VISIBLE
-                imageLoader.displayImage("", thumbImage, profilePic())
+                imageLoader.displayImage("", thumbImage, Util.profilePic())
                 (context as MyChannels).viewPager.setCurrentItem(1, true)
                 (context as MyChannels).changeData()
                 btnSubmit.text = "Add Channel"

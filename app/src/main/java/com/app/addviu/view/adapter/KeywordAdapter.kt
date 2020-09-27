@@ -16,6 +16,7 @@ import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.Playlistpage
 import com.app.addviu.view.activity.SearchActivity
 import com.app.addviu.view.activity.VideoPlayerScreen
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.DisplayImageOptions
 import com.nostra13.universalimageloader.core.ImageLoader
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
@@ -109,13 +110,13 @@ class KeywordAdapter<Any>(
                         imageLoader.displayImage(
                             "drawable://" + R.drawable.circle_user,
                             holder.channelImage,
-                            roundProfilePic()
+                            Util.roundProfilePic()
                         )
                     } else {
                         imageLoader.displayImage(
                             data.coverImage,
                             holder.channelImage,
-                            roundProfilePic()
+                            Util.roundProfilePic()
                         )
                     }
                     holder.moreIcon.visibility = View.GONE
@@ -207,12 +208,6 @@ class KeywordAdapter<Any>(
                 }
             }
         }
-    }
-
-    fun roundProfilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true)
-            .showImageOnLoading(R.drawable.circle_user)
-            .displayer(RoundedBitmapDisplayer(200)).build()
     }
 
     fun updateKeyList(carList: ArrayList<KeywordBean>) {

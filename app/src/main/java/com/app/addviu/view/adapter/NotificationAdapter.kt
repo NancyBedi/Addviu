@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
+import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.notificationModel.Notification
 import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.VideoPlayerScreen
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.DisplayImageOptions
 import com.nostra13.universalimageloader.core.ImageLoader
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
@@ -19,7 +21,7 @@ import kotlinx.android.synthetic.main.recycle_notify_item.view.*
 
 class NotificationAdapter(
     private val imageLoader: ImageLoader,
-    private val dashList: ArrayList<Notification>,
+    private val dashList: ArrayList<HomeData>,
     val context: Context
 ) :
     RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
@@ -52,7 +54,7 @@ class NotificationAdapter(
             imageLoader.displayImage(
                 data.channelImage,
                 holder.flameIcon,
-                (context as HomeScreen).roundProfilePic()
+                Util.roundProfilePic()
             )
         }
         imageLoader.displayImage(
@@ -77,9 +79,13 @@ class NotificationAdapter(
 
         override fun onClick(v: View?) {
             val data = dashList[adapterPosition]
-            val intent = Intent(context, VideoPlayerScreen::class.java)
-            intent.putExtra("uid", data.uid)
-            (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
+//            val intent = Intent(context, VideoPlayerScreen::class.java)
+//            intent.putExtra("uid", data.uid)
+//            (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
+            (context as HomeScreen).initializeDraggablePanel(data)
+
+
+
 //            if (data.id == data.notificationVideoId && data.userId == data.notificationUserId ) {
 //                val intent = Intent(context, ChannelPage::class.java)
 //                intent.putExtra("name", data.channelName)

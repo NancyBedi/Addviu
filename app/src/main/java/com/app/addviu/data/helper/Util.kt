@@ -33,6 +33,9 @@ import com.app.addviu.R
 import com.app.addviu.data.helper.DIRECTORY_NAME
 import com.app.addviu.view.viewInterface.AlertDialogListener
 import com.app.addviu.view.viewInterface.YesClick
+import com.nostra13.universalimageloader.core.DisplayImageOptions
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer
 import kotlinx.android.synthetic.main.select_image_dialog.view.*
 import java.io.File
 import java.io.FileInputStream
@@ -109,6 +112,18 @@ open class Util {
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
                 )
             }
+        }
+
+        fun roundProfilePic(): DisplayImageOptions {
+            return DisplayImageOptions.Builder().cacheOnDisk(true)
+                .showImageOnLoading(R.drawable.circle_user)
+                .displayer(RoundedBitmapDisplayer(200)).build()
+        }
+
+        fun profilePic(): DisplayImageOptions {
+            return DisplayImageOptions.Builder().cacheOnDisk(true)
+                .showImageOnLoading(R.drawable.loading)
+                .displayer(SimpleBitmapDisplayer()).build()
         }
 
         fun showImageAlertDialog(context: Activity) {

@@ -10,8 +10,8 @@ android {
         applicationId "com.app.addviu"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 6
-        versionName "1.05"
+        versionCode 7
+        versionName "1.06"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true

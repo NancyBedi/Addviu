@@ -14,6 +14,7 @@ import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.MyChannels
 import com.app.addviu.view.fragments.MyChannelFragment
 import com.app.addviu.view.viewInterface.YesClick
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.DisplayImageOptions
 import com.nostra13.universalimageloader.core.ImageLoader
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
@@ -61,10 +62,10 @@ class ChannelListAdapter(
             imageLoader.displayImage(
                 "drawable://" + R.drawable.circle_user,
                 holder.channelImage,
-                roundProfilePic()
+                Util.roundProfilePic()
             )
         } else {
-            imageLoader.displayImage(data.coverImage, holder.channelImage, roundProfilePic())
+            imageLoader.displayImage(data.coverImage, holder.channelImage, Util.roundProfilePic())
         }
 
         holder.moreIcon.setOnClickListener {
@@ -114,11 +115,6 @@ class ChannelListAdapter(
         }
     }
 
-    fun roundProfilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true)
-            .showImageOnLoading(R.drawable.circle_user)
-            .displayer(RoundedBitmapDisplayer(200)).build()
-    }
 
     override fun yesClick() {
         AppController.instance?.dataManager?.deleteChannel(

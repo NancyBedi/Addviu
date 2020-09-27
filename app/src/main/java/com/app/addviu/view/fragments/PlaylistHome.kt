@@ -101,13 +101,13 @@ class PlaylistHome(var playListId:String, val isUserChannel:Boolean):BaseFragmen
             }
         }else if (t is PlaylistDetailBean){
             if (t.status == 1){
-                if (t.data.banner != null && t.data.banner.isNotEmpty()) {
-                    imageLoader.displayImage(t.data.banner, bannerImage, profilePic())
+                if (t.data.banner != null && t.data.banner?.isNotEmpty()!!) {
+                    imageLoader.displayImage(t.data.banner, bannerImage, Util.profilePic())
                 }
 //                else{
 //                    imageLoader.displayImage("drawable://" + R.drawable.ic_launcher_background, bannerImage, profilePic())
 //                }
-                if (t.data.playlistIcon != null && t.data.playlistIcon.isNotEmpty()) {
+                if (t.data.playlistIcon != null && t.data.playlistIcon?.isNotEmpty()!!) {
                     imageLoader.displayImage(t.data.playlistIcon, channelImg, circleProfilePic())
                 }
 //                else{
@@ -175,7 +175,7 @@ class PlaylistHome(var playListId:String, val isUserChannel:Boolean):BaseFragmen
                     imageLoader.displayImage(selectedImage.toString(), channelImg, circleProfilePic())
                     updateChannelImage()
                 }else{
-                    imageLoader.displayImage(selectedImage.toString(), bannerImage, profilePic())
+                    imageLoader.displayImage(selectedImage.toString(), bannerImage, Util.profilePic())
                     updateBanner()
                 }
             } catch (e: Exception) {

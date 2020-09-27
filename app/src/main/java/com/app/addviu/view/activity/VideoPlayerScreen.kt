@@ -34,7 +34,7 @@ import vimeoextractor.VimeoExtractor
 import vimeoextractor.VimeoVideo
 
 @SuppressLint("SourceLockedOrientationActivity")
-class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
+class VideoPlayerScreen : BaseActivity(), OnClickListener {
 
     val adUrl = ("https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/"
             + "single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast"
@@ -53,7 +53,7 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.video_player_layout)
+        setContentView(R.layout.activity_video_player_screen)
         videoUid = intent.getStringExtra("uid") ?: ""
         videoPlayerPresenter = VideoPlayerPresenter(this)
         initializePlayer()
@@ -69,7 +69,7 @@ class VideoPlayerScreen : BaseActivity(), View.OnClickListener {
         bundle.putString("uid", videoUid)
         val videoDetailsFragment = VideoDetailsFragment()
         videoDetailsFragment.arguments = bundle
-//        fragmentTransaction.replace(R.id.detailContainer, videoDetailsFragment, "detailsFragment")
+        fragmentTransaction.replace(R.id.detailContainer, videoDetailsFragment, "detailsFragment")
         fragmentTransaction.commit()
     }
 

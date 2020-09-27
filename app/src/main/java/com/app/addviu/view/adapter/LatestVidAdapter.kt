@@ -8,16 +8,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.data.helper.CHANGE_HOME_DATA
+import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.model.latestVidModel.LatestVidListData
 import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.SideMenuVid
 import com.app.addviu.view.activity.VideoPlayerScreen
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.home_list_adapter.view.*
 
 class LatestVidAdapter(
     private val imageLoader: ImageLoader,
-    private val dashList: ArrayList<LatestVidListData>,
+    private val dashList: ArrayList<HomeData>,
     val context: Context
 ) :
     RecyclerView.Adapter<LatestVidAdapter.ViewHolder>() {
@@ -76,13 +78,13 @@ class LatestVidAdapter(
         imageLoader.displayImage(
             data.thumbnailUrl,
             holder.bannerImage,
-            (context as SideMenuVid).profilePic()
+            Util.profilePic()
         )
 
-        if(data.channel_image.isNullOrBlank()){
+        if(data.channelImage.isNullOrBlank()){
             holder.userImage.setImageResource(R.drawable.circle_user)
         }else {
-            imageLoader.displayImage(data.channel_image, holder.userImage, context.roundProfilePic())
+            imageLoader.displayImage(data.channelImage, holder.userImage, Util.roundProfilePic())
         }
         holder.userImage.setOnClickListener {
             openChannel(data)
@@ -108,18 +110,14 @@ class LatestVidAdapter(
 
 
         override fun onClick(v: View?) {
-//            if(baseFragment is HomeFragment){
-//                baseFragment.selectedPosition = adapterPosition
-//            }else if(baseFragment is TrendingFragment){
-//                baseFragment.selectedPosition = adapterPosition
-//            }
             val data = dashList[adapterPosition]
+            (context as SideMenuVid).selectedPosition = adapterPosition
             val intent = Intent(context, VideoPlayerScreen::class.java)
             intent.putExtra("uid", data.uid)
-            (context as SideMenuVid).startActivityForResult(intent, CHANGE_HOME_DATA)
+            context.startActivityForResult(intent, CHANGE_HOME_DATA)
         }
     }
-    fun openChannel(data: LatestVidListData){
+    fun openChannel(data: HomeData){
         val intent = Intent(context, ChannelPage::class.java)
         intent.putExtra("id", data.channelId.toString())
         intent.putExtra("name", data.channelName)

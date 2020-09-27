@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.R
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.view.activity.HomeScreen
+import com.app.addviu.view.activity.VideoPlayerScreen
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
 
 import kotlinx.android.synthetic.main.related_video_adapter.view.*
@@ -45,14 +47,14 @@ class RelatedVideoAdapter(
 
         holder.viewsCount.text = data.viewsCount.toString().plus(" views")
 
-        if(data.duration.isNotBlank() && data.duration.contains(":")) {
+        if (data.duration.isNotBlank() && data.duration.contains(":")) {
             val array = data.duration.split(":")
             if (array[0].equals("00") && array.size == 3) {
                 holder.textTime.text = array[1].plus(":").plus(array[2])
-            }else {
+            } else {
                 holder.textTime.text = data.duration
             }
-        }else{
+        } else {
             holder.textTime.text = data.duration
         }
 //        val imageSize = ImageSize(200, 100)
@@ -72,7 +74,7 @@ class RelatedVideoAdapter(
         imageLoader.displayImage(
             data.thumbnailUrl,
             holder.bannerImage,
-            (context as HomeScreen).profilePic()
+            Util.profilePic()
         )
 
 
@@ -94,12 +96,11 @@ class RelatedVideoAdapter(
 
         override fun onClick(v: View?) {
             val data = dashList[adapterPosition]
-            val homeData = HomeData()
-            homeData.uid = data.uid
-            homeData.channelSlug = data.channelSlug
-            homeData.videoFilename = data.videoFilename
-            homeData.viewsCount = data.viewsCount
-            (context as HomeScreen).initializeDraggablePanel(homeData)
+            if (context is HomeScreen) {
+                context.initializeDraggablePanel(data)
+            }else if(context is VideoPlayerScreen){
+                context.setRelatedVideoSelected(data)
+            }
         }
     }
 }

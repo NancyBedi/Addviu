@@ -12,6 +12,7 @@ import com.app.addviu.model.subscribedChannel.SubscribedChannelData
 import com.app.addviu.model.videoModel.ChannelData
 import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.fragments.SubscribeChannelFragment
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.DisplayImageOptions
 import com.nostra13.universalimageloader.core.ImageLoader
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
@@ -45,7 +46,7 @@ class SubscribedChannelAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mainList[position]
-        if(!data.channelName.isNullOrEmpty()) {
+        if (!data.channelName.isNullOrEmpty()) {
             holder.channelName.text = data.channelName
         }
         if (data.subscribers != null) {
@@ -58,10 +59,10 @@ class SubscribedChannelAdapter(
             imageLoader.displayImage(
                 "drawable://" + R.drawable.circle_user,
                 holder.channelImage,
-                roundProfilePic()
+                Util.roundProfilePic()
             )
         } else {
-            imageLoader.displayImage(data.coverImage, holder.channelImage, roundProfilePic())
+            imageLoader.displayImage(data.coverImage, holder.channelImage, Util.roundProfilePic())
         }
         holder.moreIcon.visibility = GONE
 
@@ -93,9 +94,4 @@ class SubscribedChannelAdapter(
         context.startActivity(intent)
     }
 
-    fun roundProfilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true)
-            .showImageOnLoading(R.drawable.circle_user)
-            .displayer(RoundedBitmapDisplayer(200)).build()
-    }
 }

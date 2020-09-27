@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.addviu.AppController
 import com.app.addviu.R
@@ -15,11 +16,13 @@ import com.app.addviu.data.helper.IS_LOGIN
 import com.app.addviu.data.helper.SharedPrefsHelper
 import com.app.addviu.data.helper.USER_ID
 import com.app.addviu.model.relatedModel.CommentsData
+import com.app.addviu.view.BaseActivity
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.SignInScreen
 import com.app.addviu.view.fragments.BaseFragment
 import com.app.addviu.view.fragments.VideoCommentsFragment
 import com.app.addviu.view.fragments.VideoRepliesFragment
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.related_comment_adapter.view.*
 
@@ -41,7 +44,7 @@ class CommentsAdapter(
 
         contactView = if (type == "replies") {
             inflater.inflate(R.layout.related_reply_adapter, parent, false)
-        }else{
+        } else {
             inflater.inflate(R.layout.related_comment_adapter, parent, false)
         }
 
@@ -59,9 +62,9 @@ class CommentsAdapter(
         holder.channelName.text = data.channel.channelName
         holder.commentCount?.text = data.replyCount.toString()
 
-        if(data.replyCount>1) {
+        if (data.replyCount > 1) {
             holder.repliesCount?.text = data.replyCount.toString().plus(" Replies")
-        }else{
+        } else {
             holder.repliesCount?.text = data.replyCount.toString().plus(" Reply")
         }
 
@@ -71,7 +74,7 @@ class CommentsAdapter(
             imageLoader.displayImage(
                 data.channel.coverImage,
                 holder.channelImage,
-                (context as HomeScreen).roundProfilePic()
+                Util.roundProfilePic()
             )
         }
 
@@ -105,7 +108,7 @@ class CommentsAdapter(
             when (v?.id!!) {
                 R.id.commentCount, R.id.repliesCount -> {
                     if (type == "comments") {
-                        val fragmentManager = (context as HomeScreen).supportFragmentManager
+                        val fragmentManager = (context as BaseActivity).supportFragmentManager
                         val fragmentTransaction = fragmentManager.beginTransaction()
                         fragmentTransaction.hide(fragmentManager.findFragmentByTag("commentsFragment")!!)
                         val bundle = Bundle()
@@ -113,24 +116,32 @@ class CommentsAdapter(
                         bundle.putString("uid", uid)
                         val videoRepliesFragment = VideoRepliesFragment()
                         videoRepliesFragment.arguments = bundle
-                        fragmentTransaction.add(
-                            R.id.frameBottom,
-                            videoRepliesFragment,
-                            "repliesFragment"
-                        )
+                        if (context is HomeScreen) {
+                            fragmentTransaction.add(
+                                R.id.frameBottom,
+                                videoRepliesFragment,
+                                "repliesFragment"
+                            )
+                        } else {
+                            fragmentTransaction.add(
+                                R.id.detailContainer,
+                                videoRepliesFragment,
+                                "repliesFragment"
+                            )
+                        }
                         fragmentTransaction.commit()
                     }
                 }
                 R.id.deleteComment -> {
                     if (sharedPrefsHelper[IS_LOGIN, false]!!) {
-                        if(baseFragment is VideoCommentsFragment) {
+                        if (baseFragment is VideoCommentsFragment) {
                             AppController.instance?.dataManager?.deleteComment(
                                 uid,
                                 data.id.toString(),
                                 baseFragment,
                                 context
                             )
-                        }else if(baseFragment is VideoRepliesFragment){
+                        } else if (baseFragment is VideoRepliesFragment) {
                             AppController.instance?.dataManager?.deleteComment(
                                 uid,
                                 data.id.toString(),
@@ -138,8 +149,8 @@ class CommentsAdapter(
                                 context
                             )
                         }
-                    }else{
-                        context.startActivity(Intent(context,SignInScreen::class.java))
+                    } else {
+                        context.startActivity(Intent(context, SignInScreen::class.java))
                     }
                 }
             }

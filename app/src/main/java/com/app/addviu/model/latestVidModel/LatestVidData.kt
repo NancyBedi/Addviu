@@ -1,5 +1,6 @@
 package com.app.addviu.model.latestVidModel
 
+import com.app.addviu.model.homeModel.HomeData
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -10,7 +11,7 @@ class LatestVidData {
 
     @SerializedName("data")
     @Expose
-    var data = ArrayList<LatestVidListData>()
+    var data = ArrayList<HomeData>()
 
     @SerializedName("first_page_url")
     @Expose

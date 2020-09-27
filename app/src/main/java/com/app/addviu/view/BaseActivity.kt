@@ -55,6 +55,7 @@ open class BaseActivity : AppCompatActivity() {
         }
 
         setFullScreen()
+
         setStatusBarGradiant()
 
     }
@@ -98,18 +99,6 @@ open class BaseActivity : AppCompatActivity() {
         startActivityForResult(intent, REQUEST_GALLERY_IMAGE)
     }
 
-    fun profilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true)
-            .showImageOnLoading(R.drawable.loading)
-            .displayer(SimpleBitmapDisplayer()).build()
-    }
-
-    fun roundProfilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true)
-            .showImageOnLoading(R.drawable.circle_user)
-            .displayer(RoundedBitmapDisplayer(200)).build()
-    }
-
     fun circleProfilePic(): DisplayImageOptions {
         return DisplayImageOptions.Builder().cacheOnDisk(true)
             .showImageOnLoading(R.drawable.circle_user)
@@ -121,7 +110,7 @@ open class BaseActivity : AppCompatActivity() {
             window.decorView.systemUiVisibility = (
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                             or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
-            window.statusBarColor = Color.TRANSPARENT
+            window.statusBarColor = Color.WHITE
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or

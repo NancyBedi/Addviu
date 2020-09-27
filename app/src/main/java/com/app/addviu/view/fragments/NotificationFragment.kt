@@ -16,15 +16,12 @@ import com.app.addviu.model.notificationModel.NotificationBean
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.adapter.ChannelListAdapter
 import com.app.addviu.view.adapter.HomeListAdapter
-import com.app.addviu.view.adapter.LatestVidAdapter
 import com.app.addviu.view.adapter.NotificationAdapter
 import com.app.addviu.view.viewInterface.ResponseCallback
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.activity_notification.*
-import kotlinx.android.synthetic.main.home_fragment_layout.*
 
-class
-NotificationFragment:BaseFragment(), ResponseCallback {
+class NotificationFragment:BaseFragment(), ResponseCallback {
     var adapter: ChannelListAdapter?=null
 
     private var homeAdapter: HomeListAdapter? = null
@@ -38,6 +35,7 @@ NotificationFragment:BaseFragment(), ResponseCallback {
     private var isLoading = false
     var totalItemsAvailable = 0
     var lastPage = 0
+    var selectedPosition = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -84,6 +82,11 @@ NotificationFragment:BaseFragment(), ResponseCallback {
         }
     }
 
+//    fun changeData(homeData: HomeData) {
+//        arrayList[selectedPosition] = homeData
+//        homeAdapter?.notifyItemChanged(selectedPosition)
+//    }
+
     override fun failure(t: Throwable) {
 
     }
@@ -99,7 +102,7 @@ NotificationFragment:BaseFragment(), ResponseCallback {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 totalItemCount = linearLayoutManager!!.itemCount
-                var lastVisibleItemarray = linearLayoutManager!!.findLastVisibleItemPosition()
+                val lastVisibleItemarray = linearLayoutManager!!.findLastVisibleItemPosition()
                 if (lastVisibleItemarray > 0) {
                     lastVisibleItem = if (lastVisibleItemarray == 3) {
                         lastVisibleItemarray

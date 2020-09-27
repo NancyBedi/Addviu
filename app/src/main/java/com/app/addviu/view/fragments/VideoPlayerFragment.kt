@@ -39,7 +39,7 @@ class VideoPlayerFragment(val draggablePanel: DraggablePanel) : BaseFragment(), 
             + "%3Dskippablelinear&correlator=")
     var videoUrl = ""
     private var isLandscape = false
-    private var player: SimpleExoPlayer? = null
+    var player: SimpleExoPlayer? = null
     var adsLoader: ImaAdsLoader? = null
     private var mediaSourceFactory: ProgressiveMediaSource.Factory? = null
     private var dataSourceFactory: DataSource.Factory? = null
@@ -155,11 +155,27 @@ class VideoPlayerFragment(val draggablePanel: DraggablePanel) : BaseFragment(), 
         backImage.setOnClickListener(this)
         onVideoTouchListener()
 
-        player?.addListener(object : Player.EventListener{
+        player?.addListener(object : Player.EventListener {
             override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
-                if(playbackState == ExoPlayer.STATE_ENDED){
-                    isVideoEnded = true
+//                if(playbackState == ExoPlayer.STATE_ENDED){
+//                    isVideoEnded = true
+//                    (context as HomeScreen).onPauseVideo()
+//                }
+
+                if (playWhenReady && playbackState == Player.STATE_READY) {
+                    // media actually playing
+                    (context as HomeScreen).onPlayVideo()
+
+                } else if (playWhenReady) {
                     (context as HomeScreen).onPauseVideo()
+
+                    // might be idle (plays after prepare()),
+                    // buffering (plays when data available)
+                    // or ended (plays when seek away from end)
+                } else {
+                    (context as HomeScreen).onPauseVideo()
+
+                    // player paused in any state
                 }
             }
         })
@@ -260,7 +276,7 @@ class VideoPlayerFragment(val draggablePanel: DraggablePanel) : BaseFragment(), 
     }
 
     fun playVideo() {
-        if(isVideoEnded){
+        if (isVideoEnded) {
             isVideoEnded = false
             player?.seekTo(0)
         }
@@ -280,6 +296,7 @@ class VideoPlayerFragment(val draggablePanel: DraggablePanel) : BaseFragment(), 
                 videoExampleLayout.keepScreenOn = true
             }
         }
+
     }
 
 }

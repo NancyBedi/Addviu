@@ -66,7 +66,7 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
             holder.txtsubscriber.text = "${data.created_date} . ${data.viewsCount} views"
         }
         if (!data.thumbnailUrl.isNullOrEmpty()) {
-            imageLoader.displayImage(data.thumbnailUrl, holder.thumbnail, profilePic())
+            imageLoader.displayImage(data.thumbnailUrl, holder.thumbnail, Util.profilePic())
         }
         if (!isUserChannel) {
             holder.btnMore.visibility = VISIBLE
@@ -137,12 +137,6 @@ class ChannelVidAdapter (private val imageLoader: ImageLoader,
 
     override fun yesClick() {
 //        AppController.instance?.dataManager?
-    }
-
-    fun profilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true)
-            .showImageOnLoading(R.drawable.loading)
-            .displayer(SimpleBitmapDisplayer()).build()
     }
 
 }

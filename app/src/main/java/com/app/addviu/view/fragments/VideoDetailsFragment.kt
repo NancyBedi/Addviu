@@ -22,8 +22,10 @@ import com.app.addviu.model.videoModel.VotesBean
 import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.SignInScreen
+import com.app.addviu.view.activity.VideoPlayerScreen
 import com.app.addviu.view.adapter.RelatedVideoAdapter
 import com.app.addviu.view.viewInterface.ResponseCallback
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.home_fragment_layout.recyclerView
 import kotlinx.android.synthetic.main.video_detail_fragment.*
 
@@ -55,7 +57,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
     }
 
     private fun getRelatedVideos() {
-        AppController.instance?.dataManager?.getRelatedVideos(videoUid, this, context)
+        AppController.instance?.dataManager?.getRelatedVideos(videoUid, this, null)
     }
 
     override fun onResume() {
@@ -115,8 +117,10 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
         data = relatedVideo
         channelSlug = relatedVideo.channel.slug
         getVotesSubscribeUser()
-//        (activity as VideoPlayerScreen).vimeoExtraction(data?.videoFilename ?: "")
-//        (activity as VideoPlayerScreen).relatedVideo = data
+        if(activity is VideoPlayerScreen) {
+            (activity as VideoPlayerScreen).vimeoExtraction(data?.videoFilename ?: "")
+            (activity as VideoPlayerScreen).relatedVideo = data
+        }
         videoTitle.text = relatedVideo.title
         detailText.text =
             relatedVideo.viewsCount.toString().plus(" views")
@@ -140,7 +144,7 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
             imageLoader.displayImage(
                 data.video.channel.coverImage,
                 channelImage,
-                (activity!! as HomeScreen).roundProfilePic()
+                Util.roundProfilePic()
             )
         }
     }
@@ -149,7 +153,9 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
         if (t is RelatedVideoBean) {
             if (t.status == 1) {
                 setDataInList(t.data)
-//                (activity as HomeScreen).setVideoPlayerVisible()
+                if(activity is VideoPlayerScreen) {
+                    (activity as VideoPlayerScreen).setVideoPlayerVisible()
+                }
             }
         } else if (t is SignUpBean) {
             if (t.status == 1) {
@@ -161,25 +167,25 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
             }
         } else if (t is SubscribeBean) {
             if (t.status == 1) {
-                textSubscriber.text = t.data.count.toString().plus(" subscribers")
+                textSubscriber?.text = t.data.count.toString().plus(" subscribers")
                 canSubscribe = t.data.canSubscribe
                 if (!t.data.canSubscribe) {
 //                    subscribeBtn.visibility = GONE
-                    subscribeBtn.setTextColor(ContextCompat.getColor(activity!!, R.color.dark_gray))
-                    subscribeBtn.isEnabled = false
+                    subscribeBtn?.setTextColor(ContextCompat.getColor(activity!!, R.color.dark_gray))
+                    subscribeBtn?.isEnabled = false
                 } else {
-                    subscribeBtn.visibility = VISIBLE
+                    subscribeBtn?.visibility = VISIBLE
                     if (t.data.userSubscribed) {
-                        subscribeBtn.text = getString(R.string.UNSUBSCRIBE)
+                        subscribeBtn?.text = getString(R.string.UNSUBSCRIBE)
                     } else {
-                        subscribeBtn.text = getString(R.string.SUBSCRIBE)
+                        subscribeBtn?.text = getString(R.string.SUBSCRIBE)
                     }
                 }
             }
         } else if (t is VotesBean) {
             if (t.status == 1) {
-                dislikeButton.text = t.data.down.toString()
-                likeButton.text = t.data.up.toString()
+                dislikeButton?.text = t.data.down.toString()
+                likeButton?.text = t.data.up.toString()
                 when {
                     t.data.userVote.equals("up", ignoreCase = true) -> {
                         setVotesImages(
@@ -216,11 +222,11 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
     }
 
     fun setVotesImages(likeImage: Int, dislikeImage: Int) {
-        dislikeButton.setCompoundDrawablesWithIntrinsicBounds(
+        dislikeButton?.setCompoundDrawablesWithIntrinsicBounds(
             null,
             ContextCompat.getDrawable(context!!, dislikeImage), null, null
         )
-        likeButton.setCompoundDrawablesWithIntrinsicBounds(
+        likeButton?.setCompoundDrawablesWithIntrinsicBounds(
             null,
             ContextCompat.getDrawable(context!!, likeImage), null, null
         )
@@ -239,11 +245,20 @@ class VideoDetailsFragment : BaseFragment(), ResponseCallback, View.OnClickListe
                 val videoCommentsFragment = VideoCommentsFragment()
                 videoCommentsFragment.arguments = bundle
                 fragmentTransaction?.hide(fragmentManager.findFragmentByTag("detailsFragment")!!)
-                fragmentTransaction?.add(
-                    R.id.frameBottom,
-                    videoCommentsFragment,
-                    "commentsFragment"
-                )
+                if(context is HomeScreen){
+                    fragmentTransaction?.add(
+                        R.id.frameBottom,
+                        videoCommentsFragment,
+                        "commentsFragment"
+                    )
+                }else{
+                    fragmentTransaction?.add(
+                        R.id.detailContainer,
+                        videoCommentsFragment,
+                        "commentsFragment"
+                    )
+                }
+
                 fragmentTransaction?.commit()
             }
             R.id.subscribeBtn -> {

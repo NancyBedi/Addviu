@@ -12,7 +12,9 @@ import com.app.addviu.view.activity.ChannelPage
 import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.fragments.BaseFragment
 import com.app.addviu.view.fragments.HomeFragment
+import com.app.addviu.view.fragments.NotificationFragment
 import com.app.addviu.view.fragments.TrendingFragment
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.home_list_adapter.view.*
 import kotlinx.android.synthetic.main.home_list_adapter.view.detailText
@@ -21,8 +23,9 @@ import kotlinx.android.synthetic.main.home_list_adapter.view.detailText
 class HomeListAdapter(
     private val imageLoader: ImageLoader,
     private var dashList: ArrayList<HomeData>,
-    val context: Context,val baseFragment: BaseFragment,
-    val type: String) :
+    val context: Context, val baseFragment: BaseFragment,
+    val type: String
+) :
     RecyclerView.Adapter<HomeListAdapter.ViewHolder>() {
 
     private var contactView: View? = null
@@ -47,17 +50,17 @@ class HomeListAdapter(
         holder.textTitle.text = data.title
 
         holder.detailText.text =
-            data.channelName.plus(" . ").plus(data.viewsCount.toString()).plus(" views").
-            plus(" . ").plus(data.createdDate)
+            data.channelName.plus(" . ").plus(data.viewsCount.toString()).plus(" views").plus(" . ")
+                .plus(data.createdDate)
 
-        if(data.duration.isNotBlank() && data.duration.contains(":")) {
+        if (data.duration.isNotBlank() && data.duration.contains(":")) {
             val array = data.duration.split(":")
-                if (array[0].equals("00") && array.size == 3) {
-                    holder.textTime.text = array[1].plus(":").plus(array[2])
-                }else {
-                    holder.textTime.text = data.duration
-                }
-        }else{
+            if (array[0].equals("00") && array.size == 3) {
+                holder.textTime.text = array[1].plus(":").plus(array[2])
+            } else {
+                holder.textTime.text = data.duration
+            }
+        } else {
             holder.textTime.text = data.duration
         }
 
@@ -78,17 +81,17 @@ class HomeListAdapter(
         imageLoader.displayImage(
             data.thumbnailUrl,
             holder.bannerImage,
-            (context as HomeScreen).profilePic()
+           Util.profilePic()
         )
 
-        if(data.channelImage.isNullOrBlank()){
+        if (data.channelImage.isNullOrBlank()) {
             holder.userImage.setImageResource(R.drawable.circle_user)
-        }else {
-            imageLoader.displayImage(data.channelImage, holder.userImage, context.roundProfilePic())
+        } else {
+            imageLoader.displayImage(data.channelImage, holder.userImage, Util.roundProfilePic())
         }
 
         holder.userImage.setOnClickListener {
-               openChannel(data)
+            openChannel(data)
         }
         holder.detailText.setOnClickListener {
             openChannel(data)
@@ -111,21 +114,17 @@ class HomeListAdapter(
 
 
         override fun onClick(v: View?) {
-            if(baseFragment is HomeFragment){
+            if (baseFragment is HomeFragment) {
                 baseFragment.selectedPosition = adapterPosition
-//            }else if(baseFragment is TrendPagination){
-            }else if(baseFragment is TrendingFragment){
+            } else if (baseFragment is TrendingFragment) {
                 baseFragment.selectedPosition = adapterPosition
             }
             val data = dashList[adapterPosition]
             (context as HomeScreen).initializeDraggablePanel(data)
-//            val intent = Intent(context, VideoPlayerScreen::class.java)
-//            intent.putExtra("uid", data.uid)
-//            (context as HomeScreen).startActivityForResult(intent, CHANGE_HOME_DATA)
         }
     }
 
-    fun openChannel(data: HomeData){
+    fun openChannel(data: HomeData) {
         val intent = Intent(context, ChannelPage::class.java)
         intent.putExtra("id", data.channelId.toString())
         intent.putExtra("name", data.channelName)

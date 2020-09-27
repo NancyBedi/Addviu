@@ -156,7 +156,7 @@ class ProfilePage : BaseActivity(), View.OnClickListener, YesClick {
                     imageLoader.displayImage(selectedImage.toString(), userImage, circleProfilePic())
                     updateChannelImage()
                 }else{
-                    imageLoader.displayImage(selectedImage.toString(), bannerImage, profilePic())
+                    imageLoader.displayImage(selectedImage.toString(), bannerImage, Util.profilePic())
                     updateBanner()
                 }
             } catch (e: Exception) {

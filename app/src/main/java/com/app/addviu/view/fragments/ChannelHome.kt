@@ -98,8 +98,8 @@ class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(
             }
         } else if (t is ChannelDetailBean){
             if (t.status == 1){
-                if (t.data.banner != null && t.data.banner.isNotEmpty()) {
-                    imageLoader.displayImage(t.data.banner, bannerImage, profilePic())
+                if (t.data.banner != null && t.data.banner?.isNotEmpty()!!) {
+                    imageLoader.displayImage(t.data.banner, bannerImage, Util.profilePic())
                 }
                 if (t.data.coverImage != null && t.data.coverImage.isNotEmpty()) {
                     imageLoader.displayImage(t.data.coverImage, channelImg, circleProfilePic())
@@ -133,7 +133,7 @@ class ChannelHome(var channelId:String, var isUserChannel:Boolean):BaseFragment(
                     imageLoader.displayImage(selectedImage.toString(), channelImg, circleProfilePic())
                     updateChannelImage()
                 }else{
-                    imageLoader.displayImage(selectedImage.toString(), bannerImage, profilePic())
+                    imageLoader.displayImage(selectedImage.toString(), bannerImage, Util.profilePic())
                     updateBanner()
                 }
             } catch (e: Exception) {

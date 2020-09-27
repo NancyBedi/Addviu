@@ -27,19 +27,18 @@ import com.app.addviu.data.helper.USER_IMAGE
 import com.app.addviu.model.homeModel.HomeData
 import com.app.addviu.presenter.HomePresenter
 import com.app.addviu.view.BaseActivity
-import com.app.addviu.view.fragments.HomeFragment
-import com.app.addviu.view.fragments.TrendingFragment
-import com.app.addviu.view.fragments.VideoDetailsFragment
-import com.app.addviu.view.fragments.VideoPlayerFragment
+import com.app.addviu.view.fragments.*
 import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.navigation.NavigationView
 import com.hoanganhtuan95ptit.draggable.DraggablePanel
+import com.hoanganhtuan95ptit.draggable.utils.translationYAnim
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.home_screen_actionbar.*
 import kotlinx.android.synthetic.main.custom_badge_layout.view.*
 import kotlinx.android.synthetic.main.navigation_header.view.*
 import kotlinx.android.synthetic.main.layout_top.*
+import kotlinx.android.synthetic.main.recycle_channel_video_item.view.*
 
 
 class HomeScreen : BaseActivity(), OnClickListener,
@@ -98,6 +97,8 @@ class HomeScreen : BaseActivity(), OnClickListener,
 
     fun initializeDraggablePanel(homeData: HomeData) {
 
+        draggablePanel.maximize()
+
         homeData.viewsCount = homeData.viewsCount + 1
 
         val baseFragment = supportFragmentManager.findFragmentById(R.id.frameLayout)
@@ -106,7 +107,6 @@ class HomeScreen : BaseActivity(), OnClickListener,
         }else if(baseFragment is HomeFragment){
             baseFragment.changeData(homeData)
         }
-
 
         tvTitle.text = homeData.title
 
@@ -131,7 +131,6 @@ class HomeScreen : BaseActivity(), OnClickListener,
             .replace(R.id.frameBottom, videoDetailsFragment, "detailsFragment")
             .commit() // add frame bottom
 
-        draggablePanel.maximize()
 
         draggablePanel.setDraggableListener(object : DraggablePanel.DraggableListener {
 
@@ -139,6 +138,11 @@ class HomeScreen : BaseActivity(), OnClickListener,
                 super.onChangeState(state)
                 if (state == DraggablePanel.State.MIN) {
                     (getTopFragment() as VideoPlayerFragment).hideControls()
+//                    if((getTopFragment() as VideoPlayerFragment).player?.isPlaying!!){
+//                        onPlayVideo()
+//                    }else{
+//                        onPauseVideo()
+//                    }
                 } else if (state == DraggablePanel.State.MAX) {
                     (getTopFragment() as VideoPlayerFragment).showControls()
                 }
@@ -156,6 +160,11 @@ class HomeScreen : BaseActivity(), OnClickListener,
         return supportFragmentManager.findFragmentById(R.id.frameTop)
     }
 
+    fun onPlayVideo(){
+        ivPause.visibility = VISIBLE
+        ivPlay.visibility = GONE
+    }
+
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.menuIcon -> {
@@ -167,8 +176,7 @@ class HomeScreen : BaseActivity(), OnClickListener,
                 }
             }
             R.id.ivPlay -> {
-                ivPause.visibility = VISIBLE
-                ivPlay.visibility = GONE
+                onPlayVideo()
                 (getTopFragment() as VideoPlayerFragment).playVideo()
             }
             R.id.ivPause -> {
@@ -215,11 +223,11 @@ class HomeScreen : BaseActivity(), OnClickListener,
 
     }
 
-    override fun setFullScreen() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        }
-    }
+//    override fun setFullScreen() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            window.decorView.systemUiVisibility = SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+//        }
+//    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -275,13 +283,13 @@ class HomeScreen : BaseActivity(), OnClickListener,
                 imageLoader.displayImage(
                     sharedPrefsHelper?.get(USER_IMAGE, ""),
                     userImage,
-                    roundProfilePic()
+                    Util.roundProfilePic()
                 )
             }else{
                 imageLoader.displayImage(
                     "drawable://"+ R.drawable.circle_user,
                     userImage,
-                    roundProfilePic()
+                    Util.roundProfilePic()
                 )
 //                bottomNavView.menu.findItem(R.id.signInMenu).setIcon(R.drawable.circle_user)
             }
@@ -339,13 +347,13 @@ class HomeScreen : BaseActivity(), OnClickListener,
                 imageLoader.displayImage(
                     sharedPrefsHelper?.get(USER_IMAGE, ""),
                     userImage,
-                    roundProfilePic()
+                    Util.roundProfilePic()
                 )
             }else{
                 imageLoader.displayImage(
                     "drawable://"+ R.drawable.circle_user,
                     userImage,
-                    roundProfilePic()
+                    Util.roundProfilePic()
                 )
             }
         }

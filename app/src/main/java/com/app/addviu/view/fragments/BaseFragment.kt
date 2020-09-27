@@ -57,19 +57,9 @@ open class BaseFragment:Fragment() {
         recyclerView.visibility = View.VISIBLE
     }
 
-    fun profilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.loading)
-            .displayer(SimpleBitmapDisplayer()).build()
-    }
-
     fun curveProfilePic(): DisplayImageOptions {
         return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.circle_user)
             .displayer(RoundedBitmapDisplayer(15)).build()
-    }
-
-    fun roundProfilePic(): DisplayImageOptions {
-        return DisplayImageOptions.Builder().cacheOnDisk(true).showImageOnLoading(R.drawable.circle_user)
-            .displayer(RoundedBitmapDisplayer(200)).build()
     }
 
     @TargetApi(Build.VERSION_CODES.M)

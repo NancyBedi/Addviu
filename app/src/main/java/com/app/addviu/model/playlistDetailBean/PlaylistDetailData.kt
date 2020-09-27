@@ -26,11 +26,11 @@ class PlaylistDetailData {
 
     @SerializedName("playlist_icon")
     @Expose
-    var playlistIcon: String = ""
+    var playlistIcon: String? = ""
 
     @SerializedName("banner")
     @Expose
-    var banner: String = ""
+    var banner: String? = ""
 
     @SerializedName("created_at")
     @Expose

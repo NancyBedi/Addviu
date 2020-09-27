@@ -26,7 +26,7 @@ class ChannelDetailData {
 
     @SerializedName("banner")
     @Expose
-    var banner: String = ""
+    var banner: String? = ""
 
     @SerializedName("cover_image")
     @Expose

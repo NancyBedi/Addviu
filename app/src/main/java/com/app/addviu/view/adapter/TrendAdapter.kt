@@ -19,6 +19,7 @@ import com.app.addviu.view.activity.VideoPlayerScreen
 import com.app.addviu.view.fragments.BaseFragment
 import com.app.addviu.view.fragments.HomeFragment
 import com.app.addviu.view.fragments.TrendingFragment
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import com.nostra13.universalimageloader.core.ImageLoader
 import kotlinx.android.synthetic.main.home_list_adapter.view.*
 import kotlinx.android.synthetic.main.item_progress.view.*
@@ -95,7 +96,7 @@ class TrendAdapter(
                     imageLoader.displayImage(
                         data.thumbnailUrl,
                         holder.bannerImage,
-                        (context as HomeScreen).profilePic()
+                        Util.profilePic()
                     )
                 }
 
@@ -105,7 +106,7 @@ class TrendAdapter(
                     imageLoader.displayImage(
                         data.channelImage,
                         holder.userImage,
-                        baseFragment.roundProfilePic()
+                        Util.roundProfilePic()
                     )
                 }
 

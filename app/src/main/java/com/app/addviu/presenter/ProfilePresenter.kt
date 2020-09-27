@@ -34,17 +34,17 @@ class ProfilePresenter (val context: Context): ResponseCallback, ProfileInterfac
                     (context as ProfilePage).imageLoader.displayImage(
                         "drawable://"+ R.drawable.circle_user,
                         context.userImage,
-                        context.roundProfilePic()
+                        Util.roundProfilePic()
                     )
                 }else{
-                    (context as ProfilePage).imageLoader.displayImage(t.data.avatar, context.userImage, context.roundProfilePic())
+                    (context as ProfilePage).imageLoader.displayImage(t.data.avatar, context.userImage, Util.roundProfilePic())
                     context.sharedPrefsHelper?.put(USER_IMAGE, t.data.avatar)
                 }
                 if(t.data.banner.isNullOrEmpty()){
                     (context as ProfilePage).imageLoader.displayImage(
                         "drawable://"+ R.drawable.dummy_bnr,
                         context.bannerImage,
-                        context.profilePic()
+                        Util.profilePic()
                     )
                 }else{
                     (context as ProfilePage).imageLoader.displayImage(t.data.banner, context.bannerImage)
@@ -64,7 +64,7 @@ class ProfilePresenter (val context: Context): ResponseCallback, ProfileInterfac
                 (context as ProfilePage).imageLoader.displayImage(
                     "drawable://"+ R.drawable.circle_user,
                     context.userImage,
-                    context.roundProfilePic()
+                    Util.roundProfilePic()
                 )
                 getUserDetails()
             }else{

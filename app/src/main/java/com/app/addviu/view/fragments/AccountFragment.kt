@@ -14,6 +14,7 @@ import com.app.addviu.view.activity.HomeScreen
 import com.app.addviu.view.activity.ProfilePage
 import com.app.addviu.view.adapter.AccountListAdapter
 import com.app.addviu.view.viewInterface.ResponseCallback
+import com.app.naxtre.mvvmfinal.data.helper.Util
 import kotlinx.android.synthetic.main.account_fragment_layout.*
 import kotlinx.android.synthetic.main.account_fragment_layout.userImage
 import kotlinx.android.synthetic.main.home_fragment_layout.recyclerView
@@ -79,13 +80,13 @@ AccountFragment : BaseFragment(), ResponseCallback {
             imageLoader.displayImage(
                 sharedPrefsHelper?.get(USER_IMAGE, ""),
                 userImage,
-                roundProfilePic()
+                Util.roundProfilePic()
             )
         }else{
             imageLoader.displayImage(
                 "drawable://"+ R.drawable.circle_user,
                 userImage,
-                roundProfilePic()
+                Util.roundProfilePic()
             )
         }
     }
